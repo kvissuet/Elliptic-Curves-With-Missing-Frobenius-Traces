@@ -1,0 +1,59 @@
+% No need to change the first 4 lines of this file
+\documentclass{uicthesi}
+\input{sections/other/__preamble}
+\input{sections/other/__commands}
+\begin{document}
+
+% The title of the thesis
+\title{Elliptic Curves with Missing Frobenius Traces}
+
+% Your full name
+\author{Kevin Vissuet}
+
+% Mention all degrees you hold currently
+\pdegrees{B.A., Mathematics, 2013 \\
+M.S., Mathematics, 2016 \\
+M.S., Mathematics, 2018 \\
+}
+
+% Probably no need to edit this
+\degree{Doctor of Philosophy in Mathematics}
+
+% Add your committee members, one per line, mentioning external universities
+% where relevant
+\committee{Nathan Jones, Advisor and Chair\\
+Alina Cojocaru \\
+Ramin Takloo-Bighash \\
+James Freitag\\
+Alvaro Lozano-Robledo, University of Connecticut}
+
+% No need to make any changes to the next 10 lines
+\maketitle
+\copyrightpage
+\input{sections/other/_1_dedication}
+\input{sections/other/_2_acknowledgement}
+% \input{sections/other/_3_contribution_of_authors}
+\tableofcontents
+\listoftables
+% \listoffigures
+\printglossary[type=\acronymtype,title=LIST OF ABBREVIATIONS,style=clong]
+\input{sections/other/_4_summary}
+
+% This is where you write the paper.  I've included a sample chapter
+% below, to suggest a possible organization.  Just add references to the
+% rest of your paper here.
+\input{sections/1_intro/0_index}
+\input{sections/2_notation/0_index}
+\input{sections/3_bounding/0_index}
+\input{sections/4_preliminaries/0_index}
+\input{sections/5_explicit_models/0_index}
+\input{sections/5_tables/0_index}
+\input{sections/6_conclusion/0_index}
+% No need to make any changes to this file below this line.
+\newpage
+\bibformb
+\bibliography{thesis}
+\input{sections/other/_6_bib}
+\newpage
+\input{sections/other/_5_vita}
+\end{document}

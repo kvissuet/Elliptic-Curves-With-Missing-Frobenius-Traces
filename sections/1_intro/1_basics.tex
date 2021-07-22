@@ -1,0 +1,257 @@
+\section{Introduction}
+\label{intro\colonbasics}
+
+Let $E$ be an elliptic curve over $\mbq$ of conductor $N_E$.  For a prime $p$ not dividing $N_E$, we consider the Frobenius trace $a_p(E) \in \mbz$ associated to $p$, which satisfies the equation
+\[
+\#E(\mbf_p) = p + 1 - a_p(E).
+\]
+The following conjecture, formulated by S. Lang and H. Trotter in 1976, articulates one distributional aspect of the infinite sequence $\left( a_p(E) \colon p \nmid N_E \right)$.  Specifically, it states a precise asymptotic formula for the counting function
+\begin{equation} \label{defofpisubErofX}
+\pi_{E,r}(X) \colon= \# \{ p \leq X \colon p \nmid N_E, \, a_p(E) = r \}.
+\end{equation}
+\begin{Conjecture} \label{LTConjecture}
+Let $E$ be an elliptic curve over $\mbq$ without complex multiplication, let $r \in \mbz$ and define the quantity $\pi_{E,r}(X)$ by \eqref{defofpisubErofX}.  There exists a constant $C_{E,r} \geq 0$ so that, as $X \rightarrow \infty$, we have
+\[
+\pi_{E,r}(X) \sim C_{E,r} \frac{\sqrt{X}}{\log X}.
+\]
+\end{Conjecture}
+\begin{remark}
+Conjecture \ref{LTConjecture} was developed using a probabilistic model based upon the Sato-Tate conjecture and the Chebotarev density theorem for division fields of $E$.  In spite of the Sato-Tate conjecture having been proved (see \cite{clozeletal} and \cite{taylor}), Conjecture \ref{LTConjecture} remains open.
+\end{remark}
+In the case $C_{E,r} = 0$, we interpret the asymptotic of Conjecture \ref{LTConjecture} as
+\begin{equation} \label{CErequalszerocase}
+\begin{matrix} \pi_{E,r}(X) \sim 0 \\ \text{ as } X\rightarrow \infty \end{matrix} \; \myeq \; \lim_{X \rightarrow \infty} \pi_{E,r}(X) < \infty.
+\end{equation}
+We will presently state a precise formula for the constant $C_{E,r}$.  As will be seen from that formula, in the case $C_{E,r} = 0$, we \emph{provably} have  $\displaystyle \lim_{X \rightarrow \infty} \pi_{E,r}(X) < \infty$.  In fact, it follows from the Chebotarev density theorem that the stronger statement
+\[
+C_{E,r} = 0 \; \Longrightarrow \; \{ p \text{ prime } \colon p \nmid N_E, \, a_p(E) = r \} = \emptyset
+\]
+holds.  When this is the case, we will call $r$ a \textbf{\emph{missing Frobenius trace for $E$}}.
+
+In this paper, we consider elliptic curves $E$ over $\mbq$ that have a missing Frobenius trace, the broad goal being to classify all such elliptic curves.  Here are a few examples.
+\begin{example} \label{level3example}
+Consider the elliptic curve $E_3$ over $\mbq$ defined by the Weierstrass equation
+\[
+E_3 \colon \; y^2 + xy + y = x^3 - x^2 - 56x + 163.
+\]
+The finite sequence $\left( a_p(E_{3}) \bmod 3 \colon  p \leq 150 \text{ and } p \nmid N_{E_{3}} \right)$ is equal to
+\[
+(0, 2, 0, 2, 0, 2, 0, 0, 2, 2, 0, 2, 0, 0, 0, 2, 2, 0, 2, 2, 0, 0, 2, 0, 2, 0, 
+2, 0, 2, 0, 0, 2, 0).
+\]
+We see that the residue class $1 \bmod 3$ is missing from this list.  This is caused by the presence of a rational $3$-torsion point $P \colon= (7,5) \in E_3[3]$.  Examining the effect of $P$ on the action of $\gal(\ol{\mbq}/\mbq)$ on $E_3[3]$, it follows that every $r \in \mbz$ satisfying $r \equiv 1 \bmod 3$ is a missing Frobenius trace for $E_3$.
+\end{example}
+
+\begin{example} \label{level8example}
+Consider the elliptic curve $E_{6}$ over $\mbq$ defined by the Weierstrass equation
+\[
+E_{6} \colon \; y^2 = x^3 - 15876x - 777924.
+\]
+The finite sequence $\left( a_p(E_{6}) \bmod 6 \colon  p \leq 150 \text{ and } p \nmid N_{E_{6}} \right)$ is equal to
+\[
+\begin{split}
+&( 4, 4, 5, 2, 5, 4, 0, 5, 0, 0, 5, 0, 2, 2, 5, 1, 2, 5, 5, 4, 0, 1, 0, 1, 0, 1, 
+0, 5, 4, 0, 0, 4 ).
+\end{split}
+\]
+We see that the residue class $3 \bmod 6$ is missing from this list.  As we shall see, due to the nature of the action of $\gal(\ol{\mbq}/\mbq)$ on the $6$-torsion of $E_{6}$, every $r \in \mbz$ satisfying $r \equiv 3 \bmod 6$ is a missing Frobenius trace for $E_6$.  Furthermore, $m=6$ is the smallest level for which $E_{6}$ has a missing trace modulo $m$.
+\end{example}
+
+\begin{example} \label{level28example}
+Consider the elliptic curve $E_{28}$ over $\mbq$ defined by the Weierstrass equation
+\[
+E_{28} \colon \; y^2 = x^3 - 7138223372x + 232131092574192.
+\]
+The finite sequence $\left( a_p(E_{28}) \bmod 28 \colon  p \leq 580 \text{ and } p \nmid N_{E_{28}} \right)$ is equal to
+\[
+\begin{split}
+&( 0, 1, 2, 26, 25, 22, 24, 19, 10, 9, 26, 22, 2, 24, 1, 10, 6, 10, 10, 16, 21, 
+21, 25, 22, 18, 23, 6, 20, 0, 19, 16, \\
+& 11, 4, 17, 6, 16, 21, 16, 5, 24, 19, 15, 
+10, 26, 0, 14, 1, 3, 6, 14, 14, 21, 4, 18, 14, 3, 27, 14, 5, 14, 18, 21, 27,\\
+&  20, 27, 16, 9, 25, 24, 0, 11, 22, 6, 3, 13, 10, 25, 2, 19, 18, 21, 20, 4, 6, 3, 2, 6, 20, 4, 12, 26, 18, 26,   21, 14, \\
+& 8, 11, 26, 23, 4, 3, 16, 18).
+\end{split}
+\]
+We see that the residue class $7 \bmod 28$ is missing from this list.  As we shall see, due to the nature of the action of $\gal(\ol{\mbq}/\mbq)$ on the $28$-torsion of $E_{28}$, every $r \in \mbz$ satisfying $r \equiv 7 \bmod 28$ is a missing Frobenius trace for $E_{28}$.  Furthermore, we see that $m=28$ is the smallest level for which $E_{28}$ has a missing trace modulo $m$.
+\end{example}
+
+Towards the goal of describing explicitly the constant $C_{E,r}$, we now consider the continuous Galois representations
+\[
+\begin{split}
+\rho_{E,m} \colon \; &G_\mbq \longrightarrow \GL_2(\mbz/m\mbz), \\
+\rho_E \colon \; &G_\mbq \longrightarrow \GL_2(\hat{\mbz}),
+\end{split}
+\]
+where $\rho_{E,m}$ is defined by letting $G_\mbq \colon= \gal(\ol{\mbq}/\mbq)$ act on $E[m]$ and fixing a $\mbz/m\mbz$-basis thereof, and $\rho_E$ is likewise defined by letting $G_\mbq$ act on the entire torsion subgroup $\ds E_{\tors} \colon= \bigcup_{m=1}^\infty E[m]$ of $E$ and choosing a $\mbz/m\mbz$-basis of each $E[m]$ in a compatible manner.  Here,
+\[
+\hat{\mbz} \colon= \lim_{ \leftarrow } \mbz/m\mbz \simeq \prod_{\ell \text{ prime}} \mbz_{\ell},
+\]
+is the inverse limit of the projective system $\{ \mbz/m\mbz \colon m \in \mbn \}$, ordered according to divisibility and with the canonical projection maps.  We may likewise view $\rho_E$ as being the inverse limit of the system of representations $\rho_{E,m}$, with $m \in \mbn$.  A famous theorem due to Serre \cite{serre} states that, if $E$ has no complex multiplication, then $\rho_E(G_\mbq) \subseteq \GL_2(\hat{\mbz})$ is an \emph{open} subgroup, or, equivalently, that the index of $\rho_E(G_{\mbq})$ in $\GL_2(\hat{\mbz})$ is finite.  Consequently, there is a positive integer $m$ for which
+\begin{equation*} %\label{conditiondefiningmsubE}
+\ker \left( \GL_2(\hat{\mbz}) \rightarrow \GL_2(\mbz/m\mbz) \right) \subseteq \rho_E(G_\mbq).
+\end{equation*}
+We define $m_E \in \mbn$ to be the smallest positive integer $m$ for which this holds.  
+
+As described in detail in \cite{langtrotter}, the constant $C_{E,r}$ appearing in Conjecture \ref{LTConjecture} is given by
+\begin{equation} \label{explicitformofCEr}
+C_{E,r} = \frac{m_E | \rho_{E,m_E}(G_\mbq)_r |}{| \rho_{E,m_E}(G_\mbq) |} \prod_{{\begin{substack} {\ell \text{ prime} \\ \ell \nmid m_E} \end{substack}}} \frac{\ell | \GL_2(\mbz/\ell\mbz)_r  |}{| \GL_2(\mbz/\ell\mbz) |},
+\end{equation}
+where, for any subgroup $H \subseteq \GL_2(\mbz/m\mbz)$, we are employing the notation
+\[
+H_r \colon= \{ g \in H \colon \tr g \equiv r \bmod m \}.
+\]
+Furthermore, it can be verified by direct computation that the infinite product over primes $\ell \nmid m_E$ in \eqref{explicitformofCEr} is \emph{convergent}, and a straightforward computation shows that each $\ell$-th factor $ \frac{\ell | \GL_2(\mbz/\ell\mbz)_r  |}{| \GL_2(\mbz/\ell\mbz) |}$ is nonzero for any $r \in \mbz$.  It follows that, for any elliptic curve $E$ over $\mbq$ without complex multiplication, we have
+\[
+C_{E,r} = 0 \; \Longleftrightarrow \; \exists m \mid m_E \text{ for which } \rho_{E,m}(G_\mbq)_r = \emptyset.
+\]
+To find elliptic curves $E$ with missing Frobenius traces (i.e. which satisfy $C_{E,r} = 0$ for some $r \in \mbz$), we are thus led to associate such elliptic curves $E$ with points on a modular curve of level $m$.  Specifically, fix a subgroup $G \subseteq \GL_2(\mbz/m\mbz)$ satisfying 
+\begin{equation} \label{conditiononG}
+\exists r \in\mbz \; \text{ for which } \; G_r = \emptyset.
+\end{equation}
+For such a group $G$, let $\tilde{G} \colon= \langle G, -I \rangle$, and consider the modular curve $X_{\tilde{G}}$, whose non-CM rational points correspond to $j$-invariants of elliptic curves $E$ with $\rho_{E,m}(G_\mbq) \subseteq \tilde{G}$, up to conjugation inside $\GL_2(\mbz/m\mbz)$ (for more details, see \cite{delignerapoport}).  Our main theorem 
+focuses on the case where $X_{\tilde{G}}$ has genus zero.  Since our goal is to classify all elliptic curves $E$ such that $C_{E,r} = 0$ for some $r \in \mbz$, we may as well consider only \emph{maximal} subgroups $G \subseteq \GL_2(\mbz/m\mbz)$ among those satisfying \eqref{conditiononG}.  Furthermore, because we will be varying the level $m$, we will phrase our definitions in terms of open subgroups $G \subseteq \GL_2(\hat{\mbz})$.
+For any open subgroup $G \subseteq \GL_2(\hat{\mbz})$, we denote by $m_G$ its \emph{level}, i.e. the smallest $m \in \mbn$ for which $\ker\left(\GL_2(\hat{\mbz}) \rightarrow \GL_2(\mbz/m\mbz) \right) \subseteq G$, and for any $m \in \mbn$ we define 
+\[
+G(m) \colon= G \bmod m \subseteq \GL_2(\mbz/m\mbz).  
+\]
+We extend our notation for the associated modular curve by setting $\tilde{G} \colon= \langle G, -I \rangle$ and setting the notation
+\[
+X_{\tilde{G}} \colon= X_{\tilde{G}(m_{\tilde{G}})}.
+\]
+Furthermore, we denote by $j_{\tilde{G}} \colon X_{\tilde{G}} \longrightarrow X(1)$ the map which associates to any point in $X_{\tilde{G}}$ the underlying elliptic curve $E$.  
+Finally, since we are only interested in subgroups $G$ up to conjugation inside $\GL_2(\hat{\mbz})$, we define the following notation, for subgroups $G_1, G_2, G \subseteq \GL_2(\hat{\mbz})$ and any integer $r$\colon
+\begin{equation} \label{defofdotrelations}
+\begin{split}
+G_1 \doteq G_2 \; &\myeq \; \exists g \in \GL_2(\hat{\mbz}) \text{ with } G_1 = g G_2 g^{-1}, \\
+G_1 \, \dot\subseteq \, G_2 \; &\myeq \; \exists g \in \GL_2(\hat{\mbz}) \text{ with } G_1 \subseteq g G_2 g^{-1}, \\
+G_r &\colon= \{ g \in G \colon \tr g \equiv r \bmod m_G \}.
+\end{split}
+\end{equation}
+We consider the following collections of open subgroups $G \subseteq \GL_2(\hat{\mbz})$\colon
+\begin{equation} \label{listofdefsofopensubgroups}
+\begin{split}
+\mf{G} &\colon= \{ G \subseteq \GL_2(\hat{\mbz}) \colon \, G \text{ is open and } \det G = \hat{\mbz}^\times \}, \\
+%\mf{G}(g,m) &\colon= \{ G \in \mf{G}(g) \colon m_G = m \}, \\
+\mf{G}(g) &\colon= \{ G \in \mf{G} \colon \,  X_{\tilde{G}} \text{ has genus } g \}, \\
+\mf{G}_{MT} &\colon= \{ G \in \mf{G}  \colon  \exists r \in \mbz \text{ with } G_r = \emptyset \}, \\
+\mf{G}_{MT}^{\max} &\colon= \{ G \in \mf{G}_{MT} \colon \, G \text{ is maximal with respect to } \dot\subseteq \}, \\
+\mf{G}_{MT}(g) &\colon= \mf{G}_{MT} \cap \mf{G}(g),  \quad\quad\quad \mf{G}_{MT}^{\max}(g) \colon= \mf{G}_{MT}^{\max} \cap \mf{G}(g).\\
+%\mf{G}_{MT}^{\max}(g,m) &\colon= \mf{G}_{MT}^{\max}(g) \cap \mf{G}(g,m).
+\end{split}
+\end{equation}
+As a consequence of the Weil pairing, for any elliptic curve $E$ over $\mbq$, we have $\det \rho_{E}(G_\mbq) = \hat{\mbz}^\times$ (see Lemma \ref{weilpairinglemma}); this is the reason for the condition $\det G = \hat{\mbz}^\times$ in the definition of $\mf{G}$ in \eqref{listofdefsofopensubgroups}.  As we will see, for any elliptic curve $E$ over $\mbq$, Conjecture \ref{LTConjecture} implies that
+\begin{equation} \label{goalbygenus}
+\exists r \in \mbz \text{ with } \lim_{X \rightarrow \infty} \pi_{E,r}(X) < \infty \; \Longleftrightarrow \; \exists G \in \mf{G}_{MT}^{\max} \text{ with } \rho_{E}(G_\mbq) \, \dot\subseteq \, G.
+\end{equation}
+(The implication ``$\Longleftarrow$'' is unconditional, whereas ``$\Longrightarrow$'' depends on Conjecture \ref{LTConjecture}.)  Thus, the goal of classifying elliptic curves $E$ over $\mbq$ satisfying the left-hand condition in \eqref{goalbygenus} leads to our consideration of the rational points of the modular curves $X_{\tilde{G}}$, for each $G \in \mf{G}_{MT}^{\max}(g)$, for each fixed $g \geq 0$.
+We remark that, in case $G = \tilde{G}$ (i.e. in case $-I \in G$) and assuming $j_E \notin \{ 0, 1728 \}$, the property that $\rho_{E}(G_\mbq) \subseteq G$ does not vary as we twist $E$, i.e. we have
+\[
+-I \in G \; \Longrightarrow \; \left( \forall \tau \in \aut_{\ol{\mbq}}(E), \; \rho_{E}(G_\mbq) \, \dot\subseteq \, G \Leftrightarrow \rho_{E^{\tau}}(G_\mbq) \, \dot\subseteq \, G \right).
+\]
+In particular, when $-I \in G$ and assuming $j_E \notin \{ 0, 1728 \}$, the property that $\rho_{E}(G_\mbq) \, \dot\subseteq \, G$ only depends on the $j$-invariant of $E$.  By contrast, in case $-I \notin G$, the property $\rho_{E^{\tau}}(G_\mbq) \, \dot\subseteq \, G$ depends, in general, on the automorphism $\tau$.  Thus, classifying elliptic curves $E$ with $\rho_{E}(G_\mbq) \, \dot\subseteq \, G$, amounts to 
+\begin{enumerate}
+\item describing explicitly the map $j_{\tilde{G}} : X_{\tilde{G}} \longrightarrow X(1)$,
+\item in case $-I \notin G$, describing the particular twists $\{ E^{\tau} \}_{\tau \in \aut_{\ol{\mbq}}(E)}$ that satisfy $\rho_{E^{\tau}}(G_\mbq) \, \dot\subseteq \, G$.
+\end{enumerate}
+
+Our main result classifies the set of elliptic curves $E$ over $\mbq$ for which $\rho_E(G_\mbq) \, \dot\subseteq \, G$ for some $G \in \mf{G}_{MT}^{\max}(0)$, in cases according to whether or not $-I \in G$, as described above.  In particular, it extends each of Examples \ref{level3example}, \ref{level8example}, and \ref{level28example} to the following one-parameter families.  We define the rational functions in $\mbq(t,D)$:
+\begin{equation} \label{shortlistofjsandds}
+\begin{array}{ll}
+j_{3,1}(t) := \ds 27\frac{(t+1)(t+9)^3}{t^3} & d_{3,1,1}(t,D) :=  \ds \frac{6(t+1)(t+9)}{t^2 - 18t - 27}, \\
+& \\
+j_{6,1}(t) := \ds 2^{10}3^3t^3(1-4t^3) & d_{6,1,1}(t,D) := \ds D, \\
+& \\
+j_{28,1}(t) := \ds - \frac{(49t^4 - 13t^2 + 1)(2401t^4 - 245t^2 + 1)^3}{t^2} & \\
+& \\
+d_{28,1,1}(t,D) :=  \ds \frac{-7t(49t^4 - 13t^2 + 1)(2401t^4 - 245t^2 + 1)}{823543t^8 - 235298t^6 + 21609t^4 - 490t^2 - 1}. & 
+\end{array} 
+\end{equation}
+Furthermore, for $(m,i) \in \{ (3,1), (6,1), (28,1) \}$, we set the Weierstrass coefficients $$a_{4;m,i}(t),a_{6;m,i}(t) \in \mbq(t)$$ by
+\begin{equation} \label{defofa4anda6}
+a_{4;m,i}(t) := \frac{108j_{m,i}(t)}{1728 - j_{m,i}(t)}, \quad\quad a_{6;m,i}(t) \colon= \frac{432j_{m,i}(t)}{1728-j_{m,i}(t)}.
+\end{equation}
+For $(m,i,k) \in \{ (3,1,1), (8,1,1), (28,1,1) \}$ we have already declared the twist parameters $$d_{m,i,k}(t,D) \in \mbq(t,D)$$ in \eqref{shortlistofjsandds}, and we define the elliptic curves $\mc{E}_{m,i,k}$ over $\mbq(t,D)$ by
+\begin{equation} \label{ellipticsurface}
+\mc{E}_{m,i,k} : \; d_{m,i,k}(t,D) y^2 = x^3 + a_{4;m,i}(t) x + a_{6;m,i}(t).
+\end{equation}
+For $t_0,D_0 \in \mbq$, we denote by $\mc{E}_{m,i,k}(t_0,D_0)$ the elliptic curve over $\mbq$ obtained by specializing $\mc{E}_{m,i,k}$ at $t = t_0$ and $D = D_0$.  The elliptic curves $E_3$, $E_6$ and $E_{28}$ of Examples \ref{level3example} - \ref{level28example} satisfy
+\[
+E_3 = \mc{E}_{3,1,1}(1,1), \quad\quad E_6 = \mc{E}_{6,1,1}(1,1), \quad\quad E_{28} = \mc{E}_{28,1,1}(1,1).
+\]
+
+In Tables II - VI, which appear in Section \ref{tablesection}, we associate $j$-invariants $j_{m,i}(t) \in \mbq(t)$ and twist parameters $d_{m,i,k}(t,D) \in \mbq(t,D)$ to all of the $3$-tuples\footnote{In each $3$-tuple $(m,i,k)$, the first entry $m$ names the $\GL_2$-level of the corresponding group; for a fixed $m$, the index $i$ changes exactly if the $j$-invariant changes, and the last index $k$ changes as that twist class changes for a fixed $j$-invariant.}
+\begin{equation} \label{masterlistofindices}
+(m,i,k) \in \left\{ \begin{matrix} 
+(2,1,1), (3,1,1), (3,1,2), (4,1,1), (5,1,1), (5,2,1), (5,2,1), \\
+(5,2,1), (6,1,1), (6,2,1), (6,3,1), (6,3,2), (7,1,1), (7,1,2), \\
+(7,2,1), (7,2,2), (7,3,1), (7,3,2), (8,1,1), (9,1,1), (9,2,1), \\
+(9,3,1), (9,4,1), (10,1,1), (10,1,2), (10,2,1), (10,2,2), (10,3,1), \\
+(12,1,1), (12,1,2), (12,2,1), (12,3,1), (12,4,1), (14,1,1), (14,2,1), \\
+(14,2,2), (14,3,1), (14,3,2), (14,4,1), (14,4,2), (14,5,1), (14,6,1), \\ 
+(14,6,2), (14,7,1), (14,7,2), (28,1,1), (28,2,1), (28,2,2), (28,3,1), \\
+(28,3,2) \end{matrix} \right\}.
+\end{equation}
+Each $j$-invariant $j_{m,i}(t)$ in our list will correspond to the natural map $X_{\tilde{G}} \longrightarrow X(1)$ associated to a group $G \in \mf{G}_{MT}^{\max}(0)$ and a choice of parameter $t \in \mbq(X_{\tilde{G}})$, and we will have $d_{m,i,k}(t,D) = D$ just in case $-I \in G$.  When  $-I \notin G$, we will have $d_{m,i,k}(t,D) \in \mbq(t) \subseteq \mbq(t,D)$, and we may also denote it simply by $d_{m,i,k}(t)$ in this case.  For each $j$-invariant $j_{m,i}(t)$ corresponding to such a tuple $(m,i,k)$ in \eqref{masterlistofindices}, we again define the Weierstrass coefficients $a_{4;m,i}(t), a_{6;m,i}(t) \in \mbq(t)$ by \eqref{defofa4anda6} and consider the associated elliptic curve $\mc{E}_{m,i,k}$ over $\mbq(t,D)$ defined by \eqref{ellipticsurface}; for $t_0, D_0 \in \mbq$ we denote by $\mc{E}_{m,i,k}(t_0,D_0)$ the specialization of $\mc{E}_{m,i,k}(t,D)$ to $t = t_0$ and $d = D_0$.  For all pairs $(t_0,D_0)$ in a Zariski open subset of $\mathbb{A}_2(\mbq)$, the specialized curve $\mc{E}_{m,i,k}(t_0,D_0)$ is an elliptic curve over $\mbq$.  In case $-I \notin G$, since the corresponding elliptic curve $\mc{E}_{m,i,k}$ as in \eqref{ellipticsurface} is defined over $\mbq(t)$, we may also denote simply by $\mc{E}_{m,i.k}(t_0)$ its specialization to $t = t_0$, which is an elliptic curve over $\mbq$ for all but finitely many $t_0 \in \mbq$.
+
+
+
+\begin{Theorem} \label{maintheorem}
+Let $E$ be an elliptic curve over $\mbq$ with $j$-invariant $j_E$ satisfying $j_E \notin \{ 0, 1728 \}$.  We have that $\exists G \in \mf{G}_{MT}^{\max}(0)$ with $\rho_E(G_\mbq) \, \dot\subseteq \, G$ if and only if there are $t_0,D_0 \in \mbq$ and a $3$-tuple $(m,i,k)$ in the set \eqref{masterlistofindices} so that $E$ is isomorphic over $\mbq$ to the elliptic curve
+\[
+\mc{E}_{m,i,k}(t_0,D_0) : \; d_{m,i,k}(t_0,D_0) y^2 = x^3 + a_{4;m,i}(t_0)x + a_{6;m,i}(t_0),
+\]
+where the $j$-invariant and twist parameter $j_{m,i}(t,D), d_{m,i,k}(t,D) \in \mbq(t,D)$ are as listed in Tables II - VI of Section \ref{tablesection} and the coefficients $a_{4;m,i}(t), a_{6,m,i}(t) \in \mbq(t)$ are defined by \eqref{defofa4anda6}.
+\end{Theorem}
+The proof of Theorem \ref{maintheorem} falls into two steps, the first one bounding the levels associated to each of the groups $G \in \mf{G}_{MT}^{\max}(0)$.  In addition to \eqref{listofdefsofopensubgroups}, we make the definitions
+\begin{equation} \label{defsofopensubgroupswithlevel}
+\begin{split}
+\mf{G}(g,m) &\colon= \{ G \in \mf{G}(g) \colon m_G = m \} \\
+\mf{G}_{MT}(g,m) &\colon= \mf{G}_{MT} \cap \mf{G}(g,m) \\
+\mf{G}_{MT}^{\max}(g,m) &\colon= \mf{G}_{MT}^{\max} \cap \mf{G}(g,m).
+\end{split}
+\end{equation}
+We will establish the following theorem.
+ \begin{Theorem} \label{boundingthelevelsthm}
+Let the set $\mf{G}_{MT}^{\max}(g)$ of open subgroups of $\GL_2(\hat{\mbz})$ be as defined in \eqref{listofdefsofopensubgroups}.  We then have
+\begin{equation} \label{genuszerocurvesbylevel}
+\mf{G}_{MT}^{\max}(0) = \bigcup_{m \in \left\{ 2, 3, 4, 5, 6, 7, 8, \atop 9, 10, 12, 14, 28 \right\}} \mf{G}_{MT}^{\max}(0,m),
+\end{equation}
+where the set $\mf{G}_{MT}^{\max}(g,m)$ is as in \eqref{defsofopensubgroupswithlevel}.
+\end{Theorem}
+Theorem \ref{boundingthelevelsthm} is proved as follows.  An equivalent formulation of a conjecture of  Rademacher states that
+\[
+\{ \text{open subgroups } S \subseteq \SL_2(\hat{\mbz}) \colon -I \in S \text{ and } X_S \text{ has genus } 0 \} / \doteq
+\]
+is a finite set.  
+This conjecture was proven by Denin (see \cite{denin1}, \cite{denin2} and \cite{denin3}).  More generally, in \cite{thompson} and \cite{zograf}, the same is shown with $0$ replaced by a general $g \in \mbn \cup \{ 0 \}$. 
+In addition, there are several papers on the \emph{effective} resolution of Rademacher's conjecture.  In particular, Cummins and Pauli \cite{cumminspauli} have produced the complete list of the elements of 
+\[
+\{ \text{open subgroups } S \subseteq \SL_2(\hat{\mbz}) \colon -I \in S \text{ and } X_S \text{ has genus } g \} / \doteq
+\]
+for $g \leq 24$, and our proof of Theorem \ref{boundingthelevelsthm} makes use of the tables therein.
+We extend the notion of $\GL_2$-level of an open subgroup $G \subseteq \GL_2(\hat{\mbz})$ by defining
+\begin{equation} \label{defofGL2levelandSL2level}
+\begin{split}
+\level_{\GL_2}(G) &\colon= \min \left\{ m \in \mbn \colon \ker \left( \GL_2(\hat{\mbz}) \rightarrow \GL_2(\mbz/m\mbz) \right) \subseteq G \right\} \\
+\level_{\SL_2}(G) &\colon= \min \left\{ m \in \mbn \colon \ker \left( \SL_2(\hat{\mbz}) \rightarrow \SL_2(\mbz/m\mbz) \right) \subseteq G \cap \SL_2(\hat{\mbz}) \right\}.
+\end{split}
+\end{equation}
+It is straightforward to see that $\level_{\SL_2}(G)$ divides $\level_{\GL_2}(G)$, and in general they can be different.  Using the main result of \cite{cumminspauli}, we will first show that
+\begin{equation} \label{takingcumminspaulifurther}
+G \in \mf{G}(0) \; \Longrightarrow \; \level_{\SL_2}(G) \in \left\{ \begin{matrix} 
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, \\
+11, 12, 13, 14, 15, 16, 18, 20, \\
+21, 22, 24, 25, 26, 27, 28, 30, 32, \\
+36, 40, 42, 48, 50, 52, 54, 56, 60, \\
+64, 72, 96 \end{matrix} \right\}.
+\end{equation}
+Next, for each $G \in \mf{G}_{MT}^{\max}(0)$, we exhibit a positive integer $d_G$ for which $\level_{\GL_2}(G)$ divides $d_G \cdot \level_{\SL_2}(G)$, and this, together with a MAGMA computation, yields Theorem \ref{boundingthelevelsthm}.
+
+To establish Theorem \ref{maintheorem}, we will utilize results of \cite{sutherlandzywina} and \cite{zywina}, which describe explicitly all prime power level modular curves with infinitely many rational points.  For the prime power levels (other than the $m=8$) occurring on the right-hand side of \eqref{genuszerocurvesbylevel} we use those results directly; for each group $G$ of level $m$ that is not a prime power, the associated missing trace is caused by an \emph{entanglement}, i.e. a non-trivial intersection
+\[
+\mbq(E[m_1]) \cap \mbq(E[m_2]) \neq \mbq \quad\quad\quad \left(m = m_1m_2, \; \gcd(m_1,m_2) = 1 \right)
+\]
+implicit in the group $G$ (for $m=8$, the missing trace is caused by a ``vertical entanglement'' and also requires additional work).  In the cases involving entanglement, we undertake a finer analysis, identifying precisely the underlying subfields and determining the subfamily for which those subfields agree.  
+
+The paper is organized as follows.  In Section \ref{proofofboundingthelevelsthmsection} we prove Theorem \ref{boundingthelevelsthm}.  In Section \ref{proofofmaintheoremsection} we prove Theorem \ref{maintheorem} and in Section \ref{tablesection} we summarize the results in three tables.  Finally, in Section \ref{concludingremarkssection} we discuss future directions.

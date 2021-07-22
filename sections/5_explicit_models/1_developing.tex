@@ -1,0 +1,1349 @@
+\section{Developing explicit models for missing trace groups} \label{proofofmaintheoremsection}
+
+In this section, we complete the proof of Theorem \ref{maintheorem}. Specifically, for each $m$ appearing in the union on the right-hand side of \eqref{genuszerocurvesbylevel}, we will now
+\begin{enumerate}
+\item list the groups $G \in \mf{G}_{MT}^{\max}(0,m)$, up to conjugation in $\GL_2(\hat{\mbz})$;
+\item for each such group $G$, exhibit a rational function $j_{\tilde{G}}(t) \in \mbq(t)$ which defines the forgetful map $j_{\tilde{G}} : X_{\tilde{G}} \longrightarrow X(1)$;
+\item in case $G \subsetneq \tilde{G}$, identify each twist parameter $d_G(t) \in \mbq(t)$ for which the elliptic curve $\mc{E}_G$ over $\mbq(t)$ given by
+\[
+\mc{E}_G : \; d_G(t) y^2 = x^3 + a_{4,\tilde{G}}(t) x + a_{6,\tilde{G}}(t)
+\]
+satisfies $\rho_{\mc{E}_G,m}(G_{\mbq(t)}) = G$. (Here the Weierstrass coefficients $a_{4,\tilde{G}}(t)$, $a_{6,\tilde{G}}(t) \in \mbq(t)$ are chosen as usual according to \eqref{defofa4anda6}, so that the $j$-invariant of $\mc{E}_G$ is $j_{\tilde{G}}(t)$.)
+\end{enumerate}
+Throughout this section, we denote by $\pi_{\GL_2}$ the canonical projection map
+\[
+\pi_{\GL_2} : \GL_2(\hat{\mbz}) \longrightarrow \GL_2(\mbz/m\mbz),
+\]
+suppressing the dependence of $\pi_{\GL_2}$ on the level $m$.
+
+\medskip
+
+\subsection{The level \texorpdfstring{$m=2$}.}
+
+We have $\mf{G}_{MT}^{\max}(0,2) = \{ G_{2,1} \}$, where $G_{2,1}(2) \subseteq \GL_2(\mbz/2\mbz)$ is given by
+\[
+G_{2,1}(2) = \left\langle \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \right\rangle
+\]
+and $G_{2,1} = \pi_{\GL_2}^{-1}(G_{2,1}(2))$. Note that $-I \in G_{2,1}$, so $G_{2,1} = \tilde{G}_{2,1}$. Define the function $j_{2,1}(t) \in \mbq(t)$ by 
+\[
+j_{2,1}(t) := 256 \frac{(t+1)^3}{t}.
+\]
+As detailed in \cite{zywina}, for any elliptic curve $E$ over $\mbq$ with $j$-invariant $j_E$, one has
+\begin{equation} \label{level2jinvariantstatement}
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{2,1} \; \Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } j_E = j_{2,1}(t_0).
+\end{equation}
+We define the coefficients $a_{4;2,1}(t)$ and $a_{6;2,1}(t)$ by \eqref{defofa4anda6} and the elliptic curve $\mc{E}_{2,1,1}$ over $\mbq(t,D)$ by
+\[
+\mc{E}_{2,1,1} : \; D y^2 = x^3 + a_{4;2,1}(t) x + a_{6;2,1}(t).
+\]
+It follows from \eqref{level2jinvariantstatement} that
+\[
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{2,1} \; \Longleftrightarrow \; \exists t_0, D_0 \in \mbq \text{ for which } E \text{ is isomorphic over $\mbq$ to } \mc{E}_{2,1,1}(t_0,D_0).
+\]
+
+\medskip
+
+\subsection{The level \texorpdfstring{$m=3$}.}
+
+We have $\mf{G}_{MT}^{\max}(0,3) = \{ G_{3,1,1}, G_{3,1,2} \}$, where $G_{3,1,1}(3), G_{3,1,2}(3) \subseteq \GL_2(\mbz/3\mbz)$ are given by
+\[
+\begin{split}
+G_{3,1,1}(3) &= \left\langle \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}, \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix} \right\rangle = \left\{ \begin{pmatrix} 1 & * \\ 0 & * \end{pmatrix} \right\}, \\
+G_{3,1,2}(3) &= \left\langle \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}, \begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix} \right\rangle = \left\{ \begin{pmatrix} * & * \\ 0 & 1 \end{pmatrix} \right\}
+\end{split}
+\]
+and $G_{3,1,k} = \pi_{\GL_2}^{-1}(G_{3,1,k}(3))$ for $k \in \{1,2 \}$. Note that $-I \notin G_{3,1,k}$. We have 
+\[
+\tilde{G}_{3,1,1}(3) = \tilde{G}_{3,1,2}(3) = \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\};
+\]
+let us denote this group by $\tilde{G}_{3,1}(3)$, omitting the last subscript. Define the function $j_{3,1}(t) \in \mbq(t)$ by
+\[
+j_{3,1}(t) := 27\frac{(t+1)(t+9)^3}{t^3}.
+\]
+As detailed in \cite{zywina}, for any elliptic curve $E$ over $\mbq$ with $j$-invariant $j_E$, one has
+\begin{equation} \label{level3jinvariantstatement}
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{3,1} \; \Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } j_E = j_{3,1}(t_0).
+\end{equation}
+We define the coefficients $a_{4;3,1}(t)$ and $a_{6;3,1}(t)$ by \eqref{defofa4anda6}, the twist parameters \\
+$d_{3,1,1}(t), d_{3,1,2}(t) \in \mbq(t)$ by
+\[
+d_{3,1,1}(t) := \frac{(t+1)(t^2 - 18t - 27)}{6(t+9)}, \quad\quad d_{3,1,2}(t) := -3 d_{3,1,1}(t),
+\]
+and the elliptic curves $\mc{E}_{3,1,k}$ over $\mbq(t)$ by
+\[
+\mc{E}_{3,1,k} : \; d_{3,1,k}(t) y^2 = x^3 + a_{4;3,1}(t) x + a_{6;3,1}(t) \quad\quad \left( k \in \{1, 2 \} \right).
+\]
+As may be found in \cite{zywina}, for any elliptic curve $E$ over $\mbq$ with $j$-invariant $j_E$, one has
+\[
+\begin{split}
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{3,1,1} \; &\Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } E \text{ is isomorphic over $\mbq$ to } \mc{E}_{3,1,1}\left( t_0 \right), \\
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{3,1,2} \; &\Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } E \text{ is isomorphic over $\mbq$ to } \mc{E}_{3,1,2}\left( t_0 \right).
+\end{split}
+\]
+
+\medskip
+
+\subsection{The level \texorpdfstring{$m=4$}.}
+
+We have $\mf{G}_{MT}^{\max}(0,4) = \{ G_{4,1,1} \}$, where $G_{4,1,1}(4) \subseteq \GL_2(\mbz/4\mbz)$ is given by
+\[
+G_{4,1,1}(4) = \left\langle \begin{pmatrix} 1 & 1 \\ 0 & 3 \end{pmatrix}, \begin{pmatrix} 3 & 2 \\ 0 & 3 \end{pmatrix}, \begin{pmatrix} 1 & 1 \\ 1 & 2 \end{pmatrix} \right\rangle
+\]
+and $G_{4,1,1} = \pi_{\GL_2}^{-1}(G_{4,1,1}(4))$. Note that $-I \notin G_{4,1,1}$. We have 
+\[
+%\begin{split}
+\tilde{G}_{4,1,1}(4) 
+%&= \left\langle \begin{pmatrix} 1 & 1 \\ 0 & 3 \end{pmatrix}, \begin{pmatrix} 3 & 2 \\ 0 & 3 \end{pmatrix}, \begin{pmatrix} 1 & 1 \\ 1 & 2 \end{pmatrix} \right\rangle \\
+= \GL_2(\mbz/4\mbz)_{\chi_4 = \ve},
+%\end{split}
+\]
+defined as in \eqref{defofGL2subchi4equalsve}. Let us set $\tilde{G}_{4,1} := \tilde{G}_{4,1,1}$. We define the $j$-invariant $j_{4,1}(t) := -t^2 + 1728$ and the elliptic curve $\mc{E}_{4,1}$ over $\mbq(t,D)$ by
+\begin{equation*} %\label{level4genericellipticcurve}
+\mc{E}_{4,1} : \; y^2 = x^3 + \frac{108D^2 j_{4.1}(t)}{1728 - j_{4,1}(t)} x + \frac{432D^3 j_{4,1}(t)}{1728 - j_{4,1}(t)};
+\end{equation*}
+see \eqref{level4genericellipticcurve}. By Lemma \ref{identifyingthesubfieldslevel4lemma}, for any elliptic curve $E$ over $\mbq$, we have
+\[
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{4,1} \; \Longleftrightarrow \; \exists t_0, D_0 \in \mbq \text{ with } E \simeq_\mbq \mc{E}_{4,1}(t_0,D_0)
+\]
+and
+\begin{equation} \label{specialformofthedummerextension}
+\mbq(t,D)\left( i, \gD_{\mc{E}_{4,1}}^{1/4} \right) = \mbq(t,D)\left( i, \sqrt{Dt(t^2-1728)} \right).
+\end{equation}
+
+Regarding the index two subgroup $G_{4,1,1}(4) \subseteq \tilde{G}_{4,1}(4)$, a computation reveals that
+\[
+G_{4,1,1}(4) \cap \SL_2(\mbz/4\mbz)' = G_{4,1,1}(4) \cap \SL_2(\mbz/4\mbz),
+\]
+and $G_{4,1,1}(4)$ is the unique maximal subgroup (relative to $\dot\subseteq$) of $\tilde{G}_{4,1}(4)$ with this property. By Lemmas \ref{level4kummersubextensionlemma} and \ref{identifyingthesubfieldslevel4lemma}, together with the Galois correspondence and \eqref{specialformofthedummerextension}, it follows that
+\begin{equation} \label{howtogetsmallermod4image}
+\begin{split}
+\rho_{\mc{E}_{4,1}(t_0,D_0)}(G_\mbq) \, \dot\subseteq \, G_{4,1,1} \; &\Longleftrightarrow \; \mbq\left( i,\gD_{\mc{E}_{4,1}(t_0,D_0)}^{1/4} \right) = \mbq(i) \\
+&\Longleftrightarrow \; D_0 = \pm t_0(t_0^2 - 1728).
+\end{split}
+\end{equation}
+Noting that $t \mapsto t(t^2-1728)$ is an odd function of $t$ and $j_{4,1}(t)$ is even, we are led to the single twist parameter
+\[
+d_{4,1,1}(t) := t(t^2-1728),
+\]
+and we define the elliptic curve $\mc{E}_{4,1,1}$ over $\mbq(t)$ by
+\[
+\mc{E}_{4,1,1} : \; d_{4,1,1}(t) y^2 = x^3 + a_{4;4,1}(t) x + a_{6;4,1}(t).
+\]
+For each elliptic curve $E$ over $\mbq$ with $j$-invariant $j_E$, we evidently have
+\[
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{4,1,1} \; \Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which $E$ is isomorphic over $\mbq$ to $\mc{E}_{4,1,1}\left( t_0 \right)$.}
+\]
+
+\medskip
+
+\subsection{The level \texorpdfstring{$m=5$}.}
+
+We have $\mf{G}_{MT}^{\max}(0,5) = \{ G_{5,1,1}, G_{5,1,2}, G_{5,2,1}, G_{5,2,2} \}$, where the groups $G_{5,i,k}(5) \subseteq \GL_2(\mbz/5\mbz)$ are given by
+\[
+\begin{split}
+G_{5,1,1}(5) &= \left\langle \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}, \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix} \right\rangle = \left\{ \begin{pmatrix} 1 & * \\ 0 & * \end{pmatrix} \right\}, \\
+G_{5,1,2}(5) &= \left\langle \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}, \begin{pmatrix} 4 & 0 \\ 0 & 2 \end{pmatrix} \right\rangle = \left\{ \begin{pmatrix} a^2 & * \\ 0 & a \end{pmatrix} : a \in (\mbz/5\mbz)^\times \right\}, \\
+G_{5,2,1}(5) &= \left\langle \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}, \begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix} \right\rangle = \left\{ \begin{pmatrix} * & * \\ 0 & 1 \end{pmatrix} \right\}, \\
+G_{5,2,2}(5) &= \left\langle \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}, \begin{pmatrix} 2 & 0 \\ 0 & 4 \end{pmatrix} \right\rangle = \left\{ \begin{pmatrix} a & * \\ 0 & a^2 \end{pmatrix} : a \in (\mbz/5\mbz)^\times \right\},
+\end{split}
+\]
+and $G_{5,i,k} = \pi_{\GL_2}^{-1}(G_{5,i,k}(5))$ for $i,k \in \{1,2 \}$. Note that $-I \notin G_{5,i,k}$, for each $i,k \in \{1, 2 \}$. We have 
+\[
+\begin{split}
+\tilde{G}_{5,1}(5) &:= \tilde{G}_{5,1,1}(5) = \tilde{G}_{5,1,2}(5) = \left\{ \begin{pmatrix} \pm 1 & * \\ 0 & * \end{pmatrix} \right\}, \\
+\tilde{G}_{5,2}(5) &:= \tilde{G}_{5,2,1}(5) = \tilde{G}_{5,2,2}(5) = \left\{ \begin{pmatrix} * & * \\ 0 & \pm 1 \end{pmatrix} \right\}.
+\end{split}
+\]
+Define the functions $j_{5,1}(t), j_{5,2}(t) \in \mbq(t)$ by
+\[
+\begin{split}
+j_{5,1}(t) &:= \frac{(t^4 - 12t^3 + 14t^2 + 12t + 1)^3}{t^5(t^2 - 11t - 1)}, \\
+j_{5,2}(t) &:= \frac{(t^4 + 228t^3 + 494t^2 - 228t + 1)^3}{t(t^2 - 11t - 1)^5}.
+\end{split}
+\]
+As detailed in \cite{zywina}, for any elliptic curve $E$ over $\mbq$ with $j$-invariant $j_E$, one has
+\begin{equation*} \label{level5jinvariantstatement}
+\begin{split}
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{5,1} \; &\Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } j_E = j_{5,1}(t_0), \\
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{5,2} \; &\Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } j_E = j_{5,2}(t_0).
+\end{split}
+\end{equation*}
+We define the coefficients $a_{4;5,i}(t)$, and $a_{6;5,i}(t)$ for each $i \in \{1, 2\}$ by \eqref{defofa4anda6}, the twist parameters $d_{5,i,k}(t) \in \mbq(t)$ for each $i,k \in \{1, 2\}$ by
+\[
+\begin{split}
+d_{5,1,1}(t) &:= - \frac{(t^2+1)(t^4 - 18t^3 + 74t^2 + 18t + 1)}{2(t^4 - 12t^3 + 14t^2 + 12t + 1)}, \quad\quad\quad\quad\;\, d_{5,1,2}(t) := 5 d_{5,1,1}(t), \\
+d_{5,2,1}(t) &:= - \frac{(t^2+1)(t^4 - 522t^3 - 10006t^2 + 522t + 1)}{2(t^4 + 228t^3 + 494t^2 - 228t + 1)}, \quad\quad d_{5,2,2}(t) := 5 d_{5,2,1}(t),
+\end{split}
+\]
+and the elliptic curves $\mc{E}_{5,i,k}$ over $\mbq(t)$ by
+\[
+\mc{E}_{5,i,k} : \; d_{5,i,k}(t) y^2 = x^3 + a_{4;5,i}(t) x + a_{6;5,i}(t) \quad\quad \left( i,k \in \{1, 2 \} \right).
+\]
+As detailed in \cite{zywina}, for any elliptic curve $E$ over $\mbq$ and for each $i,k \in \{1, 2\}$, we have
+\[
+%\begin{split}
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{5,i,k} \; \Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } E \text{ is isomorphic over $\mbq$ to } \mc{E}_{5,i,k}\left( t_0 \right). \\
+%\rho_{E,3}(G_\mbq) \subseteq G_{3,1,2}(3) \; &\Longleftrightarrow \; \exists t_0, D_0 \in \mbq \text{ for which } E \text{ is isomorphic over $\mbq$ to } \mc{E}_{3,1,2}(t_0,D_0).
+%\end{split}
+\]
+
+\medskip
+
+\subsection{The level \texorpdfstring{$m = 6$}}
+
+We have $\mf{G}_{MT}^{\max}(0,6) = \{ G_{6,1,1}, G_{6,2,1}, G_{6,3,1}, G_{6,3,2} \}$, where $G_{6,i,k}(6) \subseteq \GL_2(\mbz/6\mbz)$ are given by
+\begin{equation} \label{descriptionofgroupslevel6}
+\begin{split}
+G_{6,1,1}(6) &= \left\langle \begin{pmatrix} 1 & 1 \\ 0 & 5 \end{pmatrix}, \begin{pmatrix} 5 & 1 \\ 3 & 2 \end{pmatrix}, \begin{pmatrix} 3 & 2 \\ 4 & 3 \end{pmatrix} \right\rangle \simeq \GL_2(\mbz/2\mbz) \times_{\psi^{(1,1)}} \GL_2(\mbz/3\mbz), \\
+G_{6,2,1}(6) &= \left\langle \begin{pmatrix} 1 & 1 \\ 0 & 5 \end{pmatrix}, \begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix}, \begin{pmatrix} 2 & 3 \\ 3 & 5 \end{pmatrix} \right\rangle \simeq \GL_2(\mbz/2\mbz) \times_{\psi^{(2,1)}} \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}, \\
+G_{6,3,1}(6) &= \left\langle \begin{pmatrix} 5 & 0 \\ 0 & 1 \end{pmatrix}, \begin{pmatrix} 5 & 5 \\ 0 & 5 \end{pmatrix}, \begin{pmatrix} 4 & 3 \\ 3 & 1 \end{pmatrix} \right\rangle \simeq \GL_2(\mbz/2\mbz) \times_{\psi^{(3,1)}} \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}, \\
+G_{6,3,2}(6) &= \left\langle \begin{pmatrix} 1 & 0 \\ 0 & 5 \end{pmatrix}, \begin{pmatrix} 5 & 5 \\ 0 & 5 \end{pmatrix}, \begin{pmatrix} 4 & 3 \\ 3 & 1 \end{pmatrix} \right\rangle \simeq \GL_2(\mbz/2\mbz) \times_{\psi^{(3,2)}} \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\},
+\end{split}
+\end{equation}
+and $G_{6,i,k} = \pi_{\GL_2}^{-1}(G_{6,i,k}(6))$. In the fibered product involving $\psi^{(1,1)} = (\psi_2^{(1,1)},\psi_3^{(1,1)})$ on the right-hand side of $G_{6,1,1}(6)$ above, the common quotient $\Gamma$ is $D_3$, the dihedral group of order $6$, the map $\psi_2^{(1,1)}$ is any isomorphism $\GL_2(\mbz/2\mbz) \simeq D_3$, and the map $\psi_3^{(1,1)} : \GL_2(\mbz/3\mbz) \longrightarrow D_3$ is a surjective homomorphism, whose kernel is
+\[
+\ker \psi_3^{(1,1)} = \left\langle \begin{pmatrix} 0 & 2 \\ 1 & 0 \end{pmatrix}, \begin{pmatrix} 2 & 1 \\ 1 & 1 \end{pmatrix} \right\rangle = \SL_2(\mbz/3\mbz)' \subseteq \GL_2(\mbz/3\mbz).
+\]
+In the fibered products involving $\psi^{(2,1)}$, $\psi^{(3,1)}$ and $\psi^{(3,2)}$, the underlying homomorphisms are as follows: $\psi_2^{(2,1)} = \psi_2^{(3,1)} = \psi_2^{(3,2)} = \ve$, where $\ve$ is defined by \eqref{defofve}, and $\psi_3^{(2,1)}$, $\psi_3^{(3,1)}$, and $\psi_3^{(3,2)}$ are defined by
+\[
+\begin{split}
+\psi_3^{(2,1)} : &\left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \longrightarrow \{ \pm 1 \}, \quad\quad \psi_3^{(2,1)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := \left( \frac{ad}{3} \right), \\
+\psi_3^{(3,1)} : &\left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \longrightarrow \{ \pm 1 \}, \quad\quad \psi_3^{(3,1)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := \left( \frac{d}{3} \right), \\
+\psi_3^{(3,2)} : &\left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \longrightarrow \{ \pm 1 \}, \quad\quad \psi_3^{(3,2)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := \left( \frac{a}{3} \right).
+\end{split}
+\]
+Note that $-I \in G_{6,1,1}$ and $-I \in G_{6,2,1}$, but $-I \notin G_{6,3,k}$ for each $k \in \{ 1, 2 \}$. We have 
+\begin{equation} \label{tildeGsub63j}
+\tilde{G}_{6,3,k}(6) \simeq \GL_2(\mbz/2\mbz) \times \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \quad\quad \left( k \in \{1, 2 \} \right).
+\end{equation}
+Let us set $\tilde{G}_{6,i} := \tilde{G}_{6,i,k}$ and note that $G_{6,i,1} = \tilde{G}_{6,i}$ for $i \in \{ 1, 2 \}$. Also note that
+$\level_{\GL_2}(\tilde{G}_{6,3}) = 3$. The group $G_{6,1,1}$ is studied in \cite{braujones} (see also \cite{jonesmcmurdy} and \cite{morrow}); for any elliptic curve $E$ over $\mbq$ we have
+\[
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{6,1,1} \; \Longleftrightarrow \; 
+\begin{matrix} 
+\left[ \mbq(E[2]) : \mbq \right] = 6 \text{ and } \mbq(E[2]) \subseteq \mbq(E[3]), \text{ or} \\
+\mbq(E[2]) = \mbq(\mu_3) \text{ and } \rho_{E,3}(G_\mbq) \, \dot\subseteq \, \mc{N}_{\ns}(3),
+\end{matrix} 
+\]
+where $\mc{N}_{\ns}(3)$ denotes the normalizer in $\GL_2(\mbz/3\mbz)$ of a non-split Cartan subgroup. Define $j_{6,1}(t) \in \mbq(t)$ and the elliptic curve $\mc{E}_{6,1,1}$ over $\mbq(t,D)$ by
+\[
+\begin{split}
+j_{6,1}(t) :=& 2^{10}3^3t^3(1-4t^3), \\
+\mc{E}_{6,1,1} : \; Dy^2 =& x^3 + \frac{108 j_{6,1}(t)}{1728 - j_{6,1}(t)} x + \frac{432 j_{6,1}(t)}{1728 - j_{6,1}(t)}.
+\end{split}
+\]
+As detailed in \cite{braujones}, for any elliptic curve $E$ over $\mbq$, we have
+\begin{equation*} %\label{howtogetsmallermod4image}
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{6,1,1} \; \Longleftrightarrow \; \exists t_0, D_0 \in \mbq \text{ for which } E \text{ is isomorphic over $\mbq$ to } \mc{E}_{6,1,1}(t_0,D_0).
+\end{equation*}
+Regarding the group $G_{6,2,1} = \tilde{G}_{6,2}$: by \eqref{descriptionofgroupslevel6}, Corollary \ref{keycorollaryforinterpretationofentanglements} and Lemma \ref{level2kummersubextensionlemma}, we have
+\begin{equation} \label{from31to62}
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{6,2,1} \; \Longleftrightarrow \; \mbq\left( \sqrt{\gD_E} \right) = \mbq(\mu_3) \text{ and } \rho_{E,3}(G_\mbq) \, \dot\subseteq \, \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}.
+\end{equation}
+Recall $j_{3,1}(t) \in \mbq(t)$, defined by $j_{3,1}(t) := 27\frac{(t+1)(t+9)^3}{t^3}$ and the coefficients $a_{4;3,1}(t)$ and $a_{6;3,1}(t)$ defined by \eqref{defofa4anda6}; consider the elliptic curve $\mc{E}_{3,1}$ over $\mbq(t,D)$ defined by 
+\[
+\mc{E}_{3,1} : \; y^2 = x^3 + D^2a_{4;3,1}(t) x + D^3a_{6;3,1}(t).
+\]
+The discriminant $\gD_{\mc{E}_{3,1}}$ of $\mc{E}_{3,1}$ satisfies
+\begin{equation} \label{discriminantofmcEsub31}
+\gD_{\mc{E}_{3,1}} = 2^{18}3^9\frac{D^6t^3(t+1)^2(t+9)^6}{(t^2-18t-27)^6}.
+\end{equation}
+In particular, $\mbq\left( \sqrt{\gD_{\mc{E}_{3,1}}} \right) = \mbq(\sqrt{3t})$, so by \eqref{from31to62}, we see that $\rho_{\mc{E}_{3,1}(t_0,D_0)}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{6,2} = G_{6,2,1}$ if and only if $t_0 \in - (\mbq^\times)^2$. We therefore set 
+\[
+j_{6,2}(t) := j_{3,1}(-t^2), \quad\quad a_{4;6,2}(t) := a_{4;3,1}(-t^2), \quad a_{6;6,2}(t) := a_{4;3,1}(-t^2)
+\]
+and define the elliptic curve $\mc{E}_{6,2,1}$ over $\mbq(t,D)$ by
+\[
+\mc{E}_{6,2,1} : \; D y^2 = x^3 + a_{4;6,2}(t) x + a_{6;6,2}(t).
+\]
+For any $E$ over $\mbq$, we then have
+\[
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{6,2,1} \; \Longleftrightarrow \; \exists t_0, D_0 \in \mbq \text{ for which $E$ is isomorphic over $\mbq$ to } \mc{E}_{6,2,1}(t_0,D_0).
+\]
+
+Finally, we turn to the groups $G_{6,3,1}$ and $G_{6,3,2}$. By \eqref{tildeGsub63j} and \eqref{level3jinvariantstatement}, for any $E$ over $\mbq$, we have
+\[
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{6,3} \; \Longleftrightarrow \; \exists t_0, D_0 \in \mbq \text{ for which $E$ is isomorphic over $\mbq$ to } \mc{E}_{3,1}(t_0,D_0).
+\]
+On the other hand, \eqref{descriptionofgroupslevel6}, Corollary \ref{keycorollaryforinterpretationofentanglements} and Lemma \ref{level2kummersubextensionlemma} imply that
+\[
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{6,3,k} \; \Longleftrightarrow \; \rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{6,3} \; \text{ and } \; \mbq\left( \sqrt{\gD_E} \right) = \mbq(E[3])^{\ker \psi_3^{(1,k)}} \quad \left( k \in \{ 1, 2 \} \right).
+\]
+Thus, by Lemma \ref{subfieldsoflevel3lemma} together with \eqref{discriminantofmcEsub31}, we are led to the twist parameters
+\[
+d_{6,3,1}(t) := \frac{2t(t+1)(t+9)}{t^2 - 18t - 27}, \quad\quad d_{6,3,2}(t) := - \frac{6t(t+1)(t+9)}{t^2 - 18t - 27}.
+\]
+We furthermore set
+\[
+a_{4;6,3}(t) := a_{4;3,1}(t), \quad a_{6;6,3}(t) := a_{6;3,1}(t)
+\]
+and define the elliptic curves $\mc{E}_{6,3,k}$ over $\mbq(t)$ by
+\[
+\mc{E}_{6,3,k} : \; d_{6,3,k}(t) y^2 = x^3 + a_{4;6,3}(t) x + a_{6;6,3}(t).
+\]
+Our discussion demonstrates that, for any elliptic curve $E$ over $\mbq$ and for each $k \in \{1, 2 \}$, we have
+\[
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{6,3,k} \; \Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which $E$ is isomorphic over $\mbq$ to } \mc{E}_{6,3,k}\left( t_0 \right).
+\]
+
+\medskip
+
+\subsection{The level \texorpdfstring{$m = 7$}.}
+
+We have $\mf{G}_{MT}^{\max}(0,7) = \{ G_{7,1,1}, G_{7,1,2}, G_{7,2,1}, G_{7,2,2}, G_{7,3,1}, G_{7,3,2} \}$, where the groups $G_{7,i,k}(7) \subseteq \GL_2(\mbz/7\mbz)$ are given by
+\begin{equation*}
+\begin{split}
+G_{7,1,1}(7) &= \left\langle \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}, \begin{pmatrix} 1 & 0 \\ 0 & 3 \end{pmatrix} \right\rangle = \left\{ \begin{pmatrix} 1 & * \\ 0 & * \end{pmatrix} \right\}, \\
+G_{7,1,2}(7) &= \left\langle \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}, \begin{pmatrix} 6 & 0 \\ 0 & 2 \end{pmatrix} \right\rangle = \left\{ \begin{pmatrix} \pm 1 & * \\ 0 & a^2 \end{pmatrix} : a \in (\mbz/7\mbz)^\times \right\}, \\
+G_{7,2,1}(7) &= \left\langle \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}, \begin{pmatrix} 3 & 0 \\ 0 & 1 \end{pmatrix} \right\rangle = \left\{ \begin{pmatrix} * & * \\ 0 & 1 \end{pmatrix} \right\}, \\
+G_{7,2,2}(7) &= \left\langle \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}, \begin{pmatrix} 2 & 0 \\ 0 & 6 \end{pmatrix} \right\rangle = \left\{ \begin{pmatrix} a^2 & * \\ 0 & \pm 1 \end{pmatrix} : a \in (\mbz/7\mbz)^\times \right\}, \\
+G_{7,3,1}(7) &= \left\langle \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}, \begin{pmatrix} 5 & 0 \\ 0 & 2 \end{pmatrix} \right\rangle = \left\{ \begin{pmatrix} \pm a^2 & * \\ 0 & a^2 \end{pmatrix} : a \in (\mbz/7\mbz)^\times \right\}, \\
+G_{7,3,2}(7) &= \left\langle \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}, \begin{pmatrix} 2 & 0 \\ 0 & 5 \end{pmatrix} \right\rangle = \left\{ \begin{pmatrix} a^2 & * \\ 0 & \pm a^2 \end{pmatrix} : a \in (\mbz/7\mbz)^\times \right\}
+\end{split}
+\end{equation*}
+and $G_{7,i,k} = \pi_{\GL_2}^{-1}(G_{7,i,k}(7))$ for each $i \in \{ 1, 2, 3 \}$ and $k \in \{1,2 \}$. Note that $-I \notin G_{7,i,k}$, for each $i,k$. We have 
+\begin{equation} \label{tildeGlevel7groups}
+\begin{split}
+\tilde{G}_{7,1}(7) &:= \tilde{G}_{7,1,1}(7) = \tilde{G}_{7,1,2}(7) = \left\{ \begin{pmatrix} \pm 1 & * \\ 0 & * \end{pmatrix} \right\}, \\
+\tilde{G}_{7,2}(7) &:= \tilde{G}_{7,2,1}(7) = \tilde{G}_{7,2,2}(7) = \left\{ \begin{pmatrix} * & * \\ 0 & \pm 1 \end{pmatrix} \right\}, \\
+\tilde{G}_{7,3}(7) &:= \tilde{G}_{7,3,1}(7) = \tilde{G}_{7,3,2}(7) = \left\{ \begin{pmatrix} a & * \\ 0 & \pm a \end{pmatrix} : a \in (\mbz/7\mbz)^\times \right\}.
+\end{split}
+\end{equation}
+Define the functions $j_{7,1}(t), j_{7,2}(t), j_{7,3}(t) \in \mbq(t)$ by
+\begin{equation} \label{tildeGlevel7jinvariants}
+\begin{split}
+j_{7,1}(t) &:= \frac{(t^2 - t + 1)^3(t^6 - 11t^5 + 30t^4 - 15t^3 - 10t^2 + 5t + 1)^3}{t^7(t-1)^7(t^3 - 8t^2 + 5t + 1)}, \\
+j_{7,2}(t) &:= \frac{(t^2 - t + 1)^3(t^6 + 229t^5 + 270t^4 - 1695t^3 + 1430t^2 - 235t + 1)^3}{t(t-1)(t^3 - 8t^2 + 5t + 1)^7}, \\
+j_{7,3}(t) &:= - \frac{(t^2 - 3t - 3)^3(t^2 - t + 1)^3(3t^2 - 9t + 5)^3(5t^2 - t - 1)^3}{(t^3 - 2t^2 - t + 1)(t^3 - t^2 - 2t + 1)^7}.
+\end{split}
+\end{equation}
+As detailed in \cite{zywina}, for any elliptic curve $E$ over $\mbq$ with $j$-invariant $j_E$, one has
+\begin{equation} \label{level7jinvariantstatement}
+\begin{split}
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{7,1} \; &\Longleftrightarrow \; \exists t \in \mbq \text{ for which } j_E = j_{7,1}(t), \\
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{7,2} \; &\Longleftrightarrow \; \exists t \in \mbq \text{ for which } j_E = j_{7,2}(t), \\
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{7,3} \; &\Longleftrightarrow \; \exists t \in \mbq \text{ for which } j_E = j_{7,3}(t).
+\end{split}
+\end{equation}
+We define the coefficients $a_{4;7,i}(t)$, and $a_{6;7,i}(t)$ for each $i \in \{1, 2, 3\}$ by \eqref{defofa4anda6}, the twist parameters $d_{7,i,k}(t) \in \mbq(t)$ for each $i \in \{ 1, 2, 3 \}$ and $k \in \{1, 2\}$ by
+\[
+\begin{split}
+d_{7,1,1} :=& - \frac{t^{12} - 18t^{11} + 117t^{10} - 354t^9 + 570t^8 - 486t^7 + 273t^6}{2(t^2 - t + 1)(t^6 - 11t^5 + 30t^4 - 15t^3 - 10t^2 + 5t + 1)} +\\
+\\
+&\frac{- 222t^5 + 174t^4 - 46t^3 - 15t^2 + 6t + 1}{2(t^2 - t + 1)(t^6 - 11t^5 + 30t^4 - 15t^3 - 10t^2 + 5t + 1)}\\
+\\
+d_{7,2,1} &:= - \frac{\begin{pmatrix} t^{12} - 522t^{11} - 8955t^{10} + 37950t^9 - 70998t^8 + 131562t^7 - 253239t^6 + \\ 316290t^5 - 218058t^4 + 80090t^3 - 14631t^2 + 510t + 1 \end{pmatrix}}{2(t^2 - t + 1)(t^6 + 229t^5 + 270t^4 - 1695t^3 + 1430t^2 - 235t + 1)} \\
+\\
+d_{7,3,1} &:= \frac{7(t^4 - 6t^3 + 17t^2 - 24t + 9)(3t^4 - 4t^3 - 5t^2 - 2t - 1)(9t^4 - 12t^3 - t^2 + 8t - 3)}{2(t^2 - 3t - 3)(t^2 - t + 1)(3t^2 - 9t + 5)(5t^2 - t - 1)}
+\end{split}
+\]
+and $d_{7,i,2} := -7d_{7,i,1}$ for $i \in \{1, 2, 3 \}$; define the elliptic curves $\mc{E}_{7,i,k}$ over $\mbq(t)$ by
+\[
+\mc{E}_{7,i,k} : \; d_{7,i,k}(t) y^2 = x^3 + a_{4;7,i}(t) x + a_{6;7,i}(t) \quad\quad \left( i \in \{ 1, 2, 3 \}, \, k \in \{1, 2 \} \right).
+\]
+As may be found in \cite{zywina}, for any elliptic curve $E$ over $\mbq$ with $j$-invariant $j_E$, and for each $i \in \{ 1, 2, 3 \}$ and $k \in \{1, 2\}$, one has
+\[
+%\begin{split}
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{7,i,k} \; \Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } E \text{ is isomorphic over $\mbq$ to } \mc{E}_{7,i,k}\left( t_0 \right). \\
+%\rho_{E,3}(G_\mbq) \, \dot\subseteq \, G_{3,1,2}(3) \; &\Longleftrightarrow \; \exists t_0, D_0 \in \mbq \text{ for which } E \text{ is isomorphic over $\mbq$ to } \mc{E}_{3,1,2}(t_0,D_0).
+%\end{split}
+\]
+
+\medskip
+
+\subsection{The level \texorpdfstring{$m=8$}.}
+
+We have $\mf{G}_{MT}^{\max}(0,8) = \{ G_{8,1,1}, G_{8,2,1} \}$, where $G_{8,1,1}(8), G_{8,2,1}(8) \subseteq \GL_2(\mbz/8\mbz)$ are given by
+\[
+\begin{split}
+G_{8,1,1}(8) &= \left\langle \begin{pmatrix} 1 & 1 \\ 0 & 7 \end{pmatrix}, \begin{pmatrix} 3 & 0 \\ 0 & 7 \end{pmatrix}, \begin{pmatrix} 5 & 5 \\ 5 & 2 \end{pmatrix} \right\rangle, \\
+G_{8,2,1}(8) &= \left\langle \begin{pmatrix} 5 & 6 \\ 6 & 7 \end{pmatrix}, \begin{pmatrix} 3 & 0 \\ 0 & 7 \end{pmatrix}, \begin{pmatrix} 5 & 5 \\ 5 & 2 \end{pmatrix} \right\rangle,
+\end{split}
+\]
+and $G_{8,i,1} = \pi_{\GL_2}^{-1}(G_{8,i,1}(8))$ for each $i \in \{1, 2 \}$. Note that $-I \notin G_{8,i,1}$, and we define groups $\tilde{G}_{8,1} := \tilde{G}_{8,1,1}$ and $\tilde{G}_{8,2} := \tilde{G}_{8,2,1}$.
+
+As a consequence of \cite[Lemma 28]{sutherlandzywina} and \cite[Proposition 3.1]{sutherlandzywina}, for any group $G \in \mf{G}(0,8)$, we have
+\begin{equation} \label{iszsadmissiblecondition}
+X_{\tilde{G}}(\mbq) \neq \emptyset \; \Longleftrightarrow \; \exists g \in \tilde{G} \text{ that is $\GL_2(\mbz/8\mbz)$-conjugate to } \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \text{ or } \begin{pmatrix} 1 & 1 \\ 0 & -1 \end{pmatrix}.
+\end{equation}
+A computation shows that $\tilde{G}_{8,2}(8)$ fails the condition on the right-hand side of \eqref{iszsadmissiblecondition}, whereas $\tilde{G}_{8,1}(8)$ satisfies it. Thus, $\left| X_{\tilde{G}_{8,2}}(\mbq) \right| = 0$ and $\left| X_{\tilde{G}_{8,1}}(\mbq) \right| = \infty$, and we will therefore restrict our consideration to the groups $\tilde{G}_{8,1}$ and $G_{8,1,1}$. The group $\tilde{G}_{8,1}$ has $\GL_2$-level $4$, and one may verify by direct computation that
+\[
+\begin{split}
+&\tilde{G}_{8,1}(4) \subseteq \GL_2(\mbz/4\mbz)_{\chi_4 = \ve}, \quad \tilde{G}_{8,1}(2) = \GL_2(\mbz/2\mbz) \quad \text{ and } \\
+&\ker\left( \GL_2(\mbz/4\mbz) \rightarrow \GL_2(\mbz/2\mbz) \right) \cap \SL_2(\mbz/4\mbz)' \cap \tilde{G}_{8,1}(4) = \{ I \},
+\end{split}
+\]
+where the group $\GL_2(\mbz/4\mbz)_{\chi_4 = \ve}$ is as in \eqref{defofGL2subchi4equalsve}. Furthermore, $\tilde{G}_{8,1}(4)$ is the unique subgroup (up to $\doteq$) of $\GL_2(\mbz/4\mbz)$ satisfying these three conditions.
+By the Galois correspondence and Lemma \ref{level4kummersubextensionlemma}, it follows that, for any elliptic curve $E$ over $\mbq$, we have
+\begin{equation} \label{rhocontainedintildeGsub81}
+\begin{split}
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{8,1} \quad &\Longleftrightarrow \quad \rho_{E,4}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{8,1}(4) \\
+&\Longleftrightarrow \quad \begin{matrix} \mbq(\sqrt{\gD_E}) = \mbq(i), \; [\mbq(E[2]) : \mbq ] =6, \\ \text{ and } \mbq(E[4]) = \mbq(E[2], \gD_E^{1/4}). \end{matrix}
+\end{split}
+\end{equation}
+Define the rational functions $g_{8,1}(t), f_{8,1}(t)$ and $j_{8,1}(t) \in \mbq(t)$ by
+\[
+g_{8,1}(t) := - \frac{t^2 + 2t - 2}{t}, \quad\quad f_{8,1}(t) := 4t^3(8-t), \quad\quad j_{8,1}(t) := f_{8,1}(g_{8,1}(t)).
+\]
+The group $\tilde{G}_{8,1}$ appears under the label 4$\text{D}^0$-4a in \cite{sutherlandzywina}, wherein it is shown that, for any elliptic curve $E$ over $\mbq$ of $j$-invariant $j_E$, we have
+\[
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{8,1} \; \Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } j_E = j_{8,1}(t_0).
+\]
+The group $G_{8,1,1}$ entails an additional vertical entanglement. Specifically, we have
+\[
+G_{8,1,1} \cap \pi_{\GL_2}\left( \SL_2(\mbz/4\mbz)' \right) = G_{8,1,1} \cap \pi_{\GL_2}\left( \SL_2(\mbz/8\mbz) \right),
+\]
+and $G_{8,1,1}$ is the unique maximal subgroup of $\tilde{G}_{8,1}$ (with respect to $\dot\subseteq$) that satisfies this. It follows that, for any elliptic curve $E$ over $\mbq$,
+\begin{equation} \label{conditionforrhotobeinsideG811}
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{8,1,1} \quad \Longleftrightarrow \quad \begin{matrix} \mbq(\sqrt{\gD_E}) = \mbq(i), \; \mbq(E[4]) = \mbq(E[2],\gD_E^{1/4}), \\ [ \mbq(E[2]) : \mbq] = 6 \; \text{ and } \; \mbq(i, \gD_E^{1/4}) = \mbq(\mu_8). \end{matrix}
+\end{equation}
+We define the coefficients $a_{4;8,1}(t)$ and $a_{6;8,1}(t)$ by \eqref{defofa4anda6} and consider the elliptic curve $\mc{E}_{8,1}$ over $\mbq(t,D)$ defined by 
+\[
+\mc{E}_{8,1} : \; y^2 = x^3 + D^2a_{4;8,1}(t) x + D^3a_{6;8,1}(t).
+\]
+By \eqref{rhocontainedintildeGsub81}, for any 
+$t_0, D_0 \in \mbq$ for which $\mc{E}_{8,1}(t_0,D_0)$ is an elliptic curve, we have $\mbq\left( \sqrt{\gD_{\mc{E}_{8,1}(t_0,D_0)}} \right) = \mbq(i)$ and $\mbq(\mc{E}_{8,1}(t_0,D_0)[4]) = \mbq\left( \mc{E}_{8,1}(t_0,D_0)[2],\gD_{\mc{E}_{8,1}(t_0,D_0)}^{1/4} \right)$.
+The discriminant $\gD_{\mc{E}_{8,1}}$ satisfies
+\[
+\gD_{\mc{E}_{8,1}} = - 2^{16} 3^{12} \frac{D^6t^4(t^2 +2t-2)^6(t^2+10t-2)^2}{(t^2+2)^6(t^2+8t-2)^6},
+\]
+and thus, using $\zeta_8 = \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2} i$, we find that
+\[
+\mbq\left( i, \gD_{\mc{E}_{8,1}(t_0,D_0)}^{1/4} \right) = \mbq\left( i, \sqrt{\frac{2D(t^2 +2t-2)(t^2+10t-2)}{(t^2+2)(t^2+8t-2)}} \right).
+\]
+Thus, it follows from \eqref{rhocontainedintildeGsub81} and \eqref{conditionforrhotobeinsideG811} that
+\[
+\rho_{\mc{E}_{8,1}(t_0,D_0)}(G_\mbq) \, \dot\subseteq \, G_{8,1,1} \; \Longleftrightarrow \; D = \pm \frac{(t^2 +2t-2)(t^2+10t-2)}{(t^2+2)(t^2+8t-2)}.
+\]
+Thus, we are led to the pair of twist parameters
+$
+d_{8,1,1}^{\pm}(t) := \pm \frac{(t^2 +2t-2)(t^2+10t-2)}{(t^2+2)(t^2+8t-2)}.
+$
+Finally, noting that $j_{8,1}(-2/t) = j_{8,1}(t)$ and $d_{8,1,1}^{\pm}(-2/t) = d_{8,1,1}^{\mp}(t)$, we are led to the single twist parameter 
+\[
+d_{8,1,1}(t) := \frac{(t^2 +2t-2)(t^2+10t-2)}{(t^2+2)(t^2+8t-2)},
+\]
+and, defining the elliptic curve $\mc{E}_{8,1,1}$ over $\mbq(t)$ by
+\[
+\mc{E}_{8,1,1} : \; d_{8,1,1}(t) y^2 = x^3 + a_{4;8,1}(t)x + a_{6;8,1}(t),
+\]
+we have that, for each elliptic curve $E$ over $\mbq$ with $j$-invariant $j_E$,
+\[
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{8,1,1} \; \Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which $E$ is isomorphic over $\mbq$ to $\mc{E}_{8,1,1}\left( t_0 \right)$.}
+\]
+
+\medskip
+
+\subsection{The level \texorpdfstring{$m=9$}.}
+
+We have $\mf{G}_{MT}^{\max}(0,9) = \{ G_{9,1,1}, G_{9,2,1}, G_{9,3,1}, G_{9,4,1}, G_{9,5,1} \}$, where $G_{9,i,1}(9) \subseteq \GL_2(\mbz/9\mbz)$ are given by
+\[
+\begin{split}
+G_{9,1,1}(9) &= \left\langle \begin{pmatrix} 1 & 3 \\ 0 & 1 \end{pmatrix}, \begin{pmatrix} 5 & 0 \\ 3 & 2 \end{pmatrix}, \begin{pmatrix} 4 & 2 \\ 0 & 5 \end{pmatrix} \right\rangle, \\
+G_{9,2,1}(9) &= \left\langle \begin{pmatrix} 2 & 1 \\ 0 & 5 \end{pmatrix}, \begin{pmatrix} 4 & 0 \\ 3 & 5 \end{pmatrix} \right\rangle, \\
+G_{9,3,1}(9) &= \left\langle \begin{pmatrix} 1 & 3 \\ 0 & 1 \end{pmatrix}, \begin{pmatrix} 5 & 2 \\ 3 & 5 \end{pmatrix}, \begin{pmatrix} 4 & 0 \\ 0 & 5 \end{pmatrix} \right\rangle, \\
+G_{9,4,1}(9) &= \left\langle \begin{pmatrix} 0 & 2 \\ 4 & 1 \end{pmatrix}, \begin{pmatrix} 4 & 3 \\ 5 & 4 \end{pmatrix}, \begin{pmatrix} 4 & 5 \\ 0 & 5 \end{pmatrix} \right\rangle, \\
+G_{9,5,1}(9) &= \left\langle \begin{pmatrix} 5 & 7 \\ 2 & 8 \end{pmatrix}, \begin{pmatrix} 1 & 0 \\ 0 & 4 \end{pmatrix} \right\rangle
+\end{split}
+\]
+and $G_{9,i,1} = \pi_{\GL_2}^{-1}(G_{9,i,1}(9))$ for each $i \in \{1, 2, 3, 4, 5 \}$. We have that $-I \in G_{9,i,1}$ for each $i \in \{1, 2, 3, 4, 5 \}$; as usual we define $\tilde{G}_{9,i} := \tilde{G}_{9,i,1}$, which equals $G_{9,i,1}$ in this case. The group $\tilde{G}_{9,5}(9)$ fails the right-hand condition in \eqref{iszsadmissiblecondition}, whereas, for $i \in \{ 1, 2, 3, 4 \}$, the groups $\tilde{G}_{9,i}(9)$ satisfy it. Since $X_{\tilde{G}_{9,5}}$ is a thus conic with no rational points, we will restrict our consideration to the first four groups in our list, which appear in \cite{sutherlandzywina} under the labels 9$\text{H}^0$-9c, 9$\text{I}^0$-9b, 9$\text{J}^0$-9c, and 9$\text{F}^0$-9a, respectively. We define the functions
+\[
+\begin{array}{lllllllllll}
+f_{9,1}(t) &:= & \frac{(t+3)^3(t+27)}{t} & & g_{9,1}(t) &:= & \frac{729}{t^3-27} & & h_{9,1}(t) &:= & \frac{-6(t^3 - 9t)}{t^3 + 9t^2 - 9t - 9} \\
+& & & & g_{9,2}(t) &:= & t(t^2 + 9t + 27) & & h_{9,2}(t) &:= & \frac{-3(t^3 + 9t^2 - 9t - 9)}{t^3 + 3t^2 - 9t - 3} \\
+& & & & g_{9,3}(t) &:= & t^3 & & h_{9,3}(t) &:= & \frac{3(t^3 + 3t^2 - 9t - 3)}{t^3 - 3t^2 - 9t + 3} 
+\end{array}
+\]
+and the $j$-invariants
+\[
+\begin{split}
+j_{9,1}(t) &:= f_{9,1}\left(g_{9,1}\left(h_{9,1}(t) \right) \right), \quad j_{9,2}(t) := f_{9,1}\left(g_{9,2}\left(h_{9,2}(t) \right) \right), \quad j_{9,3}(t) := f_{9,1}\left(g_{9,3}\left(h_{9,3}(t) \right) \right), \\
+j_{9,4}(t) &:= \frac{3^7(t^2-1)^3(t^6 + 3t^5 + 6t^4 + t^3 - 3t^2 + 12t + 16)^3(2t^3 + 3t^2 - 3t - 5)}{(t^3 - 3t - 1)^9}.
+\end{split}
+\]
+As demonstrated in \cite{sutherlandzywina}, for any elliptic curve $E$ over $\mbq$ with $j$-invariant $j_E$ and for each $i \in \{1, 2, 3, 4 \}$, we have
+\[
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{9,i} \; \Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } j_E = j_{9,i}(t_0).
+\]
+We define the coefficients $a_{4;9,i}(t)$ and $a_{6;9,i}(t)$ by \eqref{defofa4anda6} and consider the elliptic curve $\mc{E}_{9,i}$ over $\mbq(t,D)$ defined by 
+\[
+\mc{E}_{9,i} : \; D y^2 = x^3 + a_{4;9,i}(t) x + a_{6;9,i}(t).
+\]
+Since $G_{9,i,1} = \tilde{G}_{9,1}$ for each $i$, it follows immediately that, for each elliptic curve $E$ over $\mbq$ with $j$-invariant $j_E$ and for each $i \in \{1, 2, 3, 4 \}$, we have
+\[
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{9,i,1} \; \Longleftrightarrow \; \exists t_0, D_0 \in \mbq \text{ for which $E$ is isomorphic over $\mbq$ to $\mc{E}_{9,i}\left( t_0,D_0 \right)$.}
+\]
+
+\medskip
+
+\subsection{The level \texorpdfstring{$m = 10$}.}
+
+We have $\mf{G}_{MT}^{\max}(0,10) = \{ G_{10,1,1}, G_{10,1,2}, G_{10,2,1}, G_{10,2,2}, G_{10,3,1} \}$, where $G_{10,i,k}(10) \subseteq \GL_2(\mbz/10\mbz)$ are given by
+\begin{equation} \label{descriptionofgroupslevel10}
+\begin{split}
+G_{10,1,1}(10) &= \left\langle \begin{pmatrix} 9 & 9 \\ 0 & 9 \end{pmatrix}, \begin{pmatrix} 6 & 5 \\ 5 & 1 \end{pmatrix}, \begin{pmatrix} 1 & 0 \\ 0 & 3 \end{pmatrix} \right\rangle \simeq \GL_2(\mbz/2\mbz) \times_{\psi^{(1,1)}} \left\{ \begin{pmatrix} \pm 1 & * \\ 0 & * \end{pmatrix} \right\}, \\
+G_{10,1,2}(10) &= \left\langle \begin{pmatrix} 9 & 9 \\ 0 & 9 \end{pmatrix}, \begin{pmatrix} 6 & 5 \\ 5 & 1 \end{pmatrix}, \begin{pmatrix} 9 & 0 \\ 0 & 3 \end{pmatrix} \right\rangle \simeq \GL_2(\mbz/2\mbz) \times_{\psi^{(1,2)}} \left\{ \begin{pmatrix} \pm 1 & * \\ 0 & * \end{pmatrix} \right\}, \\
+G_{10,2,1}(10) &= \left\langle \begin{pmatrix} 9 & 9 \\ 0 & 9 \end{pmatrix}, \begin{pmatrix} 6 & 5 \\ 5 & 1 \end{pmatrix}, \begin{pmatrix} 3 & 0 \\ 0 & 9 \end{pmatrix} \right\rangle \simeq \GL_2(\mbz/2\mbz) \times_{\psi^{(2,1)}} \left\{ \begin{pmatrix} * & * \\ 0 & \pm 1 \end{pmatrix} \right\}, \\
+G_{10,2,2}(10) &= \left\langle \begin{pmatrix} 9 & 9 \\ 0 & 9 \end{pmatrix}, \begin{pmatrix} 6 & 5 \\ 5 & 1 \end{pmatrix}, \begin{pmatrix} 7 & 0 \\ 0 & 1 \end{pmatrix} \right\rangle \simeq \GL_2(\mbz/2\mbz) \times_{\psi^{(2,2)}} \left\{ \begin{pmatrix} * & * \\ 0 & \pm 1 \end{pmatrix} \right\}, \\
+G_{10,3,1}(10) &= \left\langle \begin{pmatrix} 4 & 9 \\ 9 & 6 \end{pmatrix}, \begin{pmatrix} 1 & 3 \\ 9 & 8 \end{pmatrix}, \begin{pmatrix} 9 & 0 \\ 0 & 1 \end{pmatrix} \right\rangle \simeq \GL_2(\mbz/2\mbz) \times_{\psi^{(3,1)}} G_{S_4}(5)
+\end{split}
+\end{equation}
+and $G_{10,i,k} = \pi_{\GL_2}^{-1}(G_{10,i,k}(10))$. In the fibered product on the right-hand side of $G_{10,3,1}(10)$, the group $G_{S_4}(5)$ denotes the unique (up to conjugation in $\GL_2(\mbz/5\mbz)$) subgroup of $\GL_2(\mbz/5\mbz)$ of index $5$ (its image in $\PGL_2(\mbz/5\mbz)$ is isomorphic to $S_4$, the symmetric group on $4$ symbols), and in that fibered product, the underlying maps $\psi_5^{(3,1)} = (\psi_2^{(3,1)},\psi_5^{(3,1)})$, surject onto a common quotient isomorphic to $D_3$, the dihedral group of order $6$. The map $\psi_2^{(3,1)}$ is any isomorphism $\GL_2(\mbz/2\mbz) \simeq D_3$, and the map $\psi_5^{(3,1)} : G_{S_4}(5) \longrightarrow D_3$ is the restriction of the projection map $\GL_2(\mbz/5\mbz) \longrightarrow \PGL_2(\mbz/5\mbz)$, followed by any surjection $S_4 \longrightarrow D_3$; its kernel is $\mc{N}_{\s}(5)$, the normalizer in $\GL_2(\mbz/5\mbz)$ of a split Cartan subgroup. In the fibered products involving $\psi^{(1,1)}$, $\psi^{(1,2)}$, $\psi^{(2,1)}$ and $\psi^{(2,2)}$, the underlying homomorphisms are as follows: $\psi_2^{(1,1)} = \psi_2^{(1,2)} = \psi_2^{(2,1)} = \psi_2^{(2,2)} = \ve$ as in \eqref{defofve}, whereas $\psi_5^{(1,1)}$, $\psi_5^{(1,2)}$, $\psi_5^{(2,1)}$ and $\psi_5^{(2,2)}$ are defined by
+\[
+\begin{split}
+\psi_5^{(1,1)} : &\left\{ \begin{pmatrix} \pm 1 & * \\ 0 & * \end{pmatrix} \right\} \longrightarrow \{ \pm 1 \}, \quad\quad \psi_5^{(1,1)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := a \in \{ \pm 1 \}, \\
+\psi_5^{(1,2)} : &\left\{ \begin{pmatrix} \pm 1 & * \\ 0 & * \end{pmatrix} \right\} \longrightarrow \{ \pm 1 \}, \quad\quad \psi_5^{(1,2)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := \left( \frac{d}{5} \right) a \in \{ \pm 1 \}, \\
+\psi_5^{(2,1)} : &\left\{ \begin{pmatrix} * & * \\ 0 & \pm 1 \end{pmatrix} \right\} \longrightarrow \{ \pm 1 \}, \quad\quad \psi_5^{(2,1)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := \left( \frac{a}{5} \right) d \in \{ \pm 1 \}, \\
+\psi_5^{(2,2)} : &\left\{ \begin{pmatrix} * & * \\ 0 & \pm 1 \end{pmatrix} \right\} \longrightarrow \{ \pm 1 \}, \quad\quad \psi_5^{(2,2)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := d \in \{ \pm 1 \}.
+\end{split}
+\]
+We note that $-I \in G_{10,3,1}$ and $-I \notin G_{10,i,k}$, for each $i, k \in \{ 1, 2 \}$; we have 
+\begin{equation} \label{tildeGsub10ij}
+\begin{split}
+\tilde{G}_{10,1,k}(10) &\simeq \GL_2(\mbz/2\mbz) \times \left\{ \begin{pmatrix} \pm 1 & * \\ 0 & * \end{pmatrix} \right\}, \\
+\tilde{G}_{10,2,k}(10) &\simeq \GL_2(\mbz/2\mbz) \times \left\{ \begin{pmatrix} * & * \\ 0 & \pm 1 \end{pmatrix} \right\}\quad\quad \left( k \in \{1, 2 \} \right).
+\end{split}
+\end{equation}
+Let us set $\tilde{G}_{10,i} := \tilde{G}_{10,i,k}$ and note that $G_{10,3,1} = \tilde{G}_{10,3}$. Also note that
+$\level_{\GL_2}(\tilde{G}_{10,i}) = 5$ for $i \in \{1, 2 \}$. The group $\tilde{G}_{10,3}$ is studied in \cite{jonesmcmurdy}; for any elliptic curve $E$ over $\mbq$ we have
+\[
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{10,3} \; \Longleftrightarrow \; 
+\begin{matrix} 
+\mbq(\sqrt{5}) \subsetneq \mbq(E[2]) \subseteq \mbq(E[5]) \text{ and } \rho_{E,5}(G_\mbq) = G_{S_4}(5), \text{ or} \\
+\mbq(E[2]) = \mbq(\sqrt{5}) \text{ and } \rho_{E,5}(G_\mbq) \subsetneq G_{S_4}(5).
+\end{matrix} 
+\]
+Define $f_{10,3}(t), g_{10,3}(t) \in \mbq(t)$ by
+\[
+f_{10,3}(t) := t^3(t^2 + 5t + 40), \quad\quad g_{10,3}(t) := \frac{3t^6 + 12t^5 + 80t^4 + 50t^3 - 20t^2 - 8t + 8}{(t-1)^2(t^2 + 3t + 1)^2}
+\]
+and the $j$-invariant $j_{10,3}(t) \in \mbq(t)$ and elliptic curve $\mc{E}_{10,3,1}$ over $\mbq(t,D)$ by
+\[
+\begin{split}
+j_{10,3}(t) :=& f_{10,3}\left( g_{10,3}(t) \right), \\
+\mc{E}_{10,3,1} : \; D y^2 =& x^3 + \frac{108j_{10,3}(t)}{1728 - j_{10,3}(t)} x + \frac{432 j_{10,3}(t)}{1728 - j_{10,3}(t)}.
+\end{split}
+\]
+As proved in \cite{jonesmcmurdy}, for any elliptic curve $E$ over $\mbq$, we have
+\begin{equation*} %\label{howtogetsmallermod4image}
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{10,3,1} \; \Longleftrightarrow \; \exists t_0, D_0 \in \mbq \text{ for which } E \text{ is isomorphic over $\mbq$ to } \mc{E}_{10,3,1}(t_0,D_0).
+\end{equation*}
+
+Regarding the groups $G_{10,i,k}$ for $i,k \in \{1, 2\}$, we first consider the groups $\tilde{G}_{10,i}$. Given \eqref{tildeGsub10ij}, we may apply results in \cite{zywina}, which exhibits the $j$-invariants
+\[
+j_{5,1}(t) := \frac{(t^4 - 12t^3 + 14t^2 + 12t + 1)^3}{t^5(t^2 - 11t - 1)}, \quad\quad
+j_{5,2}(t) := \frac{(t^4 + 228t^3 + 494t^2 - 228t + 1)^3}{t(t^2 - 11t - 1)^5}
+\]
+and shows that, for any elliptic curve $E$ over $\mbq$ with $j$-invariant $j_E$, we have
+\[
+\begin{split}
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{10,1} \; &\Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } j_E = j_{5,1}(t_0), \\
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{10,2} \; &\Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } j_E = j_{5,2}(t_0).
+\end{split}
+\]
+If $E$ is an elliptic curve satisfying $$\rho_{E,5}(G_\mbq) \, \dot\subseteq \, \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}$$ then there is a $G_\mbq$-stable cyclic subgroup $\langle P \rangle \subseteq E[5]$; given any such Galois-stable cyclic subgroup $\langle P \rangle$, we let $E_{\langle P \rangle}' := E/\langle P \rangle$ denote the associated isogenous curve (which is necessarily defined over $\mbq$). By \eqref{tildeGsub10ij}, we have that
+\begin{equation} \label{conditionfortildeG101andG102}
+\begin{split}
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{10,1} \; &\Longleftrightarrow \; \exists \text{ a $G_\mbq$-stable } \langle P \rangle \subseteq E[5] \quad\quad\;\;\; \text{ with } \quad [ \mbq( P ) : \mbq ] \leq 2, \\
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{10,2} \; &\Longleftrightarrow \; \begin{matrix} \exists \text{ a $G_\mbq$-stable } \langle P \rangle \subseteq E[5] \text{ and} \\ \exists \text{ a $G_\mbq$-stable } \langle P' \rangle \subseteq E_{\langle P \rangle}' [5] \end{matrix} \quad \text{ with } \quad [ \mbq( P' ) : \mbq ] \leq 2.
+\end{split}
+\end{equation}
+Furthermore, by \eqref{descriptionofgroupslevel10}, Corollary \ref{keycorollaryforinterpretationofentanglements} and Lemma \ref{level2kummersubextensionlemma}, we have
+\begin{equation} \label{conditionsforGsub10ij}
+\begin{split}
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{10,1,1} \; &\Longleftrightarrow \; \exists \text{ a $G_\mbq$-stable } \langle P \rangle \subseteq E[5] \quad\quad\;\;\; \text{ with } \quad\; \mbq(P) = \mbq(\sqrt{\gD_E}), \\
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{10,1,2} \; &\Longleftrightarrow \; \exists \text{ a $G_\mbq$-stable } \langle P \rangle \subseteq E[5] \quad\quad\;\;\; \text{ with } \quad\; \mbq(P) = \mbq(\sqrt{5\gD_E}), \\
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{10,2,1} \; &\Longleftrightarrow \; \begin{matrix} \exists \text{ a $G_\mbq$-stable } \langle P \rangle \subseteq E[5] \text{ and} \\ \exists \text{ a $G_\mbq$-stable } \langle P' \rangle \subseteq E_{\langle P \rangle}'[5] \end{matrix} \quad \text{ with } \quad \mbq(P') = \mbq( \sqrt{5\gD_E}), \\
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{10,2,2} \; &\Longleftrightarrow \; \begin{matrix} \exists \text{ a $G_\mbq$-stable } \langle P \rangle \subseteq E[5] \text{ and} \\ \exists \text{ a $G_\mbq$-stable } \langle P' \rangle \subseteq E_{\langle P \rangle}'[5] \end{matrix} \quad \text{ with } \quad \mbq(P') = \mbq( \sqrt{\gD_E}).
+\end{split}
+\end{equation} 
+We define the coefficients $a_{4;10,i}(t)$ $a_{6;10,i}(t)$ defined by \eqref{defofa4anda6}; consider the elliptic curves $\mc{E}_{10,i}$ over $\mbq(t,D)$ defined by 
+\[
+\begin{split}
+\mc{E}_{10,1} &: \; y^2 = x^3 + D^2a_{4;10,1}(t) x + D^3a_{6;10,1}(t), \\
+\mc{E}_{10,2} &: \; y^2 = x^3 + D^2a_{4;10,2}(t) x + D^3a_{6;10,2}(t).
+\end{split}
+\]
+We have
+\[
+\begin{split}
+\gD_{\mc{E}_{10,1}} = \frac{2^{18}3^{12}D^6 t^5 (t^2 - 11t - 1) (t^4 - 12t^3 + 14t^2 + 12t + 1)^6}{(t^2 + 1)^6 (t^4 - 18t^3 + 74t^2 + 18t + 1)^6}, \\
+\gD_{\mc{E}_{10,2}} = \frac{2^{18}3^{12}D^6 t (t^2 - 11t - 1)^5 (t^4 + 228t^3 + 494t^2 - 228t + 1)^6}{(t^2 + 1)^6 (t^4 - 522t^3 - 10006t^2 + 522t + 1)^6},
+\end{split}
+\]
+and thus 
+\[
+\mbq\left( \sqrt{\gD_{\mc{E}_{10,1}}} \right) = \mbq\left( \sqrt{\gD_{\mc{E}_{10,2}}} \right) = \mbq \left( \sqrt{t(t^2 - 11t - 1)} \right).
+\]
+By Lemma \ref{subfieldsoflevel5lemma}, we are led to the twist parameters
+\[
+\begin{split}
+d_{10,1,1}(t) &:= \frac{-2t(t^2-11t-1)(t^4 - 12t^3 + 14t^2 + 12t + 1)}{(t^2 + 1)(t^4 - 18t^3 + 74t^2 + 18t + 1)}, \quad\quad\quad\quad d_{10,1,2}(t) := 5 d_{10,1,1}(t), \\
+d_{10,2,1}(t) &:= \frac{-10t(t^2-11t-1)(t^4 + 228t^3 + 494t^2 - 228t + 1)}{(t^2 + 1) (t^4 - 522t^3 - 10006t^2 + 522t + 1)}, \quad\quad d_{10,2,2}(t) := 5 d_{10,2,1}(t),
+\end{split}
+\]
+and to the elliptic curves $\mc{E}_{10,i,k}$ over $\mbq(t)$, defined by
+\[
+\mc{E}_{10,i,k} : \; d_{10,i,k}(t) y^2 = x^3 + a_{4;10,i}(t) x + a_{6; 10,i}(t) \quad\quad \left( i, k \in \{ 1, 2 \} \right).
+\]
+By \eqref{conditionsforGsub10ij} and Lemma \ref{subfieldsoflevel5lemma}, for each elliptic curve $E$ over $\mbq$ and for each $i, k \in \{1, 2 \}$, we have
+\[
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{10,i,k} \; \Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which $E$ is isomorphic over $\mbq$ to $\mc{E}_{10,i,k}\left( t_0 \right)$.}
+\]
+
+\medskip
+
+\subsection{The level \texorpdfstring{$m = 12$}.}
+
+We have $\mf{G}_{MT}^{\max}(0,12) = \{ G_{12,1,1}, G_{12,2,1}, G_{12,3,1}, G_{12,4,1}, G_{12,4,2} \}$, where $G_{12,i,k}(12) \subseteq \GL_2(\mbz/12\mbz)$ are given by
+\begin{equation} \label{descriptionofgroupslevel12}
+\begin{split}
+G_{12,1,1}(12) &= \left\langle \begin{pmatrix} 7 & 7 \\ 0 & 5 \end{pmatrix}, \begin{pmatrix} 5 & 7 \\ 3 & 2 \end{pmatrix}, \begin{pmatrix} 2 & 9 \\ 9 & 8 \end{pmatrix} \right\rangle \simeq \GL_2(\mbz/4\mbz)_{\chi_4 = \ve} \times_{\psi^{(1,1)}} \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}, \\
+G_{12,2,1}(12) &= \left\langle \begin{pmatrix} 5 & 8 \\ 0 & 1 \end{pmatrix}, \begin{pmatrix} 5 & 11 \\ 0 & 11 \end{pmatrix}, \begin{pmatrix} 7 & 6 \\ 3 & 7 \end{pmatrix} \right\rangle \simeq \GL_2(\mbz/4\mbz)_{\chi_4 = \ve} \times_{\psi^{(2,1)}} \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}, \\
+G_{12,3,1}(12) &= \left\langle \begin{pmatrix} 5 & 11 \\ 0 & 11 \end{pmatrix}, \begin{pmatrix} 5 & 11 \\ 0 & 7 \end{pmatrix}, \begin{pmatrix} 2 & 1 \\ 9 & 11 \end{pmatrix} \right\rangle\simeq \GL_2(\mbz/4\mbz)_{\chi_4 = \ve} \times_{\psi^{(3,1)}} \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}, \\
+G_{12,4,1}(12) &= \left\langle \begin{pmatrix} 5 & 1 \\ 3 & 2 \end{pmatrix}, \begin{pmatrix} 7 & 6 \\ 0 & 11 \end{pmatrix}, \begin{pmatrix} 7 & 0 \\ 0 & 7 \end{pmatrix} \right\rangle \simeq \pi_{\GL_2}^{-1} \left( \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \right) \times_{\psi^{(4,1)}} \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}, \\
+G_{12,4,2}(12) &= \left\langle \begin{pmatrix} 5 & 1 \\ 3 & 2 \end{pmatrix}, \begin{pmatrix} 11 & 6 \\ 0 & 7 \end{pmatrix}, \begin{pmatrix} 7 & 0 \\ 0 & 7 \end{pmatrix} \right\rangle \simeq \pi_{\GL_2}^{-1} \left( \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \right) \times_{\psi^{(4,2)}} \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}
+\end{split}
+\end{equation}
+and $G_{12,i,k} = \pi_{\GL_2}^{-1}(G_{12,i,k}(12))$; as usual, the representations of the groups on the right-hand are to be understood via the Chinese Remainder Theorem.
+In the fibered products $\psi^{(i,k)}$, the underlying homomorphisms are as follows: the maps $\psi_4^{(i,k)}$, are defined by
+\begin{equation} \label{definitionoflevel21fiberings}
+\begin{split}
+&\psi_4^{(i,1)} : \GL_2(\mbz/4\mbz)_{\chi_4 = \ve} \longrightarrow \{ \pm 1 \}, \quad\quad\, \ker \psi_4^{(i,1)} = \left\langle \begin{pmatrix} 3 & 2 \\ 0 & 3 \end{pmatrix}, \begin{pmatrix} 3 & 3 \\ 1 & 0 \end{pmatrix}, \begin{pmatrix} 1 & 1 \\ 0 & 3 \end{pmatrix} \right\rangle \quad \left( i \in \{1, 2, 3 \} \right), \\
+%\psi_4'' : &\GL_2(\mbz/4\mbz)_{\chi_4 = \ve} \longrightarrow \{ \pm 1 \}, \quad\quad \ker \psi_4' = \left\langle \begin{pmatrix} 3 & 2 \\ 0 & 3 \end{pmatrix}, \begin{pmatrix} 3 & 3 \\ 1 & 0 \end{pmatrix}, \begin{pmatrix} 3 & 3 \\ 0 & 1 \end{pmatrix} \right\rangle, \\
+&\psi_4^{(4,k)} : \pi_{\GL_2}^{-1} \left( \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \right) \rightarrow \{ \pm 1 \}, \quad \psi_4^{(4,k)}(g) = \det g \quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\, \left( k \in \{ 1, 2 \} \right),
+%\phi_4' : &\pi_{\GL_2}^{-1} \left( \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \right) \longrightarrow \{ \pm 1 \}, \quad\quad \phi_4'(g) = \det g,
+\end{split}
+\end{equation}
+and the maps $\psi_3^{(i,k)}$ are defined by
+\[
+\begin{split}
+\psi_3^{(1,1)} : &\left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \longrightarrow \{ \pm 1 \}, \quad\quad \psi_3^{(1,1)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := \left( \frac{ad}{3} \right), \\
+\psi_3^{(2,1)} = \psi_3^{(4,2)} : &\left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \longrightarrow \{ \pm 1 \}, \quad\quad \psi_3^{(2,1)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) = \psi_3^{(4,2)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := \left( \frac{d}{3} \right), \\
+\psi_3^{(3,1)} = \psi_3^{(4,1)} : &\left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \longrightarrow \{ \pm 1 \}, \quad\quad \psi_3^{(3,1)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) = \psi_3^{(4,1)} \left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right):= \left( \frac{a}{3} \right).
+%\phi_3 : &\left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \longrightarrow \{ \pm 1 \}, \quad\quad \phi_3\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := \left( \frac{a}{3} \right), \\
+%\phi_3' &\left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \longrightarrow \{ \pm 1 \}, \quad\quad \phi_3'\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := \left( \frac{d}{3} \right).
+\end{split}
+\]
+We note that $-I \in G_{12,2,1}, G_{12,3,1}$ and $-I \notin G_{12,1,1}, G_{12,4,k}$, for each $k \in \{ 1, 2 \}$. We have
+\begin{equation} \label{unfiberedlevel12groups}
+\begin{split}
+\tilde{G}_{12,1}(12) := \tilde{G}_{12,1,1}(12) &\simeq \GL_2(\mbz/4\mbz)_{\chi_4 = \ve} \times \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}, \\
+\tilde{G}_{12,4}(12) := \tilde{G}_{12,4,k}(12) &\simeq \pi_{\GL_2}^{-1} \left( \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \right) \times \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \quad \left( k \in \{1, 2 \} \right).
+\end{split}
+\end{equation}
+As detailed in \cite{sutherlandzywina}, for any elliptic curve $E$ over $\mbq$ with $j$-invariant $j_E$, we have
+\[
+\begin{split}
+\rho_{E,4}(G_\mbq) \, \dot\subseteq \, \GL_2(\mbz/4\mbz)_{\chi_4 = \ve} \; &\Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } j_E = -t_0^2 + 1728, \\
+\rho_{E,4}(G_\mbq) \, \dot\subseteq \, \pi_{\GL_2}^{-1} \left( \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \right) \; &\Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } j_E = t_0^2 + 1728, \\
+\rho_{E,3}(G_\mbq) \, \dot\subseteq \, \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \; &\Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } j_E = 27 \frac{(t_0+1)(t_0+9)^3}{t_0^3}.
+\end{split}
+\]
+To obtain models for the modular curves corresponding to the groups in \eqref{unfiberedlevel12groups}, we are led to the equations
+\[
+-t^2 + 1728 = 27\frac{(s+1)(s+9)^3}{s^3}, \quad\quad t^2 + 1728 = 27\frac{(s+1)(s+9)^3}{s^3},
+\]
+each of which is a singular model of a conic. Resolving the singularities in MAGMA, we are led to the substitutions $s = - \frac{27}{u^2}$, $t = \frac{u^4 - 18u^2 - 27}{u}$ for the first equation and $s = \frac{1}{27u^2}$, $t = \frac{1-486u^2 - 19683u^4}{u}$ for the second, and these lead to the $j$-invariants
+\[
+j_{12,i}(u) := - \frac{(u^2-27)(u^2-3)^3}{u^2} \quad \left( i \in \{1, 2, 3 \} \right), \quad\quad j_{12,4}(u) := \frac{(27u^2+1)(243u^2+1)^3}{u^2}.
+\]
+(Note that $G_{12,i,1} \subseteq \tilde{G}_{12,1}$ for any $i \in \{1, 2, 3 \}$.). We thus have
+\[
+\begin{split}
+\rho_{E,12}(G_\mbq) \, \dot\subseteq \, \GL_2(\mbz/4\mbz)_{\chi_4 = \ve} \times \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \; &\Longleftrightarrow \; \exists u_0 \in \mbq \text{ with } j_E = j_{12,1}(u_0), \\
+\rho_{E,12}(G_\mbq) \, \dot\subseteq \, \pi_{\GL_2}^{-1} \left( \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \right) \times \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \; &\Longleftrightarrow \; \exists u_0 \in \mbq \text{ with } j_E = j_{12,4}(u_0).
+\end{split}
+\]
+We define the coefficients $a_{4;12,i}(u), a_{6;12,i}(u) \in \mbq(u)$ by
+\[
+\begin{split}
+a_{4;12,i}(u) :=& a_{4;3,1}\left( -\frac{27}{u^2} \right), \quad a_{6;12,i} := a_{6;3,1}\left( -\frac{27}{u^2} \right), \quad\quad \left( i \in \{ 1, 2, 3 \} \right), \\
+a_{4;12,4}(u) :=& a_{4;3,1}\left( \frac{1}{27u^2} \right), \quad a_{6;12,4} := a_{6;3,1}\left( \frac{1}{27u^2} \right)
+\end{split}
+\]
+and consider the elliptic curves $\mc{E}_{12,i}$ over $\mbq(u,D)$ defined by 
+\[
+\mc{E}_{12,i} : \; D y^2 = x^3 + a_{4;12,i}(u) x + a_{6;12,i}(u) \quad\quad \left( i \in \{ 1, 2, 3, 4 \} \right).
+\]
+(Note that $\mc{E}_{12,1} = \mc{E}_{12,2} = \mc{E}_{12,3}$.) 
+
+Applying Lemma \ref{identifyingthesubfieldslevel4lemma} with $\frac{u^4 - 18u^2 - 27}{u}$ substituted for the variable, we find that
+\[
+\mbq\left( i, \gD_{\mc{E}_{12,i}}^{1/4} \right) = \mbq\left( i, \sqrt{\frac{Du(u^2-27)(u^2-3)}{u^4-18u^2-27}} \right) \quad\quad \left( i \in \{1, 2, 3 \} \right).
+\]
+By \eqref{descriptionofgroupslevel12} and Corollary \ref{justentanglementequalitycorollary}, we see that, for any specialization $\mc{E}_{12,1}(u_0,D_0)$ that is an elliptic curve,
+\[
+\begin{split}
+\rho_{\mc{E}_{12,1}(u_0,D_0)}(G_\mbq) \, \dot\subseteq \, G_{12,1,1} \; &\Longleftrightarrow \; \mbq\left( \sqrt{\pm \frac{D_0u_0(u_0^2-27)(u_0^2-3)}{u_0^4-18u_0^2-27}} \right) = \mbq\left( \sqrt{-3} \right) \\
+&\Longleftrightarrow \; D_0 \in \mp \frac{3u_0(u_0^2-27)(u_0^2-3)}{u_0^4-18u_0^2-27} (\mbq^\times)^2.
+\end{split}
+\]
+By \eqref{descriptionofgroupslevel12} and \eqref{definitionoflevel21fiberings}, and noting that $u \mapsto -\frac{3u(u^2-27)(u^2-3)}{u^4-18u^2-27}$ is an odd function of $u$, we are led to the twist choice
+\[
+d_{12,1,1}(u) := -\frac{3u(u^2-27)(u^2-3)}{u^4-18u^2-27}
+\]
+and the model $\mc{E}_{12,1,1}$ over $\mbq(u)$, defined by
+\[
+\mc{E}_{12,1,1} : \; d_{12,1,1}(u) y^2 = x^3 + a_{4;12,1}(u) x + a_{6;12,1}(u).
+\]
+Regarding the groups $G_{12,2,1}$ and $G_{12,3,1}$, we apply Lemma \ref{subfieldsoflevel3lemma} with $-\frac{27}{u^2}$ substituted for the variable, obtaining
+\[
+\begin{split}
+\mbq(t,D) \left( \mc{E}_{12,2}[3] \right)^{\ker \psi_3^{(2,1)}} &= \mbq(t,D) \left( \sqrt{\frac{6D(u^2-27)(u^2-3)}{u^4-18u^2-27}} \right), \\
+\mbq(t,D) \left( \mc{E}_{12,3}[3] \right)^{\ker \psi_3^{(3,1)}} &= \mbq(t,D) \left( \sqrt{-\frac{2D(u^2-27)(u^2-3)}{u^4-18u^2-27}} \right).
+\end{split}
+\] 
+Noting also that for $i \in \{2, 3 \}$, the Weierstrass coefficients satisfy $a_{4;12,i}(-u) = a_{4;12,i}(u)$ and $a_{6;12,i}(-u) = a_{6;12,i}(u)$, we are thus led to the models $\mc{E}_{12,2,1}$, $\mc{E}_{12,3,1}$ over $\mbq(v,D)$
+\[
+\begin{split}
+\mc{E}_{12,2,1} : \; &D y^2 = x^3 + a_{4;12,2}(6v^2) x + a_{6;12,2}(6v^2), \\
+\mc{E}_{12,3,1} : \; &D y^2 = x^3 + a_{4;12,3}(-2v^2) x + a_{6;12,3}(-2v^2).
+\end{split}
+\] 
+For any elliptic curve $E$ over $\mbq$, we have
+\[
+\begin{split}
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{12,1,1} \; &\Longleftrightarrow \; \exists u_0 \in \mbq \text{ for which } E \text{ is isomorphic over $\mbq$ to } \mc{E}_{12,1,1}\left( u_0 \right), \\
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{12,2,1} \; &\Longleftrightarrow \; \exists v_0, D_0 \in \mbq \text{ for which } E \text{ is isomorphic over $\mbq$ to } \mc{E}_{12,2,1}(v_0,D_0), \\
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{12,3,1} \; &\Longleftrightarrow \; \exists v_0, D_0 \in \mbq \text{ for which } E \text{ is isomorphic over $\mbq$ to } \mc{E}_{12,3,1}(v_0,D_0).
+\end{split}
+\]
+We now find models for the remaining two groups $G_{12,4,1}$, $G_{12,4,2}$. Applying Lemma \ref{subfieldsoflevel3lemma} with $\frac{1}{27u^2}$ substituted for the variable, we find that
+\[
+\begin{split}
+\mbq(t,D) \left( \mc{E}_{12,4}[3] \right)^{\ker \psi_3^{(4,1)}} &= \mbq(t,D) \left( \sqrt{-\frac{6D(27u^2+1)(243u^2+1)}{19683u^4 + 486u^2 - 1}} \right), \\
+\mbq(t,D) \left( \mc{E}_{12,4}[3] \right)^{\ker \psi_3^{(4,2)}} &= \mbq(t,D) \left( \sqrt{\frac{2D(27u^2+1)(243u^2+1)}{19683u^4 + 486u^2 - 1}} \right).
+\end{split}
+\] 
+By \eqref{descriptionofgroupslevel12} and \eqref{definitionoflevel21fiberings}, we obtain the appropriate twist classes by setting each of these fields equal to $\mbq(i)$, which leads to the definitions
+\[
+d_{12,4,1}(u) := \frac{6(27u^2+1)(243u^2+1)}{19683u^4 + 486u^2 - 1}, \quad\quad d_{12,4,2}(u) := -\frac{2(27u^2+1)(243u^2+1)}{19683u^4 + 486u^2 - 1}.
+\]
+We define the elliptic curves $\mc{E}_{12,4,k}$ over $\mbq(u)$ by
+\[
+\mc{E}_{12,4,k} : \; d_{12,4,k}(u) y^2 = x^3 + a_{4;12,4}(u) x + a_{6;12,4}(u) \quad\quad \left( k \in \{ 1, 2 \} \right).
+\]
+It follows from our discussion that, for any elliptic curve $E$ over $\mbq$,
+\[
+\begin{split}
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{12,4,1} \; &\Longleftrightarrow \; \exists u_0 \in \mbq \text{ for which } E \text{ is isomorphic over $\mbq$ to } \mc{E}_{12,4,1}\left( u_0 \right), \\
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{12,4,2} \; &\Longleftrightarrow \; \exists u_0 \in \mbq \text{ for which } E \text{ is isomorphic over $\mbq$ to } \mc{E}_{12,4,2}\left( u_0 \right).
+\end{split}
+\]
+
+\medskip
+
+\subsection{The level \texorpdfstring{$m = 14$}}
+
+We have 
+\[
+\mf{G}_{MT}^{\max}(0,14) = \mf{G}_{MT,2}^{\max}(0,14) \sqcup \mf{G}_{MT,3}^{\max}(0,14),
+\] 
+with
+\[
+\begin{split}
+\mf{G}_{MT,2}^{\max}(0,14) &= \{ G_{14,1,1}, G_{14,2,1}, G_{14,2,1}, G_{14,2,2}, G_{14,3,1}, G_{14,3,2}, G_{14,4,1} \}, \\
+\mf{G}_{MT,3}^{\max}(0,14) &= \{ G_{14,5,1}, G_{14,6,1}, G_{14,6,2}, G_{14,7,1}, G_{14,7,2} \}, 
+\end{split}
+\]
+where the groups $G_{14,i,k}(14) \subseteq \GL_2(\mbz/14\mbz)$ for $G_{14,i,k} \in \mf{G}_{MT,2}^{\max}(0,14)$ are given by
+\begin{equation} \label{descriptionofgroupslevel14withquadraticfibering}
+\begin{split}
+G_{14,1,1}(14) &= \left\langle \begin{pmatrix} 9 & 2 \\ 1 & 9 \end{pmatrix}, \begin{pmatrix} 12 & 5 \\ 11 & 6 \end{pmatrix} \right\rangle\simeq \GL_2(\mbz/2\mbz) \times_{\psi^{(1,1)}} \left\{ \begin{pmatrix} \pm 1 & * \\ 0 & * \end{pmatrix} \right\}, \\
+G_{12,1,2}(14) &= \left\langle \begin{pmatrix} 13 & 0 \\ 3 & 1 \end{pmatrix}, \begin{pmatrix} 6 & 1 \\ 9 & 7 \end{pmatrix} \right\rangle \simeq \GL_2(\mbz/2\mbz) \times_{\psi^{(1,2)}} \left\{ \begin{pmatrix} \pm 1 & * \\ 0 & * \end{pmatrix} \right\}, \\
+G_{14,2,1}(14) &= \left\langle \begin{pmatrix} 1 & 11 \\ 4 & 7 \end{pmatrix}, \begin{pmatrix} 9 & 4 \\ 13 & 7 \end{pmatrix} \right\rangle \simeq \GL_2(\mbz/2\mbz) \times_{\psi^{(2,1)}} \left\{ \begin{pmatrix} * & * \\ 0 & \pm 1 \end{pmatrix} \right\}, \\
+G_{14,2,2}(14) &= \left\langle \begin{pmatrix} 0 & 9 \\ 9 & 3 \end{pmatrix}, \begin{pmatrix} 1 & 6 \\ 7 & 13 \end{pmatrix} \right\rangle \simeq \GL_2(\mbz/2\mbz) \times_{\psi^{(2,2)}} \left\{ \begin{pmatrix} * & * \\ 0 & \pm 1 \end{pmatrix} \right\}, \\
+G_{14,3,1}(14) &= \left\langle \begin{pmatrix} 9 & 4 \\ 3 & 5 \end{pmatrix}, \begin{pmatrix} 1 & 7 \\ 11 & 6 \end{pmatrix} \right\rangle \simeq \GL_2(\mbz/2\mbz) \times_{\psi^{(3,1)}} \left\{ \begin{pmatrix} a & * \\ 0 & \pm a \end{pmatrix} : \; a \in (\mbz/7\mbz)^\times \right\}, \\
+G_{12,3,2}(14) &= \left\langle \begin{pmatrix} 7 & 13 \\ 3 & 0 \end{pmatrix}, \begin{pmatrix} 1 & 12 \\ 3 & 13 \end{pmatrix} \right\rangle \simeq \GL_2(\mbz/2\mbz) \times_{\psi^{(3,2)}} \left\{ \begin{pmatrix} a & * \\ 0 & \pm a \end{pmatrix} : \; a \in (\mbz/7\mbz)^\times \right\}, \\
+G_{14,4,1}(14) &= \left\langle \begin{pmatrix} 9 & 3 \\ 13 & 6 \end{pmatrix}, \begin{pmatrix} 1 & 6 \\ 7 & 3 \end{pmatrix} \right\rangle \simeq \GL_2(\mbz/2\mbz) \times_{\psi^{(4,1)}} \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\},
+\end{split}
+\end{equation}
+the groups $G_{14,i,k}(14) \subseteq \GL_2(\mbz/14\mbz)$ for $G_{14,i,k} \in \mf{G}_{MT,3}^{\max}(0,14)$ are given by
+\begin{equation} \label{descriptionofgroupslevel14withcubicfibering}
+\begin{split}
+G_{14,5,1}(14) &= \left\langle \begin{pmatrix} 3 & 7 \\ 9 & 2 \end{pmatrix}, \begin{pmatrix} 6 & 13 \\ 7 & 11 \end{pmatrix} \right\rangle \simeq \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \times_{\phi^{(5)}} \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}, \\
+G_{14,6,1}(14) &= \left\langle \begin{pmatrix} 5 & 1 \\ 7 & 4 \end{pmatrix}, \begin{pmatrix} 7 & 13 \\ 9 & 10 \end{pmatrix} \right\rangle \simeq \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \times_{\phi^{(6)}} \left\{ \begin{pmatrix} a^2 & * \\ 0 & * \end{pmatrix} : \; a \in (\mbz/7\mbz)^\times \right\}, \\
+G_{14,6,2}(14) &= \left\langle \begin{pmatrix} 9 & 11 \\ 7 & 12 \end{pmatrix}, \begin{pmatrix} 7 & 11 \\ 9 & 12 \end{pmatrix} \right\rangle \simeq \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \times_{\phi^{(6)}} \left\{ \begin{pmatrix} * & * \\ 0 & d^2 \end{pmatrix} : \; d \in (\mbz/7\mbz)^\times \right\}, \\
+G_{14,7,1}(14) &= \left\langle \begin{pmatrix} 3 & 1 \\ 1 & 10 \end{pmatrix}, \begin{pmatrix} 9 & 7 \\ 11 & 6 \end{pmatrix} \right\rangle \simeq \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \times_{\phi^{(7)}} \left\{ \begin{pmatrix} a^2 & * \\ 0 & * \end{pmatrix} : \; a \in (\mbz/7\mbz)^\times \right\}, \\
+G_{14,7,2}(14) &= \left\langle \begin{pmatrix} 0 & 3 \\ 9 & 13 \end{pmatrix}, \begin{pmatrix} 9 & 11 \\ 13 & 4 \end{pmatrix} \right\rangle \simeq \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \times_{\phi^{(7)}} \left\{ \begin{pmatrix} * & * \\ 0 & d^2 \end{pmatrix} : \; d \in (\mbz/7\mbz)^\times \right\},
+\end{split}
+\end{equation}
+and each $G_{14,i,k} = \pi_{\GL_2}^{-1}(G_{14,i,k}(14))$. In all cases, the representations of the groups on the right-hand are to be understood via the Chinese Remainder Theorem as subgroups of $\GL_2(\mbz/2\mbz) \times \GL_2(\mbz/7\mbz)$.
+For each group $G \in \mf{G}_{MT,2}^{\max}(0,14)$, the associated common quotient $\psi_2^{(i,k)}\left( \GL_2(\mbz/2\mbz) \right)$ is a cyclic group of order $2$, whereas for each group $G \in \mf{G}_{MT,3}^{\max}(0,14)$ the associated common quotients $\phi_2^{(i)}\left( \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \right)$ is a cyclic group of order $3$ (i.e. $\phi_2^{(i)}$ is a group isomorphism). These homomorphisms are defined as follows: the maps $\psi_2^{(i,k)} : \GL_2(\mbz/2\mbz) \longrightarrow \{ \pm 1 \}$ are all equal to the map $\ve$ as in \eqref{defofve}, whereas the maps $\psi_7^{(i,k)}$ are given by
+\begin{equation} \label{psifiberingmapsmod7}
+\begin{split}
+\psi_7^{(1,k)} : \left\{ \begin{pmatrix} \pm 1 & * \\ 0 & * \end{pmatrix} \right\} &\longrightarrow \{ \pm 1 \}; \quad \psi_7^{(1,1)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := \left( \frac{d}{7} \right), \quad \psi_7^{(1,2)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := \left( \frac{a}{7} \right), \\
+\psi_7^{(2,k)} : \left\{ \begin{pmatrix} * & * \\ 0 & \pm 1 \end{pmatrix} \right\} &\longrightarrow \{ \pm 1 \}, \quad \psi_2^{(2,1)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := \left( \frac{d}{7} \right), \quad \psi_2^{(2,2)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := \left( \frac{a}{7} \right), \\
+\psi_7^{(3,k)} : \left\{ \begin{pmatrix} a & * \\ 0 & \pm a \end{pmatrix} \right\} &\longrightarrow \{ \pm 1 \}, \quad \psi_2^{(3,1)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := \left( \frac{d}{7} \right), \quad \psi_2^{(3,2)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := \left( \frac{a}{7} \right), \\ 
+\psi_7^{(4,1)} : \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} &\longrightarrow \{ \pm 1 \}, \quad\quad\quad\quad\;\;\, \psi_2^{(4,1)}\left( g \right) := \left( \frac{\det g}{7} \right).
+\end{split}
+\end{equation}
+For $G \in \mf{G}_{MT,3}^{\max}(0,14)$, the common quotient will be $\left( (\mbz/7\mbz)^\times \right)^2$, which is cyclic of order $3$. The map $\phi_2^{(i)} : \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \longrightarrow \left( (\mbz/7\mbz)^\times \right)^2$ is any isomorphism, whereas the maps $\phi_7^{(i)}$ are defined by
+\begin{equation} \label{phifiberingmapsmod7}
+\begin{split}
+\phi_7^{(5)} : &\left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \longrightarrow \left( (\mbz/7\mbz)^\times \right)^2, \quad\quad \;\;\phi_7^{(5)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := (a/d)^2, \\
+\phi_7^{(6)} : &\left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \longrightarrow \left( (\mbz/7\mbz)^\times \right)^2, \quad\quad \phi_7^{(6)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := d^2, \\
+\phi_7^{(7)} : &\left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \longrightarrow \left( (\mbz/7\mbz)^\times \right)^2, \quad\quad \phi_7^{(7)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := a^2.
+\end{split}
+\end{equation}
+We note that $-I \in G_{14,4,1}, G_{14,5,1}$, whereas $-I \notin G_{14,i,k}$ for $i \in \{1, 2, 3, 6, 7 \}$ and $k \in \{1, 2 \}$. For $i \in \{ 1, 2, 3 \}$, $G_{14,i,k} \in \mf{G}_{MT,2}^{\max}(0,14)$, and in this case we have
+\begin{equation} \label{tildeGlevel14groupsincase2}
+\begin{split}
+\tilde{G}_{14,1}(14) := \tilde{G}_{14,1,1}(14) = \tilde{G}_{14,1,2}(14) &\simeq \GL_2(\mbz/2\mbz) \times \left\{ \begin{pmatrix} \pm 1 & * \\ 0 & * \end{pmatrix} \right\}, \\
+\tilde{G}_{14,2}(14) := \tilde{G}_{14,2,1}(14) = \tilde{G}_{14,2,2}(14) &\simeq \GL_2(\mbz/2\mbz) \times \left\{ \begin{pmatrix} * & * \\ 0 & \pm 1 \end{pmatrix} \right\}, \\
+\tilde{G}_{14,3}(14) := \tilde{G}_{14,3,1}(14) = \tilde{G}_{14,3,2}(14) &\simeq \GL_2(\mbz/2\mbz) \times \left\{ \begin{pmatrix} a & * \\ 0 & \pm a \end{pmatrix} : \; a \in (\mbz/7\mbz)^\times \right\}.
+\end{split}
+\end{equation}
+By contrast, for $i \in \{6, 7\}$ and $k \in \{1, 2 \}$, the group $G_{14,i,k} \in \mf{G}_{MT,3}^{\max}(0,14)$, and in this case the fibering does not disappear under $G \mapsto \tilde{G}$. Indeed, we have
+\begin{equation} \label{tildeGlevel14groupsincase3}
+\begin{split}
+\tilde{G}_{14,6}(14) = \tilde{G}_{14,6,k}(14) &\simeq \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \times_{\phi^{(6)}} \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}, \\
+\tilde{G}_{14,7}(14) = \tilde{G}_{14,7,k}(14) &\simeq \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \times_{\phi^{(7)}} \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}.
+\end{split}
+\end{equation}
+Since the arguments are quite different, we will handle separately the levels of $G \in \mf{G}_{MT,2}^{\max}(0,14)$ and $G \in \mf{G}_{MT,3}^{\max}(0,14)$.
+
+\subsubsection{The case \texorpdfstring{$G \in \mf{G}_{MT,2}^{\max}(0,14)$}: quadratic entanglements.}
+
+Let $E$ be an elliptic curve defined over $\mbq$. By virtue of \eqref{tildeGlevel14groupsincase2}, we have
+\begin{equation} \label{level14andlevel7tildeequivalence}
+\begin{split}
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{14,1} \; &\Longleftrightarrow \; \rho_{E,7}(G_\mbq) \, \dot\subseteq \, \left\{ \begin{pmatrix} \pm 1 & * \\ 0 & * \end{pmatrix} \right\}, \\
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{14,2} \; &\Longleftrightarrow \; \rho_{E,7}(G_\mbq) \, \dot\subseteq \, \left\{ \begin{pmatrix} * & * \\ 0 & \pm 1 \end{pmatrix} \right\}, \\
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{14,3} \; &\Longleftrightarrow \; \rho_{E,7}(G_\mbq) \, \dot\subseteq \, \left\{ \begin{pmatrix} a & * \\ 0 & \pm a \end{pmatrix} : \; a \in (\mbz/7\mbz)^\times \right\}, \\
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{14,4} \; &\Longrightarrow \; \rho_{E,7}(G_\mbq) \, \dot\subseteq \, \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}. \\
+\end{split}
+\end{equation}
+Comparing \eqref{level14andlevel7tildeequivalence} with \eqref{tildeGlevel7groups} and considering \eqref{level7jinvariantstatement}, we are thus led to define the $j$-invariants $j_{14,i}(t) \in \mbq(t)$ by
+\begin{equation} \label{level7jinvariantn1234}
+\begin{split}
+j_{14,i}(t) &:= j_{7,i}(t) \quad\quad \left( i \in \{1, 2, 3 \} \right), \\
+j_{7,4}(t) &:= \frac{(t^2 + 245t + 2401)^3(t^2 + 13t + 49)}{t^7},
+\end{split}
+\end{equation}
+where $j_{7,i}(t) \in \mbq(t)$ are as in \eqref{tildeGlevel7jinvariants}. Combining results in \cite{zywina} with \eqref{level14andlevel7tildeequivalence}, for each $E$ over $\mbq$ with $j$-invariant $j_E$, we have
+\begin{equation} \label{level14andlevel7modulistatement}
+\begin{split}
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{14,i} \; &\Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } j_E = j_{14,i}(t_0) \quad \left(i \in \{ 1, 2, 3 \} \right), \\
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{14,4} \; &\Longrightarrow \rho_{E,7}(G_\mbq) \, \dot\subseteq \, \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}, \\
+\rho_{E,7}(G_\mbq) \, \dot\subseteq \, \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \; &\Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } j_E = j_{7,4}(t_0).
+\end{split}
+\end{equation}
+We further define the Weierstrass coefficients $a_{4;14,i}(t)$, $a_{6;14,i}(t)$ for $i \in \{1, 2, 3\}$ (resp. for $i=4$ the coefficients $a_{4;7,4}(t)$ and $a_{6;7,4}(t)$) by \eqref{level7jinvariantn1234} and \eqref{defofa4anda6} and the elliptic curves $\mc{E}_{14,i}$ and $\mc{E}_{7,4}$ over $\mbq(t,D)$ by
+\begin{equation} \label{level14generalmodelscase2}
+\begin{split}
+\mc{E}_{14,i} : \; &Dy^2 = x^3 + a_{4;14,i}(t)x + a_{6;14,i}(t) \quad\quad \left( i \in \{1, 2, 3 \} \right), \\
+\mc{E}_{7,4} : \; &Dy^2 = x^3 + a_{4;7,4}(t)x + a_{6;7,4}(t),
+\end{split}
+\end{equation}
+By computing directly the discriminants $\gD_{\mc{E}_{14,i}}$ and $\gD_{\mc{E}_{7,4}}$, we find that
+\begin{equation} \label{level14quadraticfieldson2side}
+\begin{split}
+\mbq\left( \sqrt{\gD_{\mc{E}_{14,i}}} \right) &= \mbq\left( \sqrt{t(t-1)(t^3 - 8t^2 + 5t + 1)} \right) \quad\quad\quad \left( i \in \{ 1, 2 \} \right), \\
+\mbq\left( \sqrt{\gD_{\mc{E}_{14,3}}} \right) &= \mbq\left( \sqrt{-7(t^3 - 2t^2 - t + 1)(t^3 - t^2 - 2t + 1)} \right), \\
+\mbq\left( \sqrt{\gD_{\mc{E}_{7,4}}} \right) &= \mbq\left( \sqrt{t} \right).
+\end{split}
+\end{equation}
+We now note that the $j$-invariant functions $j_{14,i}(t) \in \mbq(t)$ satisfy
+\[
+j_{14,i}(t) = j_{7,4}\left( u_i(t) \right) \quad\quad \left( i \in \{1, 2, 3 \} \right),
+\]
+where
+\[
+u_1(t) := \frac{49t(t-1)}{t^3 - 8t^2 + 5t + 1}, \quad\quad
+u_2(t) := \frac{t^3 - 8t^2 + 5t + 1}{t(t-1)}, \quad\quad
+u_3(t) := -\frac{7(t^3 - t^2 - 2t + 1)}{t^3 - 2t^2 - t + 1}.
+\]
+Applying Lemma \ref{quadraticsubfieldsoflevel7lemma} with $u_i(t)$ in place of $t$, we find that
+\[
+\begin{split}
+\mbq(t,D)(\mc{E}_{14&,1}[7])^{\ker \psi_7^{(1,1)}} = \\ 
+& \mbq(t,D)\left( \sqrt{\frac{14D(t^2 - t + 1)(t^6 - 11t^5 + 30t^4 - 15t^3 - 10t^2 + 5t + 1)}{\begin{pmatrix} t^{12} - 18t^{11} + 117t^{10} - 354t^9 + 570t^8 - 486t^7 + \\ 273t^6 - 222t^5 + 174t^4 - 46t^3 - 15t^2 + 6t + 1 \end{pmatrix}}} \right), \\
+\mbq(t,D)(\mc{E}_{14&,2}[7])^{\ker \psi_7^{(2,1)}} = \\ & \mbq(t,D)\left( \sqrt{\frac{-2D (t^2 - t + 1) (t^6 + 229t^5 + 270t^4 - 1695t^3 + 1430t^2 - 235t + 1)}{\begin{pmatrix} t^{12} - 522t^{11} - 8955t^{10} + 37950t^9 - 70998t^8 + 131562t^7 - \\ 253239t^6 + 316290t^5 - 218058t^4 + 80090t^3 - 14631t^2 + 510t + 1 \end{pmatrix} }} \right) \\ \\
+\mbq(t,D)(\mc{E}_{14&,3}[7])^{\ker \psi_7^{(3,1)}} = \\ & \mbq(t,D)\left( \sqrt{\frac{14D (t^2 - 3t - 3) (t^2 - t + 1) (3t^2 - 9t + 5) (3t^4 - 4t^3 - 5t^2 - 2t - 1) }{ (5t^2 - t - 1) (t^4 - 6t^3 + 17t^2 - 24t + 9) (9t^4 - 12t^3 - t^2 + 8t - 3)}} \right).
+\end{split}
+\]
+Thus, by \eqref{level14quadraticfieldson2side}, \eqref{descriptionofgroupslevel14withquadraticfibering} and \eqref{psifiberingmapsmod7}, we are led to the twist parameters
+\[
+\begin{split}
+d_{14,1,1}(t) &:= \frac{14 \begin{pmatrix} t^{12} - 18t^{11} + 117t^{10} - 354t^9 + 570t^8 - 486t^7 + \\ 273t^6 - 222t^5 + 174t^4 - 46t^3 - 15t^2 + 6t + 1 \end{pmatrix} (t^2 - t + 1)}{t(t-1)(t^3 - 8t^2 + 5t + 1)(t^6 - 11t^5 + 30t^4 - 15t^3 - 10t^2 + 5t + 1)}, \\
+d_{14,2,1}(t) &:= \frac{\begin{pmatrix} t^{12} - 522t^{11} - 8955t^{10} + 37950t^9 - 70998t^8 + 131562t^7 - \\ 253239t^6 + 316290t^5 - 218058t^4 + 80090t^3 - 14631t^2 + 510t + 1 \end{pmatrix} (t^2 - t + 1)}{-2t(t-1)(t^3 - 8t^2 + 5t + 1)(t^6 + 229t^5 + 270t^4 - 1695t^3 + 1430t^2 - 235t + 1)}, \\
+d_{14,3,1}(t) &:= \frac{-2 (t^2 - 3t - 3) (t^2 - t + 1) (3t^2 - 9t + 5) (3t^4 - 4t^3 - 5t^2 - 2t - 1) (t^3 - 2t^2 - t + 1) }{ (5t^2 - t - 1) (t^4 - 6t^3 + 17t^2 - 24t + 9) (9t^4 - 12t^3 - t^2 + 8t - 3) (t^3 - t^2 - 2t + 1)},
+\end{split}
+\] 
+and
+\[
+d_{14,i,2}(t) := -7d_{14,i,1}(t) \quad\quad\quad \left( i \in \{ 1, 2, 3 \} \right). 
+\]
+Defining the elliptic curves $\mc{E}_{14,i,k}$ over $\mbq(t)$ by
+\[
+\mc{E}_{14,i,k} : \; d_{14,i,k}(t) y^2 = x^3 + a_{4;14,i}(t) x + a_{6;14,i}(t) \quad\quad \left( i \in \{1, 2, 3 \}, \, k \in \{1, 2 \} \right),
+\]
+we see that, for each $E$ over $\mbq$, we have
+\[
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{14,i,k} \; \Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } E \simeq_{\mbq} \mc{E}_{14,i,k}\left( t_0 \right) \quad\quad \begin{pmatrix} i \in \{1, 2, 3 \} \\ k \in \{1, 2 \} \end{pmatrix}.
+\]
+Finally, we see from \eqref{level14quadraticfieldson2side}, \eqref{descriptionofgroupslevel14withquadraticfibering} and \eqref{psifiberingmapsmod7}, that, defining the elliptic curve $\mc{E}_{14,4,1}$ over $\mbq(u,D)$ by
+\[
+\mc{E}_{14,4,1} : \; D y^2 = x^3 + a_{4;7,4}(-7u^2) x + a_{6;7,4}(-7u^2),
+\]
+we have, for any elliptic curve $E$ over $\mbq$,
+\[
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{14,4,1} \; \Longleftrightarrow \; \exists u_0,D_0 \in \mbq \text{ for which } E \simeq_{\mbq} \mc{E}_{14,4,1}\left( u_0,D_0 \right).
+\]
+
+\subsubsection{The case \texorpdfstring{$G \in \mf{G}_{MT,3}^{\max}(0,14)$}: cubic entanglements.}
+
+By \eqref{tildeGlevel14groupsincase3}, we have
+\[
+\tilde{G}_{14,i}(14) \subseteq \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \times \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \subseteq \GL_2(\mbz/2\mbz) \times \GL_2(\mbz/7\mbz) \quad\quad \left( i \in \{5, 6, 7 \} \right).
+\]
+As outlined in \cite{zywina}, we have
+\begin{equation}
+\begin{split} \label{levels2and7models}
+\rho_{E,2}(G_\mbq) \, \dot\subseteq \, \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \; &\Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } j_E = t_0^2 + 1728, \\
+\rho_{E,7}(G_\mbq) \, \dot\subseteq \, \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \; &\Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } j_E = j_{7,4}(t_0).
+\end{split}
+\end{equation}
+where $j_{7,4}(t)$ as in \eqref{level7jinvariantn1234}. We further define the Weierstrass coefficients $a_{4;7,4}(t)$, $a_{6;7,4}(t) \in \mbq(t)$ as usual by \eqref{defofa4anda6}, the twist parameters $d_{7,1}'(t), d_{7,2}'(t) \in \mbq(t)$ by
+\begin{equation} \label{defofdsub76anddsub77}
+\begin{split}
+d_{7,1}'(t) &:= \frac{(t^4 - 490t^3 - 21609t^2 - 235298t - 823543)(t^2 + 13t + 49)}{14(t^2 + 245t + 2401)}, \\
+d_{7,2}'(t) &:= \frac{(t^4 - 490t^3 - 21609t^2 - 235298t - 823543)(t^2 + 13t + 49)}{- 2(t^2 + 245t + 2401)}
+\end{split}
+\end{equation}
+and the elliptic curves $\mc{E}_{7,6}', \mc{E}_{7,7}'$ over $\mbq(t)$ by
+\[
+\mc{E}_{7,i}' : \; d_{7,i}'(t) y^2 = x^3 + a_{4;7,4}(t) x + a_{6;7,4}(t) \quad\quad \left( i \in \{ 1, 2 \} \right),
+\]
+As demonstrated in \cite{zywina}, for any elliptic curve $E$ over $\mbq$ we have
+\begin{equation} \label{relevantlevel7twists}
+\begin{split}
+\rho_{E,7}(G_\mbq) \, \dot\subseteq \, \left\{ \begin{pmatrix} a^2 & * \\ 0 & * \end{pmatrix} : \; a \in (\mbz/7\mbz)^\times \right\} \; &\Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } E \simeq_\mbq \mc{E}_{7,1}'(t_0), \\
+\rho_{E,7}(G_\mbq) \, \dot\subseteq \, \left\{ \begin{pmatrix} * & * \\ 0 & d^2 \end{pmatrix} : \; d \in (\mbz/7\mbz)^\times \right\} \; &\Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } E \simeq_\mbq \mc{E}_{7,2}'(t_0).
+\end{split}
+\end{equation}
+To first obtain a model for the modular curve corresponding to the level $14$ group 
+\[
+\left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \times \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}, 
+\]
+we consider the equation
+\begin{equation} \label{sexpressionequaltotexpression}
+s^2 + 1728 = \frac{(t^2 + 245t + 2401)^3(t^2 + 13t + 49)}{t^7},
+\end{equation}
+which is a singular conic. Resolving the singularities via MAGMA, we are led to the substitutions 
+\begin{equation} \label{sandtintermsofu}
+t = \frac{1}{u^2}, \quad\quad s = \frac{823543u^8 + 235298u^6 + 21609u^4 + 490u^2 - 1}{u}; 
+\end{equation}
+this gives rise to the $j$-invariant $j_{14}'(u) \in \mbq(u)$, Weierstrass coefficients $a_{4;14}'(u)$, $a_{6,14}'(u) \in \mbq(u)$ and twist parameters $d_{14,1}'(u)$, $d_{14,2}'(u) \in \mbq(u)$, given by
+\begin{equation} \label{jinvariantsandWeierstrasscoefficientslevel14}
+\begin{split}
+j_{14}'(u) &= j_{7,4}(1/u^2) = \frac{(49u^4 + 13u^2 + 1)(2401u^4 + 245u^2 + 1)^3}{u^2}, \\
+a_{4;14}'(u) &= a_{4;7,4}(1/u^2), \quad\quad a_{6;14}'(u) = a_{6;7,4}(1/u^2), \\
+d_{14,1}'(u) &= d_{7,1}'(1/u^2), \quad\quad\;\; d_{14,2}'(u) = d_{7,2}'(1/u^2),
+\end{split}
+\end{equation}
+(where $d_{7,i}'(t)$ are as in \eqref{defofdsub76anddsub77}) and to the elliptic curves $\mc{E}_{14,5}'$ over $\mbq(u,D)$ and $\mc{E}_{14,6}'$ and $\mc{E}_{14,7}'$ over $\mbq(u)$, defined by
+\begin{equation} \label{definitionofmcEsub145primeandmcEsub14iprime}
+\begin{split}
+&\mc{E}_{14,5}' : \; D y^2 = x^3 + a_{4;14}'(u) x + a_{6;14}'(u), \\
+&\mc{E}_{14,*,i}' : \; d_{14,i}'(u) y^2 = x^3 + a_{4;14}'(u) x + a_{6;14}'(u) \quad\quad \left( i \in \{ 1, 2 \} \right).
+\end{split}
+\end{equation}
+By \eqref{levels2and7models} and \eqref{relevantlevel7twists}, for any elliptic curve $E$ over $\mbq$ we have
+\begin{equation} \label{twistedmodelslevel14forlateruse}
+\begin{split}
+\rho_{E,14}(G_\mbq) \, \dot\subseteq \, \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \times \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \; &\Longleftrightarrow \; \exists u_0, D_0 \in \mbq \text{ for which } E \simeq_\mbq \mc{E}_{14,5}'(u_0,D_0), \\
+\rho_{E,14}(G_\mbq) \, \dot\subseteq \, \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \times \left\{ \begin{pmatrix} a^2 & * \\ 0 & * \end{pmatrix} \right\} \; &\Longleftrightarrow \; \exists u_0 \in \mbq \text{ for which } E \simeq_\mbq \mc{E}_{14,*,1}'(u_0), \\
+\rho_{E,14}(G_\mbq) \, \dot\subseteq \, \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \times \left\{ \begin{pmatrix} * & * \\ 0 & d^2 \end{pmatrix} \right\} \; &\Longleftrightarrow \; \exists u_0 \in \mbq \text{ for which } E \simeq_\mbq \mc{E}_{14,*,2}'(u_0).
+\end{split}
+\end{equation}
+Fixing an elliptic curve $E$ over $\mbq$ satisfying $\rho_{E,14}(G_\mbq) \, \dot\subseteq \, \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \times \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}$, we will next identify conditions under which
+\[
+\mbq(E[2]) \subseteq \mbq(E[7]).
+\]
+By \eqref{twistedmodelslevel14forlateruse}, such an elliptic curve $E$ must satisfy $E \simeq_\mbq \mc{E}_{14,5}'(u_0,D_0)$ for some $u_0, D_0 \in \mbq$.
+We define the homomorphisms $\eta_i : B(7) \longrightarrow \left( (\mbz/7\mbz)^\times \right)^2$ for $i \in \{ 1, 2, 3, 4 \}$ by
+\begin{equation} \label{defofetasubis}
+\eta_1(g) := \det(g)^2, \quad \eta_2(g) := \phi_7^{(7)}(g), \quad \eta_3(g) := \phi_7^{(6)}(g), \quad \eta_4(g) := \phi_7^{(5)}(g),
+\end{equation}
+where $\phi_7^{(i)}$ are as in \eqref{phifiberingmapsmod7}.
+The following lemma specializes Lemma \ref{gettingattheothercubicfieldslemma} to the present case, allowing us to exhibit explicit polynomials for generators of each of the four cyclic cubic subfields $\mbq(u,D)\left(\mc{E}_{14,5}'[7] \right)^{\ker \eta_i} \subseteq \mbq(u,D)\left( \mc{E}_{14,5}'[7] \right)$. 
+Define the polynomials $f_i(x) \in \mbq(u)[x]$ by
+\begin{equation} \label{defoffgandh}
+\begin{split}
+f_1(x) &= x^3 +x^2 - 2x - 1, \\
+f_2(x) &= x^3 - T_1(u) x^2 + R_2(u) x - S_3(u), \\
+f_3(x) &= x^3 - T_1(u) x^2 + T_2(u) x - R_3(u), \\
+f_4(x) &= x^3 - T_1(u) x^2 + T_2(u) x - T_3(u),
+\end{split}
+\end{equation}
+where
+\begin{equation} \label{cycliccubiccoefficients}
+\begin{split}
+T_1(u) &:= 3\left( u^4 + \frac{13}{49}u^2 + \frac{1}{49} \right), \\
+R_2(u) &:= 3\left( u^4 + \frac{13}{49}u^2 + \frac{1}{49} \right) \left( u^4 + \frac{13}{49}u^2 + \frac{33}{2401} \right), \\
+S_3(u) &:= \left( u^4 + \frac{13}{49}u^2 + \frac{1}{49} \right) \left( u^8 + \frac{26}{49}u^6 + \frac{219}{2401}u^4 + \frac{778}{117649}u^2 + \frac{881}{5764801} \right), \\
+T_2(u) &:= 3\left( u^4 + \frac{13}{49}u^2 + \frac{1}{49} \right) \left( u^4 + \frac{13}{49}u^2 - \frac{9}{343} \right), \\
+R_3(u) &:= \left( u^4 + \frac{13}{49}u^2 + \frac{1}{49} \right) \left( u^8 + \frac{26}{49}u^6 - \frac{69}{2401}u^4 - \frac{506}{16807}u^2 - \frac{3289}{823543} \right), \\
+T_3(u) &:= \left( u^4 + \frac{13}{49}u^2 + \frac{1}{49} \right) \left( u^8 + \frac{26}{49}u^6 - \frac{69}{2401}u^4 - \frac{506}{16807}u^2 - \frac{223}{117649} \right).
+\end{split}
+\end{equation}
+\begin{lemma} \label{explicitcubicsubfieldsatlevel7lemma}
+Let $\mc{E}_{14,5}'$ be the elliptic curve over $\mbq(u,D)$ defined by \eqref{definitionofmcEsub145primeandmcEsub14iprime}. 
+The four cyclic cubic subfields of $\mbq(u,D)\left( \mc{E}_{14,5}'[7] \right)$ are as follows. For each $i \in \{1, 2, 3, 4 \}$, the field
+\[
+\mbq(u,D)\left( \mc{E}_{14,5}'[7] \right)^{\ker \eta_i},
+\]
+where $\eta_i$ is as in \eqref{defofetasubis}, is equal to the splitting field of $f_i(x)$, where $f_i(x)$ is defined by \eqref{defoffgandh} and \eqref{cycliccubiccoefficients}. 
+\end{lemma}
+\begin{proof}
+Setting $t := 1/u^2$ in Lemma \ref{gettingattheothercubicfieldslemma} and performing variable substitutions of the form $x \mapsto g(u)x$ proves the lemma.
+\end{proof}
+Turning back to our elliptic curve 
+\[
+E : y^2 = x^3 + D_0^2 a_{4;14,5}(u_0)x + D_0^3 a_{6;14,5}(u_0) \quad\quad \left( u_0, D_0 \in \mbq \right)
+\]
+over $\mbq$ satisfying $\rho_{E,14}(G_\mbq) \, \dot\subseteq \, \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \times \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}$, we have the polynomials
+\[
+\psi_{E,2}(x) = x^3 + D_0^2 a_{4;14,5}(u_0)x + D_0^3a_{6;14,5}, \quad f_i(x) \quad\quad \left( i \in \{1, 2, 3, 4 \} \right),
+\]
+(where $f_i(x)$ is as in \eqref{defoffgandh}); we would like to determine conditions under which their splitting fields agree. 
+To illustrate how we use the above results to compute explicit models of the modular curves $X_G$ associated to groups $G \in \mf{G}_{MT,3}^{\max}(0,14)$, we will go through the details for the first of the groups in \eqref{descriptionofgroupslevel14withcubicfibering}; the other computations are done similarly. We wish to find a rational function $g(v) \in \mbq(v)$ so that, defining the elliptic curve $\mc{E}_{14,5,1}$ over $\mbq(v,D)$ by
+\begin{equation} \label{mcE1451writtenout}
+\mc{E}_{14,5,1} : \; Dy^2 = x^3 + a_{4;14}'(g(v)) x + a_{6;14}'(g(v)),
+\end{equation}
+we have, for each elliptic curve $E$ over $\mbq$,
+\[
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{14,5,1} \; \Longleftrightarrow \; \exists v_0, D_0 \in \mbq \text{ for which } E \simeq_\mbq \mc{E}_{14,5,1}(v_0,D_0).
+\]
+In other words, we need 
+\[
+\begin{split}
+\mbq\left( \mc{E}_{14,5,1}[2] \right) &= \mbq\left(\mc{E}_{14,5,1}[7] \right)^{\ker \phi_7^{(5)}} \\
+&= \mbq\left(\mc{E}_{14,5,1}[7] \right)^{\ker \eta_4}.
+\end{split}
+\]
+By Lemma \ref{explicitcubicsubfieldsatlevel7lemma} we are led to apply Lemma \ref{settingcubicfieldsequaltoeachotherlemma} to the polynomials
+\[
+\begin{split}
+f_S(x) &= x^3 + a_{4;14}'(u) x + a_{6;14}'(u), \\
+f_T(x) &= x^3 - T_1(u) x^2 + T_2(u) x - T_3(u),
+\end{split}
+\]
+where the coefficient functions $T_i(u)$ are as in \eqref{cycliccubiccoefficients} (the twist parameter $D$ occurring in \eqref{mcE1451writtenout} has been absorbed into the variable). Setting $S_1(u) := 0$, $S_2(u) := a_{4;14}'(u)$ and $S_3(u) := -a_{6;14}'(u)$, the condition \eqref{abcequations} now reads
+\begin{equation} \label{newabcequations}
+\begin{split}
+T_1(u) = &-2a S_2(u) + 3c, \\
+T_2(u) = &a^2 S_2(u)^2 - 3abS_3(u) - 4acS_2(u) + b^2 S_2(u) + 3c^2, \\
+T_3(u) = &a^3 S_3(u)^2 + a^2b S_2(u) S_3(u) + a^2c S_2(u)^2 - 3abc S_3(u) \\
+& - 2ac^2 S_2(u) + b^3 S_3(u) + b^2 c S_2(u) + c^3.
+\end{split}
+\end{equation}
+Setting $c := (T_1(u) + 2aS_2(u))/3$, the first equation above is satisfied. Inserting this into the second equation, we obtain a quadratic equation of the form
+\begin{equation} \label{secondequationconic}
+A(u) b^2 + B(u) ab + C(u)a^2 + c(u) = 0.
+\end{equation}
+Viewing the left-hand side as a quadratic polynomial in $b$ with coefficients in $\mbq(a,u)$, its discriminant 
+\[
+\gD(a,u) := \left( B(u) a \right)^2 - 4A(u) \left( C(u)a^2 + c(u) \right)
+\]
+is equal to
+\begin{equation} \label{originaldiscriminant}
+\begin{split}
+-\frac{2^{14}3^{11} u^2\left( u^4 + \frac{13}{49}u^2 + \frac{1}{49} \right)^2\left(u^4 + \frac{5}{49}u^2 + \frac{1}{2401}\right)^6}{7^{14} \left(u^8 + \frac{2}{7}u^6 + \frac{9}{343}u^4 + \frac{10}{16807}u^2 - \frac{1}{823543} \right)^6} a^2 \\ \\+ \frac{2^{8}3^{4} \left( u^4 + \frac{13}{49}u^2 + \frac{1}{49} \right)^2 \left( u^4 + \frac{5}{49}u^2 + \frac{1}{2401} \right)^3}{7^{3} \left(u^8 + \frac{2}{7}u^6 + \frac{9}{343}u^4 + \frac{10}{16807}u^2 - \frac{1}{823543} \right)^2};
+\end{split}
+\end{equation}
+we would like this to be a perfect square. Under the substitution 
+\begin{equation} \label{atildefroma}
+\tilde{a} := \frac{2^3 3^3 u \left(u^4 + \frac{5}{49}u^2 + \frac{1}{2401}\right)^2 a}{7^3 \left(u^8 + \frac{2}{7}u^6 + \frac{9}{343}u^4 + \frac{10}{16807}u^2 - \frac{1}{823543} \right)^2}, 
+\end{equation}
+we see that $\gD(a,u)$ is equal modulo $\left( \mbq(a,u)^\times \right)^2$ to 
+\[
+- 3 \tilde{a}^2 + 7^5 \left( u^4 + \frac{5}{49}u^2 + \frac{1}{2401} \right).
+\]
+Further substituting $u = \tilde{u}/7$ and setting this expression equal to a perfect square, we arrive at the equation
+\[
+X^2 + 3 \tilde{a}^2 = 7 \left( \tilde{u}^4 + 5\tilde{u}^2 + 1 \right),
+\]
+which we view as a conic over $\mbq(u)$. Since $7 = 2^2 + 3 \cdot 1^2$ and $\tilde{u}^4 + 5\tilde{u}^2 + 1 = (\tilde{u}^2+1)^2 + 3\tilde{u}^2$ are each represented by the left-hand norm form, we discover the $\mbq(u)$-rational point
+\[
+(X,\tilde{a}) = \left( 2\tilde{u}^2 - 3\tilde{u} + 2, (\tilde{u} + 1)^2 \right)
+\]
+on this conic. Projecting from this point, we arrive at the $\mbq(u,v)$-rational point
+\begin{equation} \label{defofXandtildea}
+\begin{split}
+X &:= 2 \frac{\tilde{u}^6 - \frac{3}{2}\tilde{u}^5 - \tilde{u}^4v + 6\tilde{u}^4 - \frac{15}{2}\tilde{u}^3 + \frac{1}{7}\tilde{u}^2v^2 - 5\tilde{u}^2v + 6\tilde{u}^2 - \frac{3}{14}\tilde{u}v^2 - \frac{3}{2}\tilde{u} + \frac{1}{7}v^2 - v + 1}{\tilde{u}^4 - \frac{4}{7}\tilde{u}^2v + 5\tilde{u}^2 + \frac{6}{7}\tilde{u}v + \frac{1}{7}v^2 - \frac{4}{7}v + 1}, \\
+\tilde{a} &:= \frac{(\tilde{u}+1)^2\left( \tilde{u}^4 + 5\tilde{u}^2 - \frac{1}{7}v^2 + 1 \right)}{\tilde{u}^4 - \frac{4}{7}\tilde{u}^2v + 5\tilde{u}^2 + \frac{6}{7}\tilde{u}v + \frac{1}{7}v^2 - \frac{4}{7}v + 1} \\
+&= \frac{(7u+1)^2\left( 16807u^4 + 1715u^2 - v^2 + 7 \right)}{16807u^4 - 196u^2v + 1715u^2 + 42uv + v^2 - 4v + 7}.
+\end{split}
+\end{equation}
+Inserting this into \eqref{atildefroma}, we find that
+\[
+a = a(u,v) = \frac{7^3 (7u+1)^2\left( 16807u^4 + 1715u^2 - v^2 + 7 \right) \left(u^8 + \frac{2}{7}u^6 + \frac{9}{343}u^4 + \frac{10}{16807}u^2 - \frac{1}{823543} \right)^2}{2^3 3^3 u \left(u^4 + \frac{5}{49}u^2 + \frac{1}{2401}\right)^2\left( 16807u^4 - 196u^2v + 1715u^2 + 42uv + v^2 - 4v + 7 \right)};
+\] 
+inserting this into \eqref{originaldiscriminant} (or alternatively working from the expression for $X$ in \eqref{defofXandtildea}), we find that the discriminant $\gD(u,a(u,v)) \in \mbq(u,v)$ of the original quadratic \eqref{secondequationconic} is now equal to
+\[
+\left( \frac{2^5 3^2\left( u^4 + \frac{13}{49}u^2 + \frac{1}{49} \right) \left( u^4 + \frac{5}{49}u^2 + \frac{1}{2401} \right) f(u,v)}{7h(u,v)g(u,v)} \right)^2
+\]
+
+where 
+\[
+\begin{split}
+    f(u,v) =& \quad u^6 - \frac{3}{14}u^5 - \frac{1}{49}u^4v + \frac{6}{49}u^4 - \frac{15}{686}u^3 + \frac{1}{16807}u^2v^2 - \frac{5}{2401}u^2v \quad +\\
+    &\quad \frac{6}{2401}u^2 - \frac{3}{235298}uv^2 - \frac{3}{33614}u + \frac{1}{823543}v^2 - \frac{1}{117649}v + \frac{1}{117649} 
+\end{split}
+\]
+\[
+g(u,v) =   u^4 - \frac{4}{343}u^2v + \frac{5}{49}u^2 + \frac{6}{2401}uv + \frac{1}{16807}v^2 - \frac{4}{16807}v + \frac{1}{2401} 
+\]
+\[
+h(u,v) = u^8 + \frac{2}{7}u^6 + \frac{9}{343}u^4 + \frac{10}{16807}u^2 - \frac{1}{823543}
+\]
+In particular, we have $\gD(u,v) = \gD(u,v)^2 \in (\mbq(u,v)^\times)^2$, and applying the quadratic formula to \eqref{secondequationconic}, we obtain functions
+\[
+b_{\pm}(u,v) := \frac{-B(u) \pm \gD(u,v)}{2A(u)} \in \mbq(u,v).
+\]
+By construction, the first two equations of \eqref{newabcequations} are satisfied when $a = a(u,v)$, $b = b_{\pm}(u,v)$ and $c := (T_1(u) + 2a(u,v)S_2(u))/3$. We now insert these rational functions into the third equation in \eqref{newabcequations}. For instance, choosing to insert $b_{+}(u,v)$, gathering all terms to one side and factoring into irreducible polynomials leads to an equation of the form
+\begin{equation} \label{expressioninu}
+\left( u^4 + \frac{13}{49}u^2 + \frac{1}{49} \right) f_1(u,v) f_2(u,v) = 0,
+\end{equation}
+where
+\[
+\begin{split}
+f_1(u,v) := &u^{13} - \frac{1}{7}u^{12} - \frac{1}{7^2}u^{11}v + \frac{15}{7^2}u^{11} - \frac{15}{7^3}u^{10} + \frac{1}{7^5}u^9v^2 - \frac{16}{7^4}u^9v + \frac{78}{7^4}u^9 - \frac{3}{7^6}u^8v^2 \\
+&- \frac{1}{7^5}u^8v - \frac{78}{7^5}u^8 + \frac{1}{7^8}u^7v^3 + \frac{18}{7^7}u^7v^2 - \frac{87}{7^6}u^7v + \frac{155}{7^6}u^7 + \frac{6}{7^9}u^6v^3 - \frac{32}{7^8}u^6v^2 \\ 
+ &- \frac{10}{7^7}u^6v - \frac{155}{7^7}u^6 + \frac{1}{7^{10}}u^5v^3 + 
+ \frac{81}{7^9}u^5v^2 - \frac{172}{7^8}u^5v + \frac{78}{7^8}u^5 + \frac{55}{7^{11}}u^4v^3 - \frac{81}{7^{10}}u^4v^2\\ 
+ &-\frac{27}{7^9}u^4v - \frac{78}{7^9}u^4 + \frac{1}{7^{12}}u^3v^3 + \frac{88}{7^{11}}u^3v^2 - \frac{61}{7^{10}}u^3v + \frac{15}{7^{10}}u^3 + \frac{55}{7^{13}}u^2v^3 + \frac{18}{7^{12}}u^2v^2\\
+ &- \frac{10}{7^{11}}u^2v - \frac{15}{7^{11}}u^2 + \frac{8}{7^{14}}uv^3 + \frac{15}{7^{13}}uv^2 - \frac{6}{7^{12}}uv + \frac{1}{7^{12}}u - \frac{1}{7^{14}}v^3 + \frac{1}{7^{13}}v^2 - 
+ \frac{1}{7^{13}}v \\
+ &- \frac{1}{7^{13}}
+\end{split}
+\]
+and $f_2(u,v) \in \mbq[u,v]$ is another polynomial of degree $13$. The polynomial equation $f_1(u,v) = 0$ defines a singular conic $\mf{S}$ that is found (by a computation in MAGMA) to be birational to the smooth conic
+\[
+C : \; r^2 - \frac{9}{49}s^2 + 600250r + 32242s + 90392079680 = 0;
+\]
+we denote by $\tau : \mf{S} \longrightarrow C$ be the birational map produced by our MAGMA calculation. Projecting from the rational point $(r_0,s_0) = (-300125,184877)$ gives rise to a isomorphism $\mb{P}^1(w) \rightarrow C$ with coordinate functions
+\[
+\begin{split}
+r &= r(w) = - \frac{300125(9w^2 - 47w - 3920)}{(3w - 79)(3w + 46)}, \\
+s &= s(w) = - \frac{84035(w^2 - 11w + 8624)}{(3w - 79)(3w + 46)}.
+\end{split}
+\]
+Furthermore, composing this isomorphism with $\tau^{-1} : C \longrightarrow \mf{S}$, we obtain
+\begin{equation} \label{defofuoft}
+u = u_5(w) := - \frac{w^3 + 546w^2 - 10003w - 205807}{13w^3 - 777w^2 - 43414w + 504259}.
+\end{equation}
+We define the elliptic curve $\mc{E}_{14,5,1}$ over $\mbq(w,D)$ by
+\begin{equation} \label{defofmcE145}
+\mc{E}_{14,5,1} : \; Dy^2 = x^3 + a_{4,14}'\left( u_5(w) \right) x + a_{6,14}'\left( u_5(w) \right),
+\end{equation}
+where the Weierstrass coefficients $a_{4,14}'(u), a_{6,14}'(u) \in \mbq(u)$ are as in \eqref{jinvariantsandWeierstrasscoefficientslevel14} and $u_5(w) \in \mbq(w)$ is as in \eqref{defofuoft}.
+It follows from our discussion that, for each elliptic curve $E$ over $\mbq$, we have
+\begin{equation} \label{conditiononmcE145}
+\exists w_0, D_0 \in \mbq \text{ for which } E \simeq_\mbq \mc{E}_{14,5,1}(w_0,D_0) \; \Longrightarrow \; \rho_{E}(G_\mbq) \, \dot\subseteq \, G_{14,5,1}.
+\end{equation}
+Now suppose we instead consider the singular conic $\mf{S}_2$ defined by $f_2(u,v) = 0$ (where $f_2(u,v)$ is as in \eqref{expressioninu}), and obtain a degree three function $u_2(w) \in \mbq(w)$ similar to \eqref{defofuoft}, and thus to an elliptic curve $\mc{E}_{14,5,1}^{(2)}$ over $\mbq(w,D)$ as in \eqref{defofmcE145} with $u(w)$ replaced by $u_2(w)$. The elliptic curve $\mc{E}_{14,5,1}^{(2)}$ then satisfies property \eqref{conditiononmcE145}, and by considering the degrees of the associated $j$-invariants, it follows that $u_2(w) = u(\mu(w))$, where $\mu(w)$ is a linear fractional transformation, i.e. an automorphism of $\mb{P}^1$. The same is true if we instead use the function $b_{-}(u,v)$ in place of $b_{+}(u,v)$ and consider any irreducible factor resulting from the third equation of \eqref{newabcequations}. We have thus established that, for any elliptic curve $E$ over $\mbq$,
+\begin{equation*} 
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{14,5,1} \; \Longleftrightarrow \; \exists w_0, D_0 \in \mbq \text{ for which } E \simeq_\mbq \mc{E}_{14,5,1}(w_0,D_0).
+\end{equation*}
+
+The arguments and computations that lead to explicit models associated to the groups $G_{14,6,k}$ and $G_{14,7,k}$ are similar, and we skip most of the details, only summarizing the results. An analogous computation for the group $\tilde{G}_{14,6}(14)$ involves applying Lemma \ref{settingcubicfieldsequaltoeachotherlemma} to the polynomials
+\[
+\begin{split}
+f_S(x) &:= x^3 + a_{4;14}'(u)x + a_{6;14}'(u) \\
+f_T(x) &:= x^3 - T_1(u) x^2 + T_2(u) x - R_3(u),
+\end{split}
+\]
+where $T_1(u)$, $T_2(u)$ and $R_3(u)$ are as in \eqref{cycliccubiccoefficients}. Continuing as above, we are led to the rational function
+\begin{equation} \label{defofusub6}
+u_6(w) := - \frac{4(w+2)(w+25)(5w+33)}{71w^3 + 357w^2 - 5243w - 23513},
+\end{equation}
+and we define the elliptic curve $\mc{E}_{14,6}$ over $\mbq(w,D)$ by
+\begin{equation} \label{defofmcEsub146}
+\mc{E}_{14,6} : \; D y^2 = x^3 + a_{4;14}'\left( u_6(w) \right) x + a_{6;14}'\left( u_6(w) \right).
+\end{equation}
+For each elliptic curve $E$ over $\mbq$, we have
+\begin{equation} \label{containedinGtilde146}
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{14,6} \; \Longleftrightarrow \; \exists w_0, D_0 \in \mbq \text{ for which } E \simeq_\mbq \mc{E}_{14,6}(w_0,D_0).
+\end{equation}
+Considering \eqref{relevantlevel7twists} and \eqref{descriptionofgroupslevel14withcubicfibering}, we are led to define the twist families 
+$\mc{E}_{14,6,1}$ and $\mc{E}_{14,6,2}$ over $\mbq(w)$ by
+\begin{equation} \label{defofmcE1461and2}
+\mc{E}_{14,6,k} : \; d_{14,k}'(u_6(w)) y^2 = x^3 + a_{4;14}'\left( u_6(w) \right) x + a_{6;14}'\left( u_6(w) \right) \quad\quad \left( k \in \{ 1, 2 \} \right),
+\end{equation}
+where $d_{14,k}'(u) := d_{7,k}'(1/u^2)$ and $d_{7,k}'(t)$ is defined by \eqref{defofdsub76anddsub77}. By \eqref{containedinGtilde146} and \eqref{twistedmodelslevel14forlateruse}, for any elliptic curve $E$ over $\mbq$ we have
+\[
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{14,6,k} \; \Longleftrightarrow \; \exists w_0 \in \mbq \text{ for which } E \simeq_\mbq \mc{E}_{14,6,k}(w_0) \quad\quad \left( k \in \{ 1, 2 \} \right).
+\]
+Similarly, the group $\tilde{G}_{14,7}(14)$ leads us to apply Lemma \ref{settingcubicfieldsequaltoeachotherlemma} to the polynomials
+\[
+\begin{split}
+f_S(x) &:= x^3 + a_{4;14}'(u)x + a_{6;14}'(u) \\
+f_T(x) &:= x^3 - T_1(u) x^2 + R_2(u) x - S_3(u),
+\end{split}
+\]
+where $T_1(u)$, $R_2(u)$ and $S_3(u)$ are as in \eqref{cycliccubiccoefficients}. Continuing as above, we are led to the rational function
+\begin{equation} \label{defofusub7}
+u_7(w) := \frac{91w^3 - 42w^2 - 28w + 8}{28w(w-2)(5w-2)},
+\end{equation}
+and we define the elliptic curve $\mc{E}_{14,7}$ over $\mbq(w,D)$ by
+\begin{equation} \label{defofmcEsub147}
+\mc{E}_{14,7} : \; D y^2 = x^3 + a_{4;14}'\left( u_7(w) \right) x + a_{6;14}'\left( u_7(w) \right).
+\end{equation}
+For each elliptic curve $E$ over $\mbq$, we have
+\begin{equation} \label{containedinGtilde147}
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{14,7} \; \Longleftrightarrow \; \exists w_0, D_0 \in \mbq \text{ for which } E \simeq_\mbq \mc{E}_{14,7}(w_0,D_0).
+\end{equation}
+We define the twist families 
+$\mc{E}_{14,7,1}$ and $\mc{E}_{14,7,2}$ over $\mbq(w)$ by
+\begin{equation} \label{defofmcE1471and2}
+\mc{E}_{14,7,k} : \; d_{14,k}'(u_7(w)) y^2 = x^3 + a_{4;14}'\left( u_7(w) \right) x + a_{6;14}'\left( u_7(w) \right) \quad\quad \left( k \in \{ 1, 2 \} \right),
+\end{equation}
+where $d_{14,k}'(u)$ is as before. By \eqref{containedinGtilde146} and \eqref{twistedmodelslevel14forlateruse}, for any elliptic curve $E$ over $\mbq$ we have
+\[
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{14,7,k} \; \Longleftrightarrow \; \exists w_0 \in \mbq \text{ for which } E \simeq_\mbq \mc{E}_{14,7,k}(w_0) \quad\quad \left( k \in \{ 1, 2 \} \right).
+\]
+
+
+\subsection{The level \texorpdfstring{$m = 28$}}
+
+We have $\mf{G}_{MT}^{\max}(0,28) = \{ G_{28,1,1}, G_{28,2,1}, G_{28,2,2}, G_{28,3,1}, G_{28,3,2} \}$, where $G_{28,i,k}(28) \subseteq \GL_2(\mbz/28\mbz)$ are given by
+\begin{equation} \label{descriptionofgroupslevel28}
+\begin{split}
+G_{28,1,1}(28) &= \left\langle \begin{pmatrix} 5 & 19 \\ 21 & 8 \end{pmatrix}, \begin{pmatrix} 9 & 3 \\ 14 & 1 \end{pmatrix}, \begin{pmatrix} 1 & 10 \\ 0 & 17 \end{pmatrix} \right\rangle \simeq \GL_2(\mbz/4\mbz)_{\chi_4 = \ve} \times_{\psi^{(1,1)}} \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}, \\
+G_{28,2,1}(28) &= \left\langle \begin{pmatrix} 5 & 9 \\ 19 & 10 \end{pmatrix}, \begin{pmatrix} 2 & 23 \\ 13 & 5 \end{pmatrix}, \begin{pmatrix} 27 & 10 \\ 14 & 11 \end{pmatrix} \right\rangle\simeq \pi_{\GL_2}^{-1} \left( \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \right) \times_{\psi^{(2,1)}} \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}, \\
+G_{28,2,2}(28) &= \left\langle \begin{pmatrix} 4 & 19 \\ 11 & 9 \end{pmatrix}, \begin{pmatrix} 3 & 12 \\ 2 & 5 \end{pmatrix}, \begin{pmatrix} 22 & 9 \\ 9 & 19 \end{pmatrix} \right\rangle \simeq \pi_{\GL_2}^{-1} \left( \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \right) \times_{\psi^{(2,2)}} \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}, \\
+G_{28,3,1}(28) &= \left\langle \begin{pmatrix} 20 & 1 \\ 5 & 7 \end{pmatrix}, \begin{pmatrix} 15 & 14 \\ 2 & 11 \end{pmatrix}, \begin{pmatrix} 7 & 12 \\ 10 & 21 \end{pmatrix} \right\rangle \simeq \pi_{\GL_2}^{-1} \left( \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \right) \times_{\psi^{(3,1)}} \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}, \\
+G_{28,3,2}(28) &= \left\langle \begin{pmatrix} 17 & 5 \\ 3 & 24 \end{pmatrix}, \begin{pmatrix} 26 & 19 \\ 1 & 23 \end{pmatrix}, \begin{pmatrix} 0 & 13 \\ 27 & 5 \end{pmatrix} \right\rangle \simeq \pi_{\GL_2}^{-1} \left( \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \right) \times_{\psi^{(3,2)}} \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\},
+\end{split}
+\end{equation}
+and $G_{28,i,k} = \pi_{\GL_2}^{-1}(G_{28,i,k}(28))$. In all cases, the representations of the groups on the right-hand are to be understood via the Chinese Remainder Theorem as subgroups of $\GL_2(\mbz/4\mbz) \times \GL_2(\mbz/7\mbz)$, and as before, we are making the usual use of the abbreviation
+$
+\GL_2(\mbz/4\mbz)_{\chi_4 = \ve} := \left\{ g \in \GL_2(\mbz/4\mbz) : \chi_4(\det g) = \ve(g \bmod 2 ) \right\}.
+$
+In the fibered products $\psi^{(i,k)}$, the underlying homomorphisms are as follows: the maps $\psi_4^{(i,k)}$ are defined by
+\begin{equation} \label{definitionoflevel28fiberings}
+\begin{split}
+\psi_4^{(1,1)} : \GL_2(\mbz/4\mbz)_{\chi_4 = \ve} \longrightarrow \{ \pm 1 \}, \quad\quad \\
+\\
+\ker \psi_4^{(1,1)} = \left\langle \begin{pmatrix} 3 & 2 \\ 0 & 3 \end{pmatrix}, \begin{pmatrix} 3 & 3 \\ 1 & 0 \end{pmatrix}, \begin{pmatrix} 1 & 1 \\ 0 & 3 \end{pmatrix} \right\rangle, \\
+\\
+\psi_4^{(i,k)} : \pi_{\GL_2}^{-1} \left( \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \right) \longrightarrow \left( \mbz/7\mbz \right)^\times, \quad\quad \\
+\\
+\ker \psi_4^{(i,k)} = \left\langle \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix}, \begin{pmatrix} 3 & 2 \\ 0 & 3 \end{pmatrix}, \begin{pmatrix} 3 & 0 \\ 0 & 3 \end{pmatrix} \right\rangle \quad \begin{pmatrix} i \in \{2, 3 \} \\ k \in \{1, 2 \} \end{pmatrix},
+\end{split}
+\end{equation}
+Note that, by Corollary \ref{keycorollaryforinterpretationofentanglements}, we need only specify the kernels of these automorphisms, since if we post-compose (say) 
+$\psi_4^{(i,k)}$ by an automorphism of $(\mbz/7\mbz)^\times$, the resulting fibered product group would be $\GL_2(\mbz/28\mbz)$-conjugate to the original group.
+On the ``$7$ side,'' the maps $\psi_7^{(1,1)}$, $\psi_7^{(2,1)}$, $\psi_7^{(2,2)}$, $\psi_7^{(3,1)}$ and $\psi_7^{(3,2)}$ are defined by
+\begin{equation} \label{fiberingsinlevel28case}
+\begin{split}
+\psi_7^{(1,1)} : &\left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \longrightarrow \{ \pm 1 \}, \quad\quad\quad\;\; \psi_7^{(1,1)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := \left( \frac{ad}{7} \right), \\
+\psi_7^{(2,1)} : &\left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \longrightarrow \left( \mbz/7\mbz \right)^\times, \quad\quad \psi_7^{(2,1)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := a^3 d^2, \\
+\psi_7^{(2,2)} : &\left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \longrightarrow \left( \mbz/7\mbz \right)^\times, \quad\quad \psi_7^{(2,2)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := d, \\
+\psi_7^{(3,1)} : &\left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \longrightarrow \left( \mbz/7\mbz \right)^\times, \quad\quad \psi_7^{(3,1)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := a, \\
+\psi_7^{(3,2)} : &\left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \longrightarrow \left( \mbz/7\mbz \right)^\times, \quad\quad \psi_7^{(3,2)}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := a^2 d^3.
+\end{split}
+\end{equation}
+We note that $-I \notin G_{28,i,k}$ for each $i \in \{1, 2, 3 \}$ and $k \in \{ 1, 2 \}$, and we have $\tilde{G}_{28,2,1} = \tilde{G}_{28,2,2} = \tilde{G}_{14,6}$, and $\tilde{G}_{28,3,1} = \tilde{G}_{28,3,2} = \tilde{G}_{14,7}$. In particular, denoting by $\tilde{G}_{28,2}$ the common value of the two groups $\tilde{G}_{28,2,k}$ and by $\tilde{G}_{28,3}$ the common value of the two groups $\tilde{G}_{28,3,k}$, we see that each of the groups $\tilde{G}_{28,2}$ and $\tilde{G}_{28,3}$ have $\GL_2$-level $14$, whereas $\tilde{G}_{28,1} := \tilde{G}_{28,1,1}$ has $\GL_2$-level $28$. Precisely, we have
+\begin{equation} \label{unfiberedlevel28groups}
+\begin{split}
+\tilde{G}_{28,1}(28) = \tilde{G}_{28,1,1}(28) &\simeq \GL_2(\mbz/4\mbz)_{\chi_4 = \ve} \times \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}, \\
+\tilde{G}_{28,2}(14) = \tilde{G}_{28,2,k}(14) &\simeq \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \times_{\phi^{(6)}} \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\}, \\
+\tilde{G}_{28,3}(14) = \tilde{G}_{28,3,k}(14) &\simeq \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \times_{\phi^{(7)}} \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\},
+\end{split}
+\end{equation}
+where the fibering maps $\phi_2^{(6)}$ and $\phi_2^{(7)}$ are isomorphisms $\left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \longrightarrow \left( (\mbz/7\mbz)^\times \right)^2$ and $\phi_7^{(6)}$, $\phi_7^{(7)}$ are as in \eqref{phifiberingmapsmod7}. By \eqref{tildeGlevel14groupsincase3}, it is then natural to define the elliptic curves $\mc{E}_{28,2}$ and $\mc{E}_{28,3}$ over $\mbq(w,D)$ by
+\[
+\mc{E}_{28,2} := \mc{E}_{14,6}, \quad\quad \mc{E}_{28,3} := \mc{E}_{14,7},
+\]
+where $\mc{E}_{14,6}$ is as in \eqref{defofmcEsub146} and $\mc{E}_{14,7}$ is as in \eqref{defofmcEsub147}. By
+\eqref{containedinGtilde146} and \eqref{containedinGtilde147}, for each elliptic curve $E$ over $\mbq$ we have
+\[
+\begin{split}
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{28,2} \; &\Longleftrightarrow \; \exists w_0, D_0 \in \mbq \text{ for which } E \simeq_\mbq \mc{E}_{28,2}(w_0,D_0), \\
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{28,3} \; &\Longleftrightarrow \; \exists w_0, D_0 \in \mbq \text{ for which } E \simeq_\mbq \mc{E}_{28,3}(w_0,D_0).
+\end{split}
+\]
+We note by \eqref{definitionoflevel28fiberings} that, for each $i \in \{2, 3\}$ and $k \in \{1, 2\}$, $\ker \psi_4^{(i,k)} \subseteq \SL_2(\mbz/4\mbz)$, and it follows that
+\[
+\mbq(u,D)\left( \mc{E}_{28,i}[4] \right)^{\ker \psi_4^{(i,k)}} = \mbq(u,D)\left( \mc{E}_{28,i}[2], i \right) \quad\quad \begin{pmatrix} i \in \{ 2, 3 \} \\ k \in \{ 1, 2 \} \end{pmatrix}.
+\]
+On the other hand, a computation shows that
+\[
+\mbq(u,D)\left( \mc{E}_{28,i}[7] \right)^{\ker \psi_7^{(i,k)}} = \mbq(u,D)\left( \mc{E}_{28,i}[7] \right)^{\ker \phi_7^{(4+i)}} \cdot \mbq(u,D) \left( \sqrt{D f_k(u)} \right) \quad\quad \begin{pmatrix} i \in \{ 2, 3 \} \\ k \in \{ 1, 2 \} \end{pmatrix},
+\]
+where
+\[
+\begin{split}
+f_1(u) &:= \frac{-14(49u^4 + 13u^2 + 1)(2401u^4 + 245u^2 + 1)}{823543u^8 + 235298u^6 + 21609u^4 + 490u^2 - 1}, \\
+f_2(u) &:= \frac{2(49u^4 + 13u^2 + 1)(2401u^4 + 245u^2 + 1)}{823543u^8 + 235298u^6 + 21609u^4 + 490u^2 - 1}.
+\end{split}
+\]
+This leads us to define the twist parameters $d_k(u) \in \mbq(u)$ by
+\[
+\begin{split}
+d_1(u) &:= -f_1(u) = \frac{14(49u^4 + 13u^2 + 1)(2401u^4 + 245u^2 + 1)}{823543u^8 + 235298u^6 + 21609u^4 + 490u^2 - 1}, \\
+d_2(u) &:= -f_2(u) = \frac{-2(49u^4 + 13u^2 + 1)(2401u^4 + 245u^2 + 1)}{823543u^8 + 235298u^6 + 21609u^4 + 490u^2 - 1},
+\end{split}
+\]
+and the elliptic curves $\mc{E}_{28,i,k}$ over $\mbq(w)$ by
+\[
+\begin{split}
+&\mc{E}_{28,2,k} : d_k(u_6(w)) y^2 = x^3 + a_{4;14,4}'(u_6(w)) x + a_{6;14,4}'(u_6(w)), \\
+&\mc{E}_{28,3,k} : d_k(u_7(w)) y^2 = x^3 + a_{4;14,4}'(u_7(w)) x + a_{6;14,4}'(u_7(w)),
+\end{split}
+\]
+where $a_{4;14,4}'(u)$, $a_{6;14,4}'(u)$ are as in \eqref{jinvariantsandWeierstrasscoefficientslevel14}, $u_6(w)$ is as in \eqref{defofusub6} and $u_7(w)$ is as in \eqref{defofusub7}. By the above discussion taken together with Corollary \ref{keycorollaryforinterpretationofentanglements}, for each elliptic curve $E$ over $\mbq$, we have
+\[
+\rho_E(G_\mbq) \, \dot\subseteq \, G_{28,i,k} \; \Longleftrightarrow \; \exists w_0 \in \mbq \text{ for which } E \simeq_\mbq \mc{E}_{28,i,k}(w_0) \quad\quad \begin{pmatrix} i \in \{ 2, 3 \} \\ k \in \{ 1, 2 \} \end{pmatrix}.
+\]
+
+To handle the group $G_{28,1,1}$, we first recall that, as detailed in \cite{sutherlandzywina}, one has
+\begin{equation} \label{chi4equalsepsilonjinvariant}
+\rho_{E,4}(G_\mbq) \, \dot\subseteq \, \GL_2(\mbz/4\mbz)_{\chi_4 = \ve} \; \Longleftrightarrow \; \exists t_0 \in \mbq \text{ for which } j_E = -t_0^2 + 1728.
+\end{equation}
+This, together with \eqref{unfiberedlevel28groups} and \eqref{level14andlevel7modulistatement}, leads us to the equation
+\begin{equation} \label{level28singularjequation}
+-s^2 + 1728 = \frac{(t^2 + 245t + 2401)^3(t^2 + 13t + 49)}{t^7} =: j_{7,4}(t)
+\end{equation}
+which is quite close to \eqref{sexpressionequaltotexpression}. The replacement $u \mapsto iu$ in \eqref{sandtintermsofu} leads us to the substitutions
+\begin{equation} \label{tandsforchi4eqepsilon}
+t = - \frac{1}{u^2}, \quad\quad s = \frac{823543u^8 - 235298u^6 + 21609u^4 - 490u^2 - 1}{u},
+\end{equation}
+which satisfy the equation \eqref{level28singularjequation}. We set 
+\[
+j_{28,1}(u) := j_{7,4}(-1/u^2),
+\]
+where $j_{7,4}(t)$ is as in \eqref{level28singularjequation}, we define $a_{4;28,1}(u), a_{6;28,1}(u) \in \mbq(u)$ as usual by \eqref{defofa4anda6} and finally the elliptic curve $\mc{E}_{28,1}$ over $\mbq(u,D)$ by
+\[
+\mc{E}_{28,1} : \; Dy^2 = x^3 + a_{4;28,1}(u) x + a_{6;28,1}(u).
+\]
+By \eqref{unfiberedlevel28groups}, \eqref{chi4equalsepsilonjinvariant} and \eqref{level14andlevel7modulistatement}, we see that, for any elliptic curve $E$ over $\mbq$, we have
+\[
+\rho_{E}(G_\mbq) \, \dot\subseteq \, \tilde{G}_{28,1} \; \Longleftrightarrow \; \exists u_0, D_0 \in \mbq \text{ for which } E \simeq_\mbq \mc{E}_{28,1}(u_0,D_0).
+\]
+Applying the substitution \eqref{tandsforchi4eqepsilon} to Lemma \ref{identifyingthesubfieldslevel4lemma} and using \eqref{fiberingsinlevel28case}, we find that
+\[
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{28,1,1} \; \Longleftrightarrow \; 
+\begin{matrix} 
+\exists u_0, D_0 \in \mbq \text{ for which } E \simeq_\mbq \mc{E}_{28,1}(u_0,D_0) \text{ and } \\
+\mbq\left( \sqrt{\frac{Du(49u^4 - 13u^2 + 1)(2401u^4 - 245u^2 + 1)}{823543u^8 - 235298u^6 + 21609u^4 - 490u^2 - 1}} \right) = \mbq\left( \sqrt{-7} \right),
+\end{matrix}
+\]
+and this happens if and only if
+\[
+D = d_{28,1,1}(u) := \frac{-7u(49u^4 - 13u^2 + 1)(2401u^4 - 245u^2 + 1)}{823543u^8 - 235298u^6 + 21609u^4 - 490u^2 - 1}
+\]
+modulo $\left( \mbq^\times \right)^2$. We define the elliptic curve $\mc{E}_{28,1,1}$ over $\mbq(u)$ by 
+\[
+\mc{E}_{28,1,1} : d_{28,1,1}(u) y^2 = x^3 + a_{4;28,1}(u) x + a_{6;28,1}(u).
+\]
+We have verified that, for any elliptic curve $E$ over $\mbq$,
+\[
+\rho_{E}(G_\mbq) \, \dot\subseteq \, G_{28,1,1} \; \Longleftrightarrow \; \exists u_0 \in \mbq \text{ for which } E \simeq_\mbq \mc{E}_{28,1,1}(u_0).
+\]

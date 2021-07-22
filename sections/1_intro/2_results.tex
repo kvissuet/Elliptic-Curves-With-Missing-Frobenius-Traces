@@ -1,0 +1,112 @@
+% \section{Statement of Result}
+% \label{intro:turmoil}
+
+% We consider the following collections of open subgroups $G \subseteq \GL_2(\hat{\mbz})$:
+% \begin{equation} \label{listofdefsofopensubgroups}
+% \begin{split}
+% \mf{G}(g) &:= \{ G \subseteq \GL_2(\hat{\mbz}) : \, G \text{ is open, } \det G = \hat{\mbz}^\times, \text{ and } X_{\tilde{G}} \text{ has genus } g \}, \\
+% %\mf{G}(g,m) &:= \{ G \in \mf{G}(g) : m_G = m \}, \\
+% \mf{G}_{MT} &:= \{ G \subseteq \GL_2(\hat{\mbz}) : G \text{ is open and } \exists r \in \mbz \text{ with } G_r = \emptyset \}, \\
+% \mf{G}_{MT}^{\max} &:= \{ G \in \mf{G}_{MT} : \, G \text{ is maximal with respect to } \dot\subseteq \}, \\
+% \mf{G}_{MT}(g) &:= \mf{G}_{MT} \cap \mf{G}(g),  \quad\quad\quad \mf{G}_{MT}^{\max}(g) := \mf{G}_{MT}^{\max} \cap \mf{G}(g).\\
+% %\mf{G}_{MT}^{\max}(g,m) &:= \mf{G}_{MT}^{\max}(g) \cap \mf{G}(g,m).
+% \end{split}
+% \end{equation}
+% As we will see, for any elliptic curve $E$ over $\mbq$, Conjecture \ref{LTConjecture} implies that
+% \begin{equation} \label{goalbygenus}
+% \exists r \in \mbz \text{ with } \lim_{X \rightarrow \infty} \pi_{E,r}(X) < \infty \; \Longleftrightarrow \; \exists G \in \mf{G}_{MT}^{\max} \text{ with } \rho_{E}(G_\mbq) \, \dot\subseteq \, G.
+% \end{equation}
+% (The implication ``$\Longleftarrow$'' is unconditional, whereas ``$\Longrightarrow$'' depends on Conjecture \ref{LTConjecture}.)  Thus, the goal of classifying elliptic curves $E$ over $\mbq$ satisfying the left-hand condition in \eqref{goalbygenus} leads to our consideration of the rational points of the modular curves $X_{\tilde{G}}$, for each $G \in \mf{G}_{MT}(g)$, for each fixed $g \geq 0$.
+% We remark that, in case $G = \tilde{G}$ (i.e. in case $-I \in G$) and assuming $j_E \notin \{ 0, 1728 \}$, the property that $\rho_{E}(G_\mbq) \subseteq G$ does not vary as we twist $E$, i.e. we have
+% \[
+% -I \in G \; \Longrightarrow \; \left( \forall \tau \in \aut_{\ol{\mbq}}(E), \; \rho_{E}(G_\mbq) \, \dot\subseteq \, G \Leftrightarrow \rho_{E^{\tau}}(G_\mbq) \, \dot\subseteq \, G \right).
+% \]
+% In particular, when $-I \in G$ and assuming $j_E \notin \{ 0, 1728 \}$, the property that $\rho_{E}(G_\mbq) \, \dot\subseteq \, G$ only depends on the $j$-invariant of $E$.  By contrast, in case $-I \notin G$, the image $\rho_{E^{\tau}}(G_\mbq) \, \dot\subseteq \, G$ depends, in general, on the automorphism $\tau$.  Thus, classifying elliptic curves $E$ with $\rho_{E}(G_\mbq) \, \dot\subseteq \, G$, amounts to 
+% \begin{enumerate}
+% \item describing explicitly the map $j_{\tilde{G}} : X_{\tilde{G}} \longrightarrow X(1)$,
+% \item in case $-I \notin G$, describing the particular twists $\{ E^{\tau} \}_{\tau \in \aut_{\ol{\mbq}}(E)}$ with $j(E^{\tau}) \in j_{\tilde{G}}(X_{\tilde{G}}(\mbq))$ that satisfy $\rho_{E^{\tau}}(G_\mbq) \, \dot\subseteq \, G$.
+% \end{enumerate}
+
+% Our main result classifies the set of elliptic curves $E$ over $\mbq$ for which $\rho_E(G_\mbq) \, \dot\subseteq \, G$ for some $G \in \mf{G}_{MT}^{\max}(0)$, in cases according to whether or not $-I \in G$, as described above.  In particular, it extends each of Examples \ref{level3example}, \ref{level8example} and \ref{level28example} to the following one-parameter families.  We define the rational functions in $\mbq(t,D)$:
+% \begin{equation} \label{shortlistofjsandds}
+% \begin{array}{ll}
+% j_{3,1}(t) := \ds 27\frac{(t+1)(t+9)^3}{t^3} & d_{3,1,1}(t,D) :=  \ds \frac{6(t+1)(t+9)}{t^2 - 18t - 27}, \\
+% & \\
+% j_{6,1}(t) := \ds 2^{10}3^3t^3(1-4t^3) & d_{6,1,1}(t,D) := \ds D, \\
+% & \\
+% j_{28,1}(t) := \ds - \frac{(49t^4 - 13t^2 + 1)(2401t^4 - 245t^2 + 1)^3}{t^2} & \\
+% & \\
+% d_{28,1,1}(t,D) :=  \ds \frac{-7t(49t^4 - 13t^2 + 1)(2401t^4 - 245t^2 + 1)}{823543t^8 - 235298t^6 + 21609t^4 - 490t^2 - 1}. & 
+% \end{array} 
+% \end{equation}
+
+% Furthermore, for $(m,i) \in \{ (3,1), (6,1), (28,1) \}$, we set the Weierstrass coefficients $a_{4;m,i}(t), a_{6;m,i}(t) \in \mbq(t)$ by
+% \begin{equation} \label{defofa4anda6}
+% a_{4;m,i}(t) := \frac{108j_{m,i}(t)}{1728 - j_{m,i}(t)}, \quad\quad a_{6;m,i}(t) := \frac{432j_{m,i}(t)}{1728-j_{m,i}(t)}.
+% \end{equation}
+% For $(m,i,k) \in \{ (3,1,1), (8,1,1), (28,1,1) \}$ we have already declared the twist parameters $d_{m,i,k}(t,D) \in \mbq(t,D)$ in \eqref{shortlistofjsandds}, and we define the elliptic curves $\mc{E}_{m,i,k}$ over $\mbq(t,D)$ by
+% \begin{equation} \label{ellipticsurface}
+% \mc{E}_{m,i,k} : \; d_{m,i,k}(t,D) y^2 = x^3 + a_{4;m,i}(t) x + a_{6;m,i}(t).
+% \end{equation}
+% For $t_0,D_0 \in \mbq$, we denote by $\mc{E}_{m,i,k}(t_0,D_0)$ the elliptic curve over $\mbq$ obtained by specializing $\mc{E}_{m,i,k}$ at $t = t_0$ and $D = D_0$.  The elliptic curves $E_3$, $E_6$ and $E_{28}$ of Examples \ref{level3example} - \ref{level28example} satisfy
+% \[
+% E_3 = \mc{E}_{3,1,1}(1,1), \quad\quad E_6 = \mc{E}_{6,1,1}(1,1), \quad\quad E_{28} = \mc{E}_{28,1,1}(1,1).
+% \]
+
+% In a table appearing in Section \ref{tablesection}, we associate $j$-invariants $j_{m,i}(t) \in \mbq(t)$ and twist parameters $d_{m,i,k}(t,D) \in \mbq(t,D)$ to all of the $3$-tuples\footnote{In each $3$-tuple $(m,i,k)$, the first entry $m$ names the $\GL_2$-level of the corresponding group; for a fixed $m$, the index $i$ changes exactly if the $j$-invariant changes, and the last index $k$ changes as that twist class changes with fixed $j$-invariant.}
+% \begin{equation} \label{masterlistofindices}
+% (m,i,k) \in \left\{ \begin{matrix} (2,1,1), (3,1,1), (3,1,2), (4,1,1), (5,1,1), (5,2,1), (5,2,1), (5,2,1), (6,1,1), \\ (6,2,1), (6,3,1), (6,3,2), (7,1,1), (7,1,2), (7,2,1), (7,2,2), (7,3,1), (7,3,2), \\ (8,1,1), (9,1,1), (9,2,1), (9,3,1), (9,4,1), (10,1,1), (10,1,2), (10,2,1), \\ (10,2,2), (10,3,1), (12,1,1), (12,1,2), (12,2,1), (12,3,1), (12,4,1), (14,1,1), \\ (14,2,1), (14,2,2), (14,3,1), (14,3,2), (14,4,1), (14,4,2), (14,5,1), (14,6,1), \\ (14,6,2), (14,7,1), (14,7,2), (28,1,1), (28,2,1), (28,2,2), (28,3,1), (28,3,2) \end{matrix} \right\}.
+% \end{equation}
+% Each $j$-invariant $j_{m,i}(t)$ in our list will correspond to the natural map $X_{\tilde{G}} \longrightarrow X(1)$ associated to a group $G \in \mf{G}_{MT}^{\max}(0)$, and we will have $d_{m,i,k}(t,D) = D$ just in case $-I \in G$ (when  $-I \notin G$, we will have $d_{m,i,k}(t,D) \in \mbq(t) \subseteq \mbq(t,D)$, and we may sometimes denote it simply by $d_{m,i,k}(t)$ in this case).  For each $j$-invariant $j_{m,i}(t)$ corresponding to such a tuple $(m,i,k)$ in \eqref{masterlistofindices}, we again define the Weierstrass coefficients $a_{4;m,i}(t), a_{6;m,i}(t) \in \mbq(t)$ by \eqref{defofa4anda6} and consider the associated elliptic curve $\mc{E}_{m,i,k}$ over $\mbq(t,D)$ defined by \eqref{ellipticsurface}; for $t_0, D_0 \in \mbq$ we denote by $\mc{E}_{m,i,k}(t_0,D_0)$ the specialization of $\mc{E}_{m,i,k}(t,D)$ to $t = t_0$ and $d = D_0$.
+
+
+
+% \begin{Theorem} \label{maintheorem}
+% Let $E$ be an elliptic curve over $\mbq$ with $j$-invariant $j_E$ satisfying $j_E \notin \{ 0, 1728 \}$.  We have that $\exists G \in \mf{G}_{MT}^{\max}(0)$ with $\rho_E(G_\mbq) \, \dot\subseteq \, G$ if and only if there are $t_0,D_0 \in \mbq$ and a $3$-tuple $(m,i,k)$ in the set \eqref{masterlistofindices} so that $E$ is isomorphic over $\mbq$ to the elliptic curve
+% \[
+% \mc{E}_{m,i,k}(t_0,D_0) : \; d_{m,i,k}(t_0,D_0) y^2 = x^3 + a_{4;m,i}(t_0)x + a_{6;m,i}(t_0),
+% \]
+% where the $j$-invariant and twist parameter $j_{m,i}(t,D), d_{m,i,k}(t,D) \in \mbq(t,D)$ are as listed in Table \ref{} of Section \ref{} and the coefficients $a_{4;m,i}(t), a_{6,m,i}(t) \in \mbq(t)$ are defined by \eqref{defofa4anda6}.
+% \end{Theorem}
+% The proof of Theorem \ref{maintheorem} falls into two steps, the first one bounding the levels associated to each of the groups $G \in \mf{G}_{MT}^{\max}(0)$.  In addition to \eqref{listofdefsofopensubgroups}, we make the definitions
+% \begin{equation} \label{defsofopensubgroupswithlevel}
+% \begin{split}
+% \mf{G}(g,m) &:= \{ G \in \mf{G}(g) : m_G = m \} \\
+% \mf{G}_{MT}(g,m) &:= \mf{G}_{MT} \cap \mf{G}(g,m) \\
+% \mf{G}_{MT}^{\max}(g,m) &:= \mf{G}_{MT}^{\max} \cap \mf{G}(g,m).
+% \end{split}
+% \end{equation}
+
+% We will establish the following theorem.
+%  \begin{Theorem} \label{boundingthelevelsthm}
+% Let the set $\mf{G}_{MT}^{\max}(g)$ of open subgroups of $\GL_2(\hat{\mbz})$ be as defined in \eqref{listofdefsofopensubgroups}.  We then have
+% \begin{equation} \label{genuszerocurvesbylevel}
+% \mf{G}_{MT}^{\max}(0) = \bigcup_{m \in \left\{ 2, 3, 4, 5, 6, 7, 8, \atop 9, 10, 12, 14, 28 \right\}} \mf{G}_{MT}^{\max}(0,m),
+% \end{equation}
+% where the set $\mf{G}_{MT}^{\max}(g,m)$ is as in \eqref{defsofopensubgroupswithlevel}.
+% \end{Theorem}
+% Theorem \ref{boundingthelevelsthm} is proved as follows.  A conjecture of Rademacher (proved by \dots; see \cite{}) implies the finiteness of the set
+% \[
+% \{ \text{open subgroups } S \subseteq \SL_2(\hat{\mbz}) : -I \in S \text{ and } X_S \text{ has genus } 0 \},
+% \]
+% We extend the notion of $\GL_2$-level of an open subgroup $G \subseteq \GL_2(\hat{\mbz})$ by defining
+% \begin{equation} \label{defofGL2levelandSL2level}
+% \begin{split}
+% \level_{\GL_2}(G) &:= \min \left\{ m \in \mbn : \ker \left( \GL_2(\hat{\mbz}) \rightarrow \GL_2(\mbz/m\mbz) \right) \subseteq G \right\} \\
+% \level_{\SL_2}(G) &:= \min \left\{ m \in \mbn : \ker \left( \SL_2(\hat{\mbz}) \rightarrow \SL_2(\mbz/m\mbz) \right) \subseteq G \cap \SL_2(\hat{\mbz}) \right\}.
+% \end{split}
+% \end{equation}
+
+% It is straightforward to see that $\level_{\SL_2}(G)$ divides $\level_{\GL_2}(G)$, and in general they can be different.  Using the main result of \cite{cumminspauli}, we will first show that
+% \begin{equation} \label{takingcumminspaulifurther}
+% G \in \mf{G}(0) \; \Longrightarrow \; \level_{\SL_2}(G) \in \left\{ \begin{matrix} 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 20, 21, 22, 24, \\ 25, 26, 27, 28, 30, 32, 36, 40, 42, 48, 50, 52, 54, 56, 60, 64, 72, 96 \end{matrix} \right\}.
+% \end{equation}
+% Next, for each $G \in \mf{G}_{MT}^{\max}(0)$, we exhibit a positive integer $d_G$ for which $\level_{\GL_2}(G)$ divides $d_G \cdot \level_{\SL_2}(G)$, and this, together with a MAGMA computation, yields Theorem \ref{boundingthelevelsthm}.
+
+% To establish Theorem \ref{maintheorem}, we will utilize results of \cite{sutherlandzywina} and \cite{zywina}, which describe explicitly all prime power level modular curves with infinitely many rational points.  For the prime power levels (other than the $m=8$) occurring on the right-hand side of \eqref{genuszerocurvesbylevel} we use those results directly; for each group $G$ of level $m$ that is not a prime power, the associated missing trace is caused by an \emph{entanglement}, i.e. a non-trivial intersection
+% \[
+% \mbq(E[m_1]) \cap \mbq(E[m_2]) \neq \mbq \quad\quad\quad \left(m = m_1m_2, \; \gcd(m_1,m_2) = 1 \right)
+% \]
+% implicit in the group $G$ (for $m=8$, the missing trace is caused by a ``vertical entanglement'' and also requires additional work).  In the cases involving entanglement, we undertake a finer analysis, identifying precisely the underlying subfields and determining the subfamily for which those subfields agree.  
+
+% The paper is organized as follows.  In Section \ref{proofofboundingthelevelsthmsection} we prove Theorem \ref{boundingthelevelsthm}.  In Section \ref{proofofmaintheoremsection} we prove Theorem \ref{maintheorem}.  Finally, in Section \ref{finalremarks} we discuss future directions.

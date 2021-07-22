@@ -1,0 +1,725 @@
+\section{Bounding the $\GL_2$-level of missing trace groups of genus zero} \label{proofofboundingthelevelsthmsection}
+
+In this section we prove Theorem \ref{boundingthelevelsthm}.  To begin with, the main results in \cite{cumminspauli} immediately imply that
+\begin{equation} \label{cumminspaulilevels}
+\left\{ \level_{\SL_2}(\tilde{G}) : G \in \mf{G}(0) \right\} = \left\{ \begin{matrix} 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 \\ 18, 20, 21, 24, 25, 26, 27, 28, 30, 32, 36, 48 \end{matrix} \right\}.
+\end{equation}
+By Proposition \ref{levelincreaseboundprop} we then have
+\begin{equation} \label{boundforSL2levels}
+G \in \mf{G}(0) \; \Longrightarrow \; \level_{\SL_2}(G) \in \left\{ \begin{matrix} 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 20, 21, 22, 24, \\ 25, 26, 27, 28, 30, 32, 36, 40, 42, 48, 50, 52, 54, 56, 60, 64, 72, 96 \end{matrix} \right\},
+\end{equation}
+we will now establish the following proposition, which bounds $m_G$ for $G \in \mf{G}_{MT}^{\max}(0)$ in terms of $m_S := \level_{\SL_2}(G)$.  For an open subgroup $G \subseteq \GL_2(\hat{\mbz})$, we set 
+\begin{equation} \label{defofksubG}
+d_G := \gcd \left( m_S^ \infty, \left| \frac{G(m_S) \cap \SL_2(\mbz/m_S\mbz)}{[G(m_S),G(m_S)]} \right| \right),
+\end{equation}
+i.e. $d_G$ is the largest factor of $\left| \frac{G(m_S) \cap \SL_2(\mbz/m_S\mbz)}{[G(m_S),G(m_S)]} \right|$ supported on primes dividing $m_S$.
+\begin{proposition} \label{twotothekproposition}
+Let $G \in \mf{G}_{MT}^{\max}$ be a maximal missing trace group of $\GL_2$-level $m_G$ and $\SL_2$-level $m_S$ satisfying $\det G = \hat{\mbz}^\times$.  Then $m_G$ divides $d_G m_S$, where $d_G$ is defined by \eqref{defofksubG}.  .
+\end{proposition}
+\begin{proof}
+Without loss of generality, we may assume that $m_G > m_S$; we let $p$ be any prime for which $v_p(m_G) > v_p\left( m_S \right)$ and set $m_G' := m_G/p^{v_p(m_G) - v_p(m_S)}$.  Note that, for any prime $\ell$, we have
+\begin{equation} \label{vpofmsubGequalsvpofmsubS}
+v_{\ell}(m_G') = 
+\begin{cases}
+v_{\ell}(m_G) & \text{ if } \ell \neq p \\
+v_{\ell}(m_S) & \text{ if } \ell = p. 
+\end{cases} 
+\end{equation}
+In particular, since $m_S$ divides $m_G'$, we then have
+\begin{equation} \label{kernelofSL2iscontainedinG}
+\ker \left( \SL_2(\mbz/m_G\mbz) \rightarrow \SL_2(\mbz/m_G'\mbz) \right) \subseteq G(m_G).
+\end{equation}
+Furthermore, since $G$ is maximal among missing trace groups, it follows that
+\begin{equation} \label{tracemodmsubGprimeissurjective}
+\tr\left( G(m_G') \right) = \mbz/m_G'\mbz.
+\end{equation}
+We first claim that 
+\begin{equation} \label{pdividesmsubGprime}
+p \mid m_G'.
+\end{equation}
+To see this, suppose for the sake of contradiction that $p \nmid m_G'$, and define $\ga := v_p(m_G) - v_p(m_S)$.  Then, since $m_S$ divides $m_G'$, under the Chinese Remainder Isomorphism $\mbz/m_G\mbz \simeq \mbz/m_G'\mbz \times \mbz/p^{\ga}\mbz$, condition \eqref{kernelofSL2iscontainedinG} reads 
+\begin{equation} \label{SL2crossoneiscontained}
+\{ 1 \} \times \SL_2(\mbz/p^{\ga}\mbz) \subseteq G(m_G).
+\end{equation}
+By surjectivity of $\det : G(p^{\ga}) \twoheadrightarrow (\mbz/p^{\ga}\mbz)^\times$ and Goursat's lemma, we then have
+\begin{equation} \label{GofmsubGasfiberedproduct}
+G(m_G) \simeq G(m_G') \times_{\psi} \GL_2(\mbz/p^{\ga}\mbz),
+\end{equation}
+where $\psi_{m_G'} : G(m_G') \longrightarrow \Gamma$ and $\psi_p : \GL_2(\mbz/p^{\ga}\mbz) \longrightarrow \Gamma$ denote the surjective group homomorphisms onto the common quotient group $\Gamma$ implicit in the fibered product.
+It follows from \eqref{SL2crossoneiscontained} that $\SL_2(\mbz/p^{\ga}\mbz) \subseteq \ker \psi_p$, and thus, for every $\gamma \in \Gamma$, there exists $d \in (\mbz/p^{\ga}\mbz)^\times$ for which
+\[
+\{ g \in \GL_2(\mbz/p\mbz) : \det g = d \} \subseteq \psi_p^{-1}(\gamma).
+\]
+Since $\tr\left( \{ g \in \GL_2(\mbz/p\mbz) : \det g = d \}  \right) = \mbz/p^{\ga}\mbz$, it is then easy to deduce from \eqref{GofmsubGasfiberedproduct} and \eqref{tracemodmsubGprimeissurjective} that $\tr\left( G(m_G) \right) = \mbz/m_G\mbz$, a contradiction.  Therefore we have established \eqref{pdividesmsubGprime}, and, by \eqref{vpofmsubGequalsvpofmsubS}, $p \mid m_S$.  Since the prime $p$ was arbitrary, it follows that
+\begin{equation} \label{msubGdividesmsubStotheinfty}
+m_G \mid m_S^\infty.
+\end{equation}
+
+We now apply Lemma \ref{verticalSL2liftlemma}, which asserts that there is a surjective group homomorphism $\gd : G(m_S) \longrightarrow (\mbz/m_G\mbz)^\times$ satisfying $\pi \circ \gd = \det : G(m_S) \longrightarrow (\mbz/m_S\mbz)^\times$, and for which
+\[
+G(m_G) = \left\{ g \in \pi_{\GL_2}^{-1}\left( G(m_S) \right) : \gd\left( \pi(g) \right) = \det g \right\}.
+\]
+By \eqref{msubGdividesmsubStotheinfty} and Lemma \ref{verticalSL2liftlemma}, we have that
+\[
+m_G/m_S = \left| \ker \left( (\mbz/m_G\mbz)^\times \rightarrow (\mbz/m_S\mbz)^\times \right) \right| = \left| \gd\left( G(m_S) \cap \SL_2(\mbz/m_S\mbz) \right) \right|,
+\]
+which in turn divides
+\[
+\left| \frac{G(m_S) \cap \SL_2(\mbz/m_S\mbz)}{[G(m_S),G(m_S)]} \right|.
+\]
+By \eqref{msubGdividesmsubStotheinfty}, $m_G/m_S$ also divides $m_S^\infty$, and Proposition \ref{twotothekproposition} follows.
+\end{proof}
+Theorem \ref{boundingthelevelsthm} follows from \eqref{boundforSL2levels} and Proposition \ref{twotothekproposition}, together with a computer computation.  The latter was carried out using the computational package MAGMA \cite{MAGMA}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Preliminaries on division fields of elliptic curves} \label{preliminariesondivisionfieldssection}
+
+In this section, we gather various preliminary results to be used in the following section to develop explicit models for the modular curves associated to the groups occurring in Theorem \ref{boundingthelevelsthm}.  We recall the general set-up:  $G \subseteq \GL_2(\hat{\mbz})$ is an open subgroup, $\tilde{G} := \langle G, -I \rangle$ and $X_{\tilde{G}}$ is the modular curve associated to $\tilde{G}$.  Denoting by $m$ the $\GL_2$-level of $\tilde{G}$ and by $j_{\tilde{G}} : X_{\tilde{G}} \longrightarrow X(1) \simeq \mbp^1$ the forgetful map, we have that, for any $j \in \mbq - \{ 0, 1728 \}$, 
+\begin{equation} \label{interpofrationalpointsonXsubG}
+j \in j_{\tilde{G}}\left( X_{\tilde{G}}(\mbq) \right) \; \Longleftrightarrow \; \exists E / \mbq \; \text{ with } \;\rho_E(G_\mbq) \dot\subseteq \tilde{G} \; \text{ and } \; j_E = j.
+\end{equation}
+We will use repeatedly the following consequence of the Weil pairing on an elliptic curve.  Let $K$ be a field, let $E$ an elliptic curve defined over $K$, let $m \in \mbn$ be a positive integer co-prime with $\Char K$ and let
+\[
+\rho_{E,m} : G_K \longrightarrow \aut(E[m]) \simeq  \GL_2(\mbz/m\mbz)
+\]
+be the Galois representation defined by letting $G_K$ act on the $m$-torsion of $E$.  On the other hand, let
+\[
+\chi_m : G_K \longrightarrow \aut(\mu_m) \simeq \left( \mbz/m\mbz \right)^\times
+\]
+be the mod $m$ cyclotomic character, defined by letting $G_K$ act on $\mu_m$.
+\begin{lemma} \label{weilpairinglemma}
+We have $\det \circ \rho_{E,m} = \chi_m$.
+\end{lemma}
+\begin{proof}
+This follows from properties of the Weil pairing; see \cite[Ch III, \S 8]{silverman}.
+\end{proof}
+We remark that, whenever the level $m$ of a maximal missing trace group may be written in the form $m = m_1 m_2$ with $m_1, m_2 > 1$ and $\gcd(m_1,m_2) = 1$, the group $G(m)$ decomposes via the Chinese Remainder Theorem as a fibered product
+\[
+G(m) = G(m_1m_2) \simeq G(m_1) \times_{\psi} G(m_2) := \{ (g_1, g_2) \in G(m_1) \times G(m_2) : \; \psi_1(g_1) = \psi_2(g_2) \},
+\]
+where $\psi_i : G(m_i) \longrightarrow H$ are each surjective homomorphisms onto a common non-trivial quotient group $H$ (if $H$ were trivial, then $G(m)$ would decompose as a full cartesian product, implying that either $G(m_1)$ or $G(m_2)$ would have a missing trace, contradicting maximality of $G$).  The following lemma will be useful for determining when $\rho_{E,m_1m_2}(G_\mbq) \, \dot\subseteq \, G(m_1) \times_\psi G(m_2)$.  In general, let $\mc{G}_1$ and $\mc{G}_2$ be finite groups and let 
+\[
+G_i, G_i' \subseteq \mc{G}_i \quad\quad \left( i \in \{1, 2 \} \right)
+\]
+be subgroups.  Let
+\[
+\psi_i : G_i \longrightarrow H, \quad \psi_i' : G_i' \longrightarrow H' \quad\quad \left( i \in \{1, 2 \} \right)
+\]
+be surjective homomorphisms onto the finite groups $H$ and $H'$, respectively, and denote by $G_1 \times_\psi G_2$ and $G_1' \times_{\psi'} G_2'$ the corresponding fibered products.  In particular, these fibered products are \emph{honest} in the sense that, for each $i \in \{1, 2 \}$, the canonical projections $G_1 \times_\psi G_2 \longrightarrow G_i$ and $G_1' \times_{\psi'} G_2' \longrightarrow G_i'$ are each surjective.
+\begin{lemma} \label{whenisgroupinsidefiberedproduct}
+With the notation just outlined, we have
+\[
+G_1' \times_{\psi'} G_2' \subseteq G_1 \times_{\psi} G_2
+\]
+if and only if
+\begin{enumerate}
+\item $\forall i \in \{ 1, 2 \}, \, G_i' \subseteq G_i$,
+\item there exists a group homomorphism $\varpi : H' \longrightarrow H$ such that $\forall i \in \{1, 2 \}, \; \varpi \circ \psi_i' = \psi_i \vert_{G_i'}$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+For the direction ``$\Rightarrow$'', condition (1) is immediate.  To verify condition (2), we first note that $\ker \psi_1' \times \ker \psi_2' \subseteq G_1 \times_\psi G_2$, which implies that
+\[
+\ker \psi_i' \subseteq \ker \psi_i \quad\quad \left( i \in \{1, 2 \} \right).
+\]
+We thus have a well-defined group homomorphism $\varpi : H' \longrightarrow H$, given by $\varpi \left( \psi_1'(g_1') \right) := \psi_1(g_1')$.
+We observe that $\varpi \circ \psi_i' = \psi_i \vert_{G_i'}$ by definition when $i = 1$ and by $G_1' \times_{\psi'} G_2' \subseteq G_1 \times_{\psi} G_2$ when $i = 2$.  This establishes (2).
+
+For the converse, assume that (1) and (2) hold and let $(g_1', g_2') \in G_1' \times_{\psi'} G_2'$.  By (1), $g_1' \in G_1$ and $g_2' \in G_2$.  Furthermore, $\psi_1'(g_1') = \psi_2'(g_2')$, and thus
+\[
+\psi_1(g_1') = \varpi \left( \psi_1'(g_1') \right) = \varpi \left( \psi_2'(g_2') \right) = \psi_2(g_2').
+\]
+Thus, $(g_1',g_2') \in G_1 \times_\psi G_2$, and we have proved the converse, establishing the lemma.
+\end{proof}
+
+
+By \eqref{interpofrationalpointsonXsubG}, we need only consider such groups up to conjugation inside $\GL_2(\mbz/m\mbz)$, i.e. up to the relation $\doteq$.  It is straightforward to see that, for any inner automorphisms $\eta_1, \eta_2 : H \longrightarrow H$, we have
+\[
+G(m_1) \times_{(\eta_1\psi_1, \eta_2 \psi_2)} G(m_2) \doteq G(m_1) \times_{(\psi_1, \psi_2)} G(m_2).
+\]
+However, the same is not always true for outer automorphisms $\eta_1, \eta_2 \in \aut(H)$; given such a pair $(\eta_1,\eta_2) \in \aut(H)^2$, we clearly have
+\[
+G(m_1) \times_{(\eta_1 \psi_1, \eta_2 \psi_2)} G(m_2) = G(m_1) \times_{(\psi_1, \eta_1^{-1} \eta_2 \psi_2)} G(m_2).
+\]
+Thus, it suffices to consider postcomposing the pair $(\psi_1,\psi_2)$ with pairs of automorphsims of the form $(1,\eta_2)$, or of the form $(\eta_1,1)$.  
+\begin{Definition} \label{defofGL2induced}
+Given the notation above, we say that an automorphism $\eta_i \in \aut(H)$ \emph{\textbf{is $\GL_2(\mbz/m_i\mbz)$-induced}} if there exists $g_i \in \GL_2(\mbz/m_i\mbz)$ satisfying $g_i G(m_i) g_i^{-1} = G(m_i)$ and for which the diagram
+\[
+\begin{tikzcd}
+G(m_i) \rar{\conj_{g_i}} \dar{\psi_i} & G(m_i) \dar{\psi_i} \\
+H \rar{\eta_i} & H
+\end{tikzcd}
+\]
+commutes.  
+\end{Definition}
+The following useful lemma is straightforward to prove.
+\begin{lemma} \label{GL2inducedlemma}
+With notation as just outlined and with $\eta_2 \in \aut(H)$, we have
+\[
+\begin{split}
+&G(m_1) \times_{(\psi_1,\eta_2\psi_2)} G(m_2) \doteq G(m_1) \times_{(\psi_1,\psi_2)} G(m_2) \; \Longleftrightarrow \; \eta_2 \in \aut(H) \text{ is $\GL_2(\mbz/m_2\mbz)$-induced,} \\
+&G(m_1) \times_{(\eta_1\psi_1,\psi_2)} G(m_2) \doteq G(m_1) \times_{(\psi_1,\psi_2)} G(m_2) \; \Longleftrightarrow \; \eta_1 \in \aut(H) \text{ is $\GL_2(\mbz/m_1\mbz)$-induced.} 
+\end{split}
+\]
+\end{lemma}
+We will now describe an interpretation of $\rho_{E,m_1m_2}(G_\mbq) \, \dot\subseteq \, G(m_1) \times_\psi G(m_2)$ in terms of entanglements.  It will be convenient to decompose the representation $\rho_{E}$ as
+\begin{equation*}
+\begin{tikzcd}
+G_\mbq \rar{\tilde{\rho}_{E}} \arrow[black, bend left]{rr}{\rho_E} & \aut(E_{\tors}) \rar{\iota_{\mc{B}}} & \GL_2(\hat{\mbz}),
+\end{tikzcd}
+\end{equation*}
+where $\mc{B} = \{ \mc{B}(m) := ({\bf{b}}_{1,m}, {\bf{b}}_{2,m}) : m \in \mbn \}$ is a collection of ordered $\mbz/m\mbz$-bases of $E[m] \subseteq E_{\tors}$, one for each $m \in \mbn$, chosen compatibly.  This decomposition has a corresponding a finite level analogue 
+\begin{equation}  \label{defofrhotilde}
+\rho_{E,m} = \iota_{\mc{B}(m)} \circ \tilde{\rho}_{E,m}
+\end{equation}
+for any $m \in \mbn$.  We will denote simply by $\iota$ either of the the isomorphisms $\aut(E[m]) \to \GL_2(\mbz/m\mbz)$ or $\aut(E_{\tors}) \to \GL_2(\hat{\mbz})$ induced by such a collection $\mc{B}$, suppressing the dependence on $\mc{B}$.  Thus, for any $m \in \mbn$, we have
+\[
+\rho_{E,m}(G_\mbq) \, \dot \subseteq \, G(m) \; \Longleftrightarrow \; \exists \iota : \tilde{\rho}_{E,m}(G_\mbq) \hookrightarrow G(m).
+\]
+
+Unraveling \eqref{interpofrationalpointsonXsubG}, we find that
+\[
+%\begin{tikzcd}
+\exists \iota : \tilde{\rho}_{E,m_1m_2}(G_\mbq) \hookrightarrow G(m_1) \times_\psi G(m_2) \; \Longrightarrow \; \begin{matrix} \exists \iota_1 : \tilde{\rho}_{E,m_1}(G_\mbq) \hookrightarrow G(m_1), \; \exists \iota_2 : \tilde{\rho}_{E,m_2}(G_\mbq) \hookrightarrow G(m_2), \\ \text{and } \; \mbq(E[m_1])^{\iota_1^{-1}(\ker \psi_1)} = \mbq(E[m_2])^{\iota_2^{-1}(\ker \psi_2)},\end{matrix}
+%\end{tikzcd}
+\]
+where we are understanding the subfield $\mbq(E[m_i])^{\iota_i^{-1}(\ker \psi_i)} \subseteq \mbq(E[m_i])$ via the natural isomorphism $\gal\left( \mbq(E[m_i])/\mbq \right) \simeq \tilde{\rho}_{E,m_i}(G_\mbq)$.
+The following corollary states conditions under which the converse holds. 
+\begin{cor} \label{justentanglementequalitycorollary}
+Let $\aut_{\GL_2(\mbz/m_i\mbz)}(H) \subseteq \aut(H)$ denote the subgroup of $\GL_2(\mbz/m_i\mbz)$-induced automorphisms, and suppose that either $\aut_{\GL_2(\mbz/m_1\mbz)}(H) = \aut(H)$ or $\aut_{\GL_2(\mbz/m_2\mbz)}(H) = \aut(H)$.  We then have
+\[
+\rho_{E,m_1m_2}(G_\mbq) \, \dot\subseteq \, G(m_1) \times_\psi G(m_2) \; \Longleftrightarrow \; \begin{matrix} \exists \iota_1 : \tilde{\rho}_{E,m_1}(G_\mbq) \hookrightarrow G(m_1), \; \exists \iota_2 : \tilde{\rho}_{E,m_2}(G_\mbq) \hookrightarrow G(m_2), \\ \text{and } \quad \mbq(E[m_1])^{\iota_1^{-1}(\ker \psi_1)} = \mbq(E[m_2])^{\iota_2^{-1}(\ker \psi_2)}. \end{matrix}
+\]
+\end{cor}
+We would like to apply Corollary \ref{justentanglementequalitycorollary} to groups $G \in \mf{G}_{MT}^{\max}(0)$.  Our computation shows that, for every such group $G$ whose $\GL_2$-level $m$ is divisible by at least two primes, and for any $m_1, m_2 > 1$ with $m = m_1m_2$ and $\gcd(m_1,m_2) = 1$, writing $G(m) \simeq G(m_1) \times_{\psi} G(m_2)$ and denoting by $H := \psi_i(G(m_i))$ the common quotient group implicit in the fibered product, we have
+\begin{equation} \label{formsofH}
+H \in \{ \mbz/2\mbz, \mbz/3\mbz, \mbz/6\mbz, S_3 \}.
+\end{equation}
+When $H \in \{ \mbz/2\mbz, S_3 \}$, all automorphisms of $H$ are inner, whence $\GL_2(\mbz/m_i\mbz)$-inner (no matter what the level $m_i$ is.  For the case $H \in \{ \mbz/3\mbz, \mbz/6\mbz \}$,  we will now look in more detail at the particulars.  
+
+The common quotient $H = \mbz/3\mbz$ arises as an entanglement between the groups $G(2)$ and $G(7)$, and in all such cases, we have
+\begin{equation} \label{descriptionofpsisub2in14case}
+G(2) = \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \subseteq \GL_2(\mbz/2\mbz), \quad\quad \psi_2 :  \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \simeq \mbz/3\mbz.
+\end{equation}
+Thus, the image $H = \mbz/3\mbz$ is isomorphic to $G(2)$, an index two (and hence normal) subgroup of $\GL_2(\mbz/2\mbz)$.  Since
+\[
+\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}^{-1} = \begin{pmatrix} 0 & 1 \\ 1 & 1 \end{pmatrix},
+\]
+it follows that the conjugation action of $\GL_2(\mbz/2\mbz)$ on $G(2)$ gives rise to all automorphisms of $H$, i.e. that $\aut(H) = \aut_{\GL_2(\mbz/2\mbz)}(H)$ in this case.
+
+The common quotient $H \simeq \mbz/6\mbz$ arises as an entanglement between $G(4)$ and $G(7)$, and in all such cases, we have
+\[
+G(4) = \pi_{\GL_2}^{-1}\left( \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \right) \subseteq \GL_2(\mbz/4\mbz), \quad\quad \ker \psi_4 = \ker \pi_{\GL_2} \cap \SL_2(\mbz/4\mbz),
+\]
+where $\pi_{\GL_2} : \GL_2(\mbz/4\mbz) \to \GL_2(\mbz/2\mbz)$ denotes the canonical projection map.  Therefore the map $\psi_4$ decomposes as
+\[
+\begin{tikzcd}
+\pi_{\GL_2}^{-1}\left( \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \right) \rar{\psi_2 \times \det} \arrow[black, bend left]{rr}{\psi_4} & \mbz/3\mbz \times \mbz/2\mbz \rar{\simeq} & \mbz/6\mbz,
+\end{tikzcd}
+\]
+where $\psi_2$ denotes the function $g \mapsto \psi_2(g \bmod 2)$, with $\psi_2$ as in \eqref{descriptionofpsisub2in14case}.  Thus, it follows from the discussion in the previous paragraph that $\aut_{\GL_2(\mbz/4\mbz)}(H) = \aut(H)$ in this case as well.  Taking these observations together with the computation that establishes \eqref{formsofH}, we thus have
+\begin{cor} \label{keycorollaryforinterpretationofentanglements}
+For each group $G \in \mf{G}_{MT}^{\max}(0)$ with the property that $m := \level_{\GL_2}(G)$ is divisible by at least two primes, choose any $m_1, m_2 \in \mbn$ with $\gcd(m_1,m_2) = 1$ and $m_1, m_2 > 1$ and write $G(m) \simeq G(m_1) \times_{\psi} G(m_2)$.  For any elliptic curve $E$ over $\mbq$, we have
+\[
+\rho_{E,m_1m_2}(G_\mbq) \, \dot\subseteq \, G(m_1) \times_\psi G(m_2) \; \Longleftrightarrow \; \begin{matrix} \exists \iota_1 : \tilde{\rho}_{E,m_1}(G_\mbq) \hookrightarrow G(m_1), \; \exists \iota_2 : \tilde{\rho}_{E,m_2}(G_\mbq) \hookrightarrow G(m_2), \\ \text{and } \quad \mbq(E[m_1])^{\iota_1^{-1}(\ker \psi_1)} = \mbq(E[m_2])^{\iota_2^{-1}(\ker \psi_2)},
+\end{matrix}
+\]
+where the basis-induced embeddings $\iota_1$ and $\iota_2$ and the representations $\tilde{\rho}_{E,m_i}$ are as in \eqref{defofrhotilde}, and the subfield $\mbq(E[m_i])^{\iota_i^{-1}(\ker \psi_i)} \subseteq \mbq(E[m_i])$ is understood via the natural isomorphism $\tilde{\rho}_{E,m_i}(G_\mbq) \simeq \gal\left( \mbq(E[m_i])/\mbq \right)$.
+\end{cor}
+
+
+\subsection{Cyclic cubic fields}
+
+Since we will be dealing with cyclic cubic extensions of $\mbq(t,D)$, we now state two lemmas about such field extensions that will be used in what follows.
+Our first lemma allows us to exhibits explicit polynomials for generators of each of the cyclic cubic  subfields of a given $\mbz/3\mbz \times \mbz/3\mbz$-extension.  In general, let $K$ be any field, let
+\begin{equation} \label{defoffsubSandfsubT}
+\begin{split}
+f_S(x) &= x^3 - S_1x^2 + S_2 x - S_3, \\
+f_T(x) &= x^3 - T_1x^2 + T_2 x - T_3
+\end{split}
+\end{equation}
+be two monic irreducible polynomials with coefficients in $K$, and denote by $K_{f_S}$ (resp. by $K_{f_T}$) the splitting polynomial of $f_S$ (resp. of $f_T$), viewed as subfields of a fixed algebraic closure $\ol{K}$ of $K$.  Assume that 
+\begin{equation} \label{KfsubSdifferentfromKfsubT}
+K_{f_S} \neq K_{f_T}
+\end{equation}
+and that the discriminants $\gD_S := \disc(f_S)$ and $\gD_T := \disc(f_T)$ are each in $\left( K^\times \right)^2$, or equivalently that $\gal(K_{f_S}/K) \simeq \gal(K_{f_T}/K)$ is a cyclic group of order $3$.  The assumption \eqref{KfsubSdifferentfromKfsubT} then implies that the composite field $K_{f_Sf_T} = K_{f_S}K_{f_T}$ satisfies
+\begin{equation} \label{galoisgroupisZmod3timesZmod3}
+\gal(K_{f_Sf_T}/K) \simeq \mbz/3\mbz \times \mbz/3\mbz,
+\end{equation}
+and this field contains $4$ cyclic cubic subfields.  Fix square roots $\sqrt{\gD_S}, \sqrt{\gD_T} \in K$ and define the coefficients $R_1, R_2, R_3, R_3' \in K$ by
+\begin{equation} \label{defofRsubis}
+\begin{split}
+R_1 := &S_1 T_1, \\
+R_2 := &S_1^2 T_2 + T_1^2 S_2 - 3S_2T_2, \\
+R_3 := &S_1^3 T_3 + T_1^3 S_3 - 3S_1 S_2 T_3 - 3 T_1 T_2 S_3 + 9S_3 T_3 \\
+&+ \left( S_1S_2 - 3S_3 + \sqrt{\gD_S} \right) \left( T_1 T_2 - 3T_3 + \sqrt{\gD_T} \right) / 4 \\
+&+ \left( S_1S_2 - 3S_3 - \sqrt{\gD_S} \right) \left( T_1 T_2 - 3T_3 - \sqrt{\gD_T} \right) / 4, \\
+R_3' := &S_1^3 T_3 + T_1^3 S_3 - 3S_1 S_2 T_3 - 3 T_1 T_2 S_3 + 9S_3 T_3 \\
+&+ \left( S_1S_2 - 3S_3 + \sqrt{\gD_S} \right) \left( T_1 T_2 - 3T_3 - \sqrt{\gD_T} \right) / 4 \\
+&+ \left( S_1S_2 - 3S_3 - \sqrt{\gD_S} \right) \left( T_1 T_2 - 3T_3 + \sqrt{\gD_T} \right) / 4.
+\end{split}
+\end{equation}
+Define the cubic polynomials $f_R(x), f_{R'}(x) \in K[x]$ by 
+\begin{equation} \label{defoffsubRandfsubRprime}
+\begin{split}
+f_R(x) &:= x^3 - R_1x^2 + R_2x - R_3, \\
+f_{R'}(x) &:= x^3 - R_1x^2 + R_2x - R_3'.
+\end{split}
+\end{equation}
+\begin{lemma} \label{gettingattheothercubicfieldslemma}
+Let $K$ be a field, let $f_S(x), f_T(x) \in K[x]$ be irreducible monic cubic polynomials as in \eqref{defoffsubSandfsubT}, and assume the setup and notation laid out above (in particular, assume that the splitting field $K_{f_Sf_T}$ of $f_S(x)f_T(x)$ satisfies \eqref{galoisgroupisZmod3timesZmod3}).  Then the four cyclic cubic subfields of $K_{f_Sf_T}$ are the splitting fields of the polynomials $f_S(x)$, $f_T(x)$, $f_R(x)$ and $f_{R'}(x)$, where $f_R(x)$ and $f_{R'}(x)$ are defined by \eqref{defoffsubRandfsubRprime} and \eqref{defofRsubis}.
+\end{lemma}
+\begin{proof}
+An exercise in symmetric polynomials.
+\end{proof}
+
+Given a field $K$ and elements $S_1, S_2, S_3, T_1, T_2, T_3 \in K$, we may consider the following system of equations in the variables $a$, $b$ and $c$.
+\begin{equation} \label{abcequations}
+\begin{split}
+T_1 = &a \left( S_1^2 - 2S_2 \right) + b S_1 + 3c, \\
+T_2 = &a^2 S_2^2 - 2a^2 S_1 S_3 + ab S_1 S_2 - 3abS_3 + 2acS_1^2 - 4acS_2 + b^2 S_2 + 2bc S_1 + 3c^2, \\
+T_3 = &a^3 S_3^2 + a^2b S_2 S_3 - 2a^2c S_1 S_3 + a^2c S_2^2 + ab^2 S_1 S_3 + abc S_1 S_2 - 3abc S_3 \\
+&+ ac^2 S_1^2 - 2ac^2 S_2 + b^3 S_3 + b^2 c S_2 + bc^2 S_1 + c^3.
+\end{split}
+\end{equation}
+
+\begin{lemma} \label{settingcubicfieldsequaltoeachotherlemma}
+Let $K$ be a field, let $f_S(x)$, $f_T(x) \in K[x]$ be irreducible monic cubic polynomials as in \eqref{defoffsubSandfsubT} and denote by $K_{f_S}$ (resp. by $K_{f_T}$) the splitting field of $f_S(x)$ (resp. of $f_T(x)$), viewed as subfields of a fixed algebraic closure $\ol{K}$ of $K$.  Assume that the discriminant $\gD_S$ of $f_S(x)$ satisfies $\gD_S \in \left( K^\times \right)^2$, so that $\gal(K_{f_S}/K)$ is a cyclic group of order $3$. We then have that $K_{f_S} = K_{f_T}$ if and only if the system of equations \eqref{abcequations} has a solution $(a,b,c) \in K^3$.
+\end{lemma}
+\begin{proof}
+Let $\ga \in \ol{K}$ denote a root of $f_S(x)$.  Then $K_{f_S} = K(\ga)$, and so we may write an arbitrary element $\gb \in K_{f_S}$ in the form
+\begin{equation} \label{betaasalgebraicexpressioninalpha}
+\gb = a \ga^2 + b\ga + c \quad\quad \left( a, b, c \in K \right).
+\end{equation}
+The elementary symmetric polynomials $S_i(a \ga^2 + b\ga + c)$ of such an element are then readily computed to be
+\begin{equation} \label{symmetricpolynomialequalities}
+\begin{split}
+S_1(a \ga^2 + b\ga + c) = &a \left( S_1^2 - 2S_2 \right) + b S_1 + 3c, \\
+S_2(a \ga^2 + b\ga + c) = &a^2 S_2^2 - 2a^2 S_1 S_3 + ab S_1 S_2 - 3abS_3 + 2acS_1^2 - 4acS_2 + b^2 S_2 + 2bc S_1 + 3c^2, \\
+S_3(a \ga^2 + b\ga + c) = &a^3 S_3^2 + a^2b S_2 S_3 - 2a^2c S_1 S_3 + a^2c S_2^2 + ab^2 S_1 S_3 + abc S_1 S_2 - 3abc S_3 \\
+&+ ac^2 S_1^2 - 2ac^2 S_2 + b^3 S_3 + b^2 c S_2 + bc^2 S_1 + c^3.
+\end{split}
+\end{equation}
+Thus, if \eqref{abcequations} have a solution $(a,b,c) \in K^3$, we see that $f_T(x)$ has a root in $K_{f_S}$, thus $f_T(x)$ splits completely over $K_{f_S}$, and so $K_{f_T} = K_{f_S}$.  Conversely, if $K_{f_T} = K_{f_S}$, then let $\gb \in K_{f_T}$ be a root of $f_T(x)$.  Writing $\gb$ in the form \eqref{betaasalgebraicexpressioninalpha}, we see that $(a,b,c) \in K^3$ is then a solution to \eqref{abcequations}.
+\end{proof}
+
+\subsection{Division fields of elliptic curves and their subfields} \label{divisionfieldssubsection}
+
+In this section, we exhibit explicitly various subfields of the $m$th division field $\mbq(t,D)\left( \mc{E}[m] \right)$ for various levels $m$ and elliptic curves $\mc{E}$ over $\mbq(t,D)$.  The Borel subgroup
+\[
+B(\ell) := \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \subseteq \GL_2(\mbz/\ell\mbz)
+\]
+plays a key role, as do the two multiplicative homomorphisms $\psi_{\ell,1}, \psi_{\ell,2} : B(\ell) \longrightarrow (\mbz/\ell\mbz)^\times$ defined by
+\begin{equation} \label{generaldefinitionofpsisubp}
+%\begin{split}
+\psi_{\ell,1}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := a, \quad\quad \psi_{\ell,2}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) := d.
+%\end{split}
+\end{equation}
+For any elliptic curve $E$ over $\mbq$, we have
+\begin{equation} \label{interpretationofwhenGaloismapsintoBorel}
+\rho_{E,\ell}(G_\mbq) \subseteq B(\ell) \; \Longleftrightarrow \; \text{ $\exists$ a $G_\mbq$-stable cyclic subgroup } \langle P \rangle \subseteq E[\ell].
+\end{equation}
+When this is the case, we denote by $E_{\langle P \rangle}' := E / \langle P \rangle$ the quotient curve, which is isogenous over $\mbq$ to $E$.  We have
+$
+\rho_{E_{\langle P \rangle}',\ell}(G_\mbq) \subseteq B(\ell),
+$
+or in other words, 
+\begin{equation} \label{existenceofPprime}
+\text{ $\exists$ a $G_\mbq$-stable cyclic subgroup } \langle P' \rangle \subseteq E_{\langle P \rangle}'[\ell]
+\end{equation}
+(this is the kernel of the dual isogeny $E_{\langle P \rangle}' \rightarrow E$).  In these terms, the Galois representations $\psi_{\ell,1}$ and $\psi_{\ell,2}$ above are simply defined by restricting the action of $G_\mbq$ respectively to $\langle P \rangle$ and to $\langle P' \rangle$, i.e. we have
+\begin{equation} \label{psisubellsactingonPandPprime}
+\gs : P \mapsto \left[ \psi_{\ell,1}(\gs) \right] P, \quad\quad\quad \gs : P' \mapsto \left[ \psi_{\ell,2}(\gs) \right] P' \quad\quad \left( \gs \in G_\mbq \right).
+\end{equation}
+Finally, we note that $\psi_{\ell,i}^{(\ell-1)/2}\left( g \right) \in \{ \pm 1 \} \subseteq (\mbz/\ell\mbz)^\times$, and that this value agrees with the Legendre symbol evaluated at $\psi_{\ell,i}\left( g \right)$, i.e. we have
+\[
+\psi_{\ell,1}^{(\ell-1)/2}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) \equiv \left( \frac{a}{\ell} \right) \bmod \ell, \quad\quad \psi_{\ell,2}^{(\ell-1)/2}\left( \begin{pmatrix} a & b \\ 0 & d \end{pmatrix} \right) \equiv \left( \frac{d}{\ell} \right) \bmod \ell.
+\]
+
+
+\subsubsection{The level \texorpdfstring{$m = 2$}}
+
+The group $\GL_2(\mbz/2\mbz)$ is a non-abelian group of order $6$, and since there is only one such group up to isomorphism, we see that it is isomorphic to the symmetric group of order $6$:  
+\begin{equation} \label{GL2Zmod2ZisisomorphictoD3}
+\GL_2(\mbz/2\mbz) \simeq S_3.
+\end{equation}
+As such, there is a unique proper non-trivial normal subgroup 
+\[
+\left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \subseteq \GL_2(\mbz/2\mbz)
+\]
+which has index two (corresponding under \eqref{GL2Zmod2ZisisomorphictoD3} to the alternating subgroup $A_3$).  This index two subgroup happens to be the commutator subgroup $\SL_2(\mbz/2\mbz)'$ of $\SL_2(\mbz/2\mbz)$; as we shall see, both this fact and the next classical, well-known lemma generalize to levels $3$ and $4$.
+\begin{lemma} \label{level2kummersubextensionlemma}
+Let $E$ be an elliptic curve over $\mbq$ and let $\gD_E$ denote the discriminant of any\footnote{Note that the field $\mbq(\sqrt{\gD_E})$ (resp. the fields $\mbq(\gD_E^{1/3})$ and $\mbq(\gD_E^{1/4})$ appearing in Lemmas \ref{level3kummersubextensionlemma} and \ref{level4kummersubextensionlemma}) does not depend on the choice of Weierstrass model for $E$, even though the discriminant $\gD_E$ does.} Weierstrass model of $E$.  We have that $\mbq(\sqrt{\gD_E}) \subseteq \mbq(E[2])$.  Furthermore, this subfield corresponds via Galois theory to the subgroup $\rho_{E,2}(G_\mbq) \cap \SL_2(\mbz/2\mbz)'$, i.e. we have
+\[
+\mbq(E[2])^{\rho_{E,2}(G_\mbq) \cap \SL_2(\mbz/2\mbz)'} = \mbq\left( \sqrt{\gD_E} \right).
+\]
+\end{lemma}
+\begin{proof}
+See for instance \cite[pp. 218]{langtrotter}.
+\end{proof}
+Throughout the paper, the role played by restriction map $\gal\left( \mbq(E[2])/\mbq \right) \rightarrow \gal\left( \mbq\left( \sqrt{\gD_E} \right)/\mbq \right)$ is significant enough to warrant our giving it an explicit name.  We make the definition
+\begin{equation} \label{defofve}
+\begin{tikzcd}
+\ve : \GL_2(\mbz/2\mbz) \rar{\simeq}& S_3 \rar{\can}& \frac{S_3}{A_3} \rar{\simeq}& \{ \pm 1 \}.
+\end{tikzcd}
+\end{equation} 
+Thus, we have
+\[
+\ker \ve = \left\langle \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \right\rangle \quad\quad \text{ and } \quad\quad \mbq(E[2])^{\ker \ve} = \mbq\left( \sqrt{\gD_E} \right).
+\]
+
+
+\subsubsection{The level \texorpdfstring{$m = 3$}}
+
+Using the classical theory of modular functions (see \cite{zywina}), it can be shown that there is a rational parameter $t$ on the genus zero modular curve $X_0(3)$ such that the forgetful map $X_0(3) \longrightarrow X(1)$ takes the form
+\[
+\mbp^1(t) \longrightarrow \mbp^1(j), \quad t \mapsto 27 \frac{(t+1)(t+9)^3}{t^3}.
+\]
+We define $\displaystyle j_3(t) := 27 \frac{(t+1)(t+9)^3}{t^3} \in \mbq(t)$ and the elliptic curve $\mc{E}_{3}$ over $\mbq(t,D)$ by
+\begin{equation} \label{level3genericellipticcurve}
+\mc{E}_3 : \; y^2 = x^3 + \frac{108D^2 j_3(t)}{1728 - j_3(t)} x + \frac{432D^3 j_3(t)}{1728 - j_3(t)}.
+\end{equation}
+By restricting the action of $\gal\left( \mbq(t,D)(\mc{E}_3[3])/\mbq(t,D) \right)$ to $\mc{E}_3[3]$ and fixing a $\mbz/3\mbz$-basis thereof, we obtain an isomorphism
+\begin{equation} \label{genericGaloisimageiscontainedinborelmod3}
+\gal\left( \mbq(t,D)(\mc{E}_3[3])/\mbq(t,D) \right) \simeq \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \subseteq \GL_2(\mbz/3\mbz).
+\end{equation}
+The following lemma explicitly characterizes the subfields cut out by the characters $\psi_{3,1}$ and $\psi_{3,2}$.
+\begin{lemma} \label{subfieldsoflevel3lemma}
+Let $\mc{E}_3$ be the elliptic curve over $\mbq(t,D)$ defined by \eqref{level3genericellipticcurve} and define the characters 
+\[
+\psi_{3,1}, \psi_{3,2} : \gal\left( \mbq(t,D)(\mc{E}_3[3])/\mbq(t,D) \right) \rightarrow \{ \pm 1 \}
+\]
+to be the restrictions under \eqref{genericGaloisimageiscontainedinborelmod3} of the characters defined in \eqref{generaldefinitionofpsisubp}.  We then have
+\begin{equation} \label{subfieldsoflevel3lemmaeqn}
+\begin{split}
+\mbq(t,D)(\mc{E}_3[3])^{\ker \psi_{3,1}} &= \mbq(t,D)\left( \sqrt{\frac{6D(t+1)(t+9)}{(t^2-18t-27)}} \right), \\
+\mbq(t,D)(\mc{E}_3[3])^{\ker \psi_{3,2}} &= \mbq(t,D)\left( \sqrt{-\frac{2D(t+1)(t+9)}{(t^2-18t-27)}} \right).
+\end{split}
+\end{equation}
+\end{lemma}
+\begin{proof}
+We compute that the $3$rd division polynomial associated to $\mc{E}_3$ has the $\mbq(t,D)$-rational factor 
+\[
+x - \frac{18D(t+1)(t+9)}{t^2 - 18t - 27}, 
+\]
+and this leads us to the point
+\[
+P := \left( \frac{18D(t+1)(t+9)}{t^2 - 18t - 27}, \frac{24Dt(t+9)}{t^2 - 18t - 27} \sqrt{\frac{6D(t+1)(t+9)}{(t^2-18t-27)}} \right) \in \mc{E}_3[3].
+\]
+Since $\displaystyle \mbq(t,D)(\mc{E}_3[3])^{\ker \psi_{3,1}} = \mbq(t,D)\left( P \right)$, this establishes the first formula in \eqref{subfieldsoflevel3lemmaeqn}; the expression for the fixed field of $\ker \psi_{3,2}$ then follows from the fact that $\displaystyle \psi_{3,1}(g) \psi_{3,2}(g) = \det g$, whose corresponding fixed field is $\mbq(t,D) \left( \sqrt{-3} \right)$.
+\end{proof}
+
+We will also make use of the following classical fact about the third division field of an elliptic curve.  Note that the commutator subgroup $\SL_2(\mbz/3\mbz)' := \left[ \SL_2(\mbz/3\mbz), \SL_2(\mbz/3\mbz) \right]$ is a normal subgroup of $\GL_2(\mbz/3\mbz)$ and the quotient group is dihedral of order 6:
+\[
+\frac{\GL_2(\mbz/3\mbz)}{\SL_2(\mbz/3\mbz)'} \simeq D_3.
+\] 
+Thus, the associated fixed field $\mbq(E[3])^{\rho_{E,3}(G_\mbq) \cap \SL_2(\mbz/3\mbz)'} \subseteq \mbq(E[3])$ is generically a $D_3$-extension of $\mbq$; the next lemma specifies generators for this subfield.
+\begin{lemma} \label{level3kummersubextensionlemma}
+Let $E$ be an elliptic curve over $\mbq$ and let $\gD_E$ denote the discriminant of any Weierstrass model of $E$.  We have that $\mbq\left( \mu_3, \gD_E^{1/3} \right) \subseteq \mbq(E[3])$.  Furthermore, this subfield corresponds via Galois theory to the subgroup $\rho_{E,3}(G_\mbq) \cap \SL_2(\mbz/3\mbz)'$, i.e. we have
+\[
+\mbq(E[3])^{\rho_{E,3}(G_\mbq) \cap \SL_2(\mbz/3\mbz)' } = \mbq \left( \mu_3, \gD_E^{1/3} \right).
+\]
+\end{lemma}
+\begin{proof}
+This is a classical result; see for instance \cite[pp. 181--183]{langtrotter} and the references therein.
+\end{proof}
+
+\subsubsection{The level \texorpdfstring{$m=4$}}
+
+The following lemma details the relevant classical facts surrounding the fourth division field of an elliptic curve.  Note that the commutator subgroup $\SL_2(\mbz/4\mbz)' := \left[ \SL_2(\mbz/4\mbz), \SL_2(\mbz/4\mbz) \right]$ is a normal subgroup of $\GL_2(\mbz/4\mbz)$ and the quotient group is dihedral of order 8:
+\[
+\frac{\GL_2(\mbz/4\mbz)}{\SL_2(\mbz/4\mbz)'} \simeq D_4.
+\] 
+Thus, the associated fixed field $\mbq(E[4])^{\rho_{E,4}(G_\mbq) \cap \SL_2(\mbz/4\mbz)'} \subseteq \mbq(E[4])$ is generically a $D_4$-extension of $\mbq$; we now specify generators for this subfield.
+\begin{lemma} \label{level4kummersubextensionlemma}
+Let $E$ be an elliptic curve over $\mbq$ and let $\gD_E$ denote the discriminant of any Weierstrass model of $E$.  We have that $\mbq\left( \mu_4, \gD_E^{1/4} \right) \subseteq \mbq(E[4])$.  Furthermore, this subfield corresponds via Galois theory to the subgroup $\rho_{E,4}(G_\mbq) \cap \SL_2(\mbz/4\mbz)'$, i.e. we have
+\[
+\mbq(E[4])^{\rho_{E,4}(G_\mbq) \cap \SL_2(\mbz/4\mbz)' } = \mbq \left( \mu_4, \gD_E^{1/4} \right).
+\]
+\end{lemma}
+\begin{proof}
+See \cite[pp. 172--173]{langtrotter} and \cite[pp. 218--220]{langtrotter}.
+\end{proof}
+
+We will sometimes need to deal with this subfield in the case that $\rho_{E,4}(G_\mbq)$ is contained in a specific proper subgroup of $\GL_2(\mbz/4\mbz)$.  In particular, we will be interested in the subgroup
+\begin{equation} \label{defofGL2subchi4equalsve}
+\begin{split}
+\GL_2(\mbz/4\mbz)_{\chi_4 = \ve} :=& \left\{ g \in \GL_2(\mbz/4\mbz) : \chi_4(\det g) = \ve(g \bmod 2) \right\} \\
+=& \left\langle \begin{pmatrix} 1 & 1 \\ 0 & 3 \end{pmatrix}, \begin{pmatrix} 1 & 0 \\ 1 & 3 \end{pmatrix}, \begin{pmatrix} 1 & 3 \\ 1 & 0 \end{pmatrix} \right\rangle,
+\end{split}
+\end{equation}
+where $\chi_4 : (\mbz/4\mbz)^\times \rightarrow \{ \pm 1 \}$ is the unique nontrivial multiplicative character and $\ve : \GL_2(\mbz/2\mbz) \rightarrow \{ \pm 1 \}$ is as in \eqref{defofve}.  For any elliptic curve $E$ over $\mbq$, we have
+\[
+\rho_{E,4}(G_\mbq) \subseteq \GL_2(\mbz/4\mbz)_{\ve = \chi_4} \; \Longleftrightarrow \mbq\left( \sqrt{\gD_E} \right) = \mbq(i).
+\]
+There is a rational parameter $t$ on the genus zero modular curve $X_{\GL_2(\mbz/4\mbz)_{\chi_4 = \ve}}$ with the property that the forgetful map $X_{\GL_2(\mbz/4\mbz)_{\chi_4 = \ve}} \rightarrow X(1)$ takes the form $t \mapsto j_4(t)$, where
+\[
+j_4(t) := -t^2 + 1728.
+\]
+As detailed in \cite{sutherlandzywina}, for any elliptic curve $E$ over $\mbq$ with $j$-invariant $j_E$, we have
+\begin{equation} \label{level4containmentintermsofjinvariant}
+\rho_{E,4}(G_\mbq) \subseteq \GL_2(\mbz/4\mbz)_{\chi_4 = \ve} \; \Longleftrightarrow \; \exists t_0 \in \mbq \; \text{ with } \; j_E = j_4(t_0).
+\end{equation}
+In particular, defining the elliptic curve $\mc{E}_4$ over $\mbq(t,D)$ by
+\begin{equation} \label{level4genericellipticcurve}
+\mc{E}_4 : \; y^2 = x^3 + \frac{108D^2 j_{4}(t)}{1728 - j_{4}(t)} x + \frac{432D^3 j_{4}(t)}{1728 - j_{4}(t)},
+\end{equation}
+we have that $\rho_{\mc{E}_4,4}(G_{\mbq(t,D)}) \doteq \GL_2(\mbz/4\mbz)_{\chi_4 = \ve}$.  The following lemma summarizes the situation and will be useful in what follows.
+\begin{lemma} \label{identifyingthesubfieldslevel4lemma}
+For any elliptic curve $E$ over $\mbq$, we have
+\begin{equation} \label{arisesasaspecializationlevel4}
+\rho_{E,4}(G_\mbq) \, \dot\subseteq \, \GL_2(\mbz/4\mbz)_{\chi_4 = \ve} \; \Longleftrightarrow \; \exists t_0, D_0 \in \mbq \; \text{ with } \; E \simeq_\mbq \mc{E}_4(t_0,D_0),
+\end{equation}
+where $\mc{E}_4$ is the elliptic curve over $\mbq(t,D)$ defined by \eqref{level4genericellipticcurve}.  Furthermore, when this is the case, we have
+\begin{equation} \label{explicitbiquadraticfourthrootofdiscriminant}
+\mbq(\mu_4, \gD_E^{1/4}) = \mbq\left( \mu_4,\gD_{\mc{E}_4(t_0,D_0)}^{1/4} \right) = \mbq\left( i, \sqrt{D_0t_0(t_0^2-1728)} \right).
+\end{equation}
+In particular, when \eqref{arisesasaspecializationlevel4} holds, the subfield $\mbq\left( \mu_4,\gD_E^{1/4} \right) \subseteq \mbq(E[4])$ is either biquadratic or quadratic over $\mbq$.
+\end{lemma}
+\begin{proof}
+The assertion \eqref{arisesasaspecializationlevel4} follows immediately from \eqref{level4containmentintermsofjinvariant}.  The equality \eqref{explicitbiquadraticfourthrootofdiscriminant} follows from
+\[
+\gD_{\mc{E}_4} = - \left( \frac{2^9 3^6 D^3 (t^2 - 1728) }{t^3} \right)^2,
+\]
+using the fact that $(-1)^{1/4} = \zeta_8 = \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2}i$, and from \eqref{explicitbiquadraticfourthrootofdiscriminant} one sees that $\mbq\left( \mu_4, \gD_E^{1/4} \right)$ is either biquadratic or quadratic over $\mbq$.
+\end{proof}
+
+\subsubsection{The level \texorpdfstring{$m = 5$}}
+
+The subgroups
+\begin{equation} \label{defofG51andG52}
+G_{5,1} := \left\{ \begin{pmatrix} \pm 1 & * \\ 0 & * \end{pmatrix} \right\}, \; G_{5,2} := \left\{ \begin{pmatrix} * & * \\ 0 & \pm 1 \end{pmatrix} \right\} \subseteq \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \subseteq \GL_2(\mbz/5\mbz)
+\end{equation}
+correspond to two genus zero modular curves $X_{G_{5,1}}$ and $X_{G_{5,2}}$, each of which is a $2$-fold cover of $X_0(5)$.
+As discussed in \cite{zywina}, the maps $\mbp^1(t) \rightarrow \mbp^1(j)$ corresponding to the forgetful maps $X_{G_{5,i}} \longrightarrow X(1)$ are given respectively by the rational functions
+\[
+j_{5,1}(t) := \frac{(t^4 - 12t^3 + 14t^2 + 12t + 1)^3}{t^5(t^2 - 11t - 1)}, \quad\quad
+j_{5,2}(t) :=  \frac{(t^4 + 228t^3 + 494t^2 - 228t + 1)^3}{t(t^2 - 11t - 1)^5}.
+\]
+We define the elliptic curves $\mc{E}_{5,i}$ over $\mbq(t,D)$ by
+\begin{equation} \label{level5genericellipticcurve}
+\mc{E}_{5,i} : \; y^2 = x^3 + \frac{108D^2 j_{5,i}(t)}{1728 - j_{5,i}(t)} x + \frac{432D^3 j_{5,i}(t)}{1728 - j_{5,i}(t)} \quad\quad\quad \left( i \in \{ 1, 2 \} \right);
+\end{equation}
+we have
+\begin{equation} \label{genericGaloisimageiscontainedinborelmod5}
+\rho_{\mc{E}_{5,i},5}(G_{\mbq(t,D)}) \, \doteq \, G_{5,i} \subseteq \GL_2(\mbz/5\mbz) \quad\quad\quad \left( i \in \{ 1, 2 \} \right).
+\end{equation}
+The next lemma explicitly characterizes the subfields cut out by the characters
+\begin{equation*} \label{defofpsisforlevel5}
+\begin{split}
+\psi_{5,1}, \; \psi_{5,2}^2\psi_{5,1} : \left\{ \begin{pmatrix} \pm 1 & * \\ 0 & * \end{pmatrix} \right\} &\longrightarrow \{ \pm 1 \} \subseteq \left( \mbz/5\mbz \right)^\times, \\
+\psi_{5,2}, \; \psi_{5,1}^2\psi_{5,2} : \left\{ \begin{pmatrix} * & * \\ 0 & \pm 1 \end{pmatrix} \right\} &\longrightarrow \{ \pm 1 \} \subseteq \left( \mbz/5\mbz \right)^\times.
+\end{split}
+\end{equation*}
+\begin{lemma} \label{subfieldsoflevel5lemma}
+For each $i \in \{1, 2\}$, let $\mc{E}_{5,i}$ be the elliptic curve over $\mbq(t,D)$ defined by \eqref{level5genericellipticcurve} and let  
+\[
+\chi_{5,1}^{(i)}, \; \chi_{5,2}^{(i)} : \gal\left( \mbq(t,D)(\mc{E}_{5,i}[5])/\mbq(t,D) \right) \longrightarrow \{ \pm 1 \} \subseteq (\mbz/5\mbz)^\times
+\]
+denote the restrictions under \eqref{genericGaloisimageiscontainedinborelmod5} of the characters $\chi_{5,1}^{(i)} := \psi_{5,i}$ and $\chi_{5,2}^{(i)} := \psi_{5,i}\psi_{5,3-i}^2$, where $\psi_{5,i}$ are as in \eqref{generaldefinitionofpsisubp}.  We then have
+\begin{equation} \label{subfieldsoflevel5lemmaeqn}
+\begin{split}
+\mbq(t,D)(\mc{E}_{5,1}[5])^{\ker \chi_{5,1}^{(1)}} &= \mbq(t,D)\left( \sqrt{-\frac{2D(t^4 - 12t^3 + 14t^2 + 12t + 1)}{((t^2 + 1)(t^4 - 18t^3 + 74t^2 + 18t + 1)}} \right), \\
+\mbq(t,D)(\mc{E}_{5,1}[5])^{\ker \chi_{5,2}^{(1)}} &= \mbq(t,D)\left( \sqrt{-\frac{10D(t^4 - 12t^3 + 14t^2 + 12t + 1)}{((t^2 + 1)(t^4 - 18t^3 + 74t^2 + 18t + 1)}} \right), \\
+\mbq(t,D)(\mc{E}_{5,2}[5])^{\ker \chi_{5,1}^{(2)}} &= \mbq(t,D)\left( \sqrt{-\frac{2D(t^4 + 228t^3 + 494t^2 - 228t + 1)}{(t^2+1)(t^4 - 522t - 10006t^2 + 522t + 1)}} \right), \\
+\mbq(t,D)(\mc{E}_{5,2}[5])^{\ker \chi_{5,2}^{(2)}} &= \mbq(t,D)\left( \sqrt{-\frac{10D(t^4 + 228t^3 + 494t^2 - 228t + 1)}{(t^2+1)(t^4 - 522t - 10006t^2 + 522t + 1)}} \right).
+\end{split}
+\end{equation}
+\end{lemma}
+\begin{proof}
+For any elliptic curve $E$ over $\mbq$ with $\rho_{E,5}(G_\mbq) \subseteq B(5)$, define $\langle P \rangle \subseteq E[5]$ and $\langle P' \rangle \subseteq E_{\langle P \rangle}'[5]$ as in \eqref{interpretationofwhenGaloismapsintoBorel} and \eqref{existenceofPprime}.  By \eqref{psisubellsactingonPandPprime} and \eqref{defofG51andG52}, we have
+\begin{equation} \label{conditionforG51andG52}
+\begin{split}
+\rho_{E,5}(G_\mbq) \, \dot\subseteq \, G_{5,1} \; &\Longleftrightarrow \; \exists \text{ a $G_\mbq$-stable } \langle P \rangle \subseteq E[5] \quad\quad\;\;\; \text{ with } \quad [ \mbq( P ) : \mbq ] \leq 2, \\
+\rho_{E,5}(G_\mbq) \, \dot\subseteq \, G_{5,2} \; &\Longleftrightarrow \; \begin{matrix} \exists \text{ a $G_\mbq$-stable } \langle P \rangle \subseteq E[5] \text{ and} \\ \exists \text{ a $G_\mbq$-stable  } \langle P' \rangle \subseteq E_{\langle P \rangle}' [5] \end{matrix} \quad \text{ with } \quad [ \mbq( P' ) : \mbq ] \leq 2,
+\end{split}
+\end{equation}
+and the same statement holds when the base field $\mbq$ is replaced by $\mbq(t,D)$.  Furthermore, we have
+\begin{equation} \label{kernelsintermsofPlevel5}
+\mbq(t,D)\left( \mc{E}_{5,1}[5] \right)^{\ker \chi_{5,1}^{(1)}} = \mbq(t,D)\left( P \right), \quad\quad \mbq(t,D)\left( \mc{E}_{5,2}[5] \right)^{\ker \chi_{5,1}^{(2)}} = \mbq(t,D)\left( P' \right), 
+\end{equation}
+where $P \in \mc{E}_{5,1}[5]$ and $P' \in (\mc{E}_{5,2})_{\langle P \rangle}'[5]$ are as in \eqref{conditionforG51andG52}.
+
+Using the linear factor of the $5$th division polynomial of $\mc{E}_{5,1}$, we find the point $P_1 = (x_1,y_1) \in \mc{E}_{5,1}[5]$, where
+\[
+\begin{split}
+x_1 &:= -\frac{6D(t^2 - 6t + 1)(t^4 - 12t^3 + 14t^2 + 12t + 1)}{(t^2 + 1)(t^4 - 18t^3 + 74t^2 + 18t + 1)}, \\
+y_1 &:=  \frac{216dt(t^4 - 12t^3 + 14t^2 + 12t + 1)}{(t^2 + 1)(t^4 - 18t^3 + 74t^2 + 18t + 1)} \sqrt{\frac{-2D(t^4 - 12t^3 + 14t^2 + 12t + 1)}{(t^2 + 1)(t^4 - 18t^3 + 74t^2 + 18t + 1)}}.
+\end{split}
+\]
+By \eqref{kernelsintermsofPlevel5}, this proves the first equality in \eqref{subfieldsoflevel5lemmaeqn}. We now consider the character $\displaystyle \psi_{5,2}^2 : G_{5,1} \rightarrow \{ \pm 1 \}$, whose value $\psi_{5,2}(g_1)^2$ agrees with $\displaystyle \left( \frac{5}{\det g_1} \right)$, and thus has corresponding fixed field $\mbq(t,D)\left( \sqrt{5} \right)$.  Since $\chi_{5,2}^{(1)} = \psi_{5,2}^2 \psi_{5,1}$, this observation establishes the second equality in \eqref{subfieldsoflevel5lemmaeqn}.  
+
+For the second pair of equalities in \eqref{subfieldsoflevel5lemmaeqn}, we reason as follows.  The $5$th division polynomial associated to $\mc{E}_{5,2}$ has a quadratic factor that is irreducible over $\mbq(t,D)$, and this leads to a $G_{\mbq(t,D)}$-stable cyclic subgroup $\langle P \rangle \subseteq \mc{E}_{5,2}[5]$.  We find that the isogenous elliptic curve $\left( \mc{E}_{5,2} \right)_{\langle P \rangle}' = \mc{E}_{5,2} / \langle P \rangle$ is given by
+\[
+\begin{split}
+\left( \mc{E}_{5,2} \right)_{\langle P \rangle}' : \; y^2 = x^3 &- \frac{67500D^2(t^4 - 12t^3 + 14t^2 + 12t + 1)(t^4 + 228t^3 + 494t^2 - 228t + 1)^2}{(t^2+1)^2(t^4 - 522t^3 - 10006t^2 + 522t + 1)^2}x \\ 
+&- \frac{6750000D^3(t^4 - 18t^3 + 74t^2 + 18t + 1)(t^4 + 228t^3 + 494t^2 - 228t + 1)^3}{(t^2+1)^2(t^4 - 522t^3 - 10006t^2 + 522t + 1)^3}.
+\end{split}
+\]
+The $5$th division polynomial of $\left( \mc{E}_{5,2} \right)_{\langle P \rangle}'$ is seen to have a linear factor, which leads to the point $P_2' = (x_2', y_2') \in \left( \mc{E}_{5,2} \right)_{\langle P \rangle}'[5]$, where
+\[
+\begin{split}
+x_2' &:= -150 \frac{D (t^2 - 6t + 1) (t^4 + 228t^3 + 494t^2 - 228t + 1)}{(t^2 + 1) (t^4 - 522t^3 - 10006t^2 + 522t + 1)}, \\
+y_2' &:= 27000 \frac{D t (t^4 + 228t^3 + 494t^2 - 228t + 1)}{(t^2 + 1) (t^4 - 522t^3 - 10006t^2 + 522t + 1)} \sqrt{\frac{-2 D (t^4 + 228t^3 + 494t^2 - 228t + 1)}{(t^2 + 1) (t^4 - 522t^3 - 10006t^2 + 522t + 1)}}.
+\end{split}
+\]
+As before, this, together with the fact that for $g_2 \in G_{5,2}$, the value $\psi_{5,1}(g_2)^2$ agrees with $\displaystyle \left( \frac{5}{\det g_2} \right)$ and that $\chi_{5,2}^{(2)} = \psi_{5,1}^2 \psi_{5,2}$, establishes the second two equalities in \eqref{subfieldsoflevel5lemmaeqn}, proving the lemma.
+\end{proof}
+
+\subsubsection{The level \texorpdfstring{$m=7$}}
+
+We begin by describing an explicit Weierstrass model $\mc{E}_7$ over $\mbq(t,D)$ that is generic in the sense that its specializations $\mc{E}_7(t_0,D_0)$ give rise to all elliptic curves $E$ over $\mbq$ for which $\rho_{E,7}(G_\mbq) \, \dot\subseteq \, B(7)$, where we recall that
+\[
+B(7) = \left\{ \begin{pmatrix} * & * \\ 0 & * \end{pmatrix} \right\} \subseteq \GL_2(\mbz/7\mbz)
+\]
+denotes the Borel subgroup.  We then describe explicitly certain subfields of $\mbq(\mc{E}_7[7])$ that will be useful in the next section.  
+
+Define $j_7(t) \in \mbq(t)$ by
+\begin{equation} \label{defofjsub7}
+j_7(t) := \frac{(t^2 + 245t + 2401)^3(t^2 + 13t + 49)}{t^7},
+\end{equation}
+and the elliptic curve $\mc{E}_7$ over $\mbq(t,D)$ by
+\begin{equation} \label{level7genericellipticcurve}
+\begin{split}
+&\mc{E}_7 : \; y^2 = x^3 + D^2 a_{4;7}(t) x + D^3 a_{6;7}(t), \\
+& a_{4;7}(t) := \frac{108 j_{7}(t)}{1728 - j_{7}(t)}, \quad\quad a_{6;7}(t) := \frac{432 j_{7}(t)}{1728 - j_{7}(t)}.
+\end{split}
+\end{equation}
+As proved in \cite{zywina}, we have
+\begin{equation} \label{genericGaloisimageiscontainedinborelmod7}
+\rho_{\mc{E}_{7},7}(G_{\mbq(t,D)}) \, \doteq \, B(7) \subseteq \GL_2(\mbz/7\mbz).
+\end{equation}
+The next lemma explicitly characterizes the subfields cut out by the quadratic characters $\psi_{7,1}^3$ and $\psi_{7,2}^3$.
+\begin{lemma} \label{quadraticsubfieldsoflevel7lemma}
+Let $\mc{E}_{7}$ be the elliptic curve over $\mbq(t,D)$ defined by \eqref{level7genericellipticcurve} and let  
+\[
+\psi_{7,1}^3, \; \psi_{7,2}^3 : \gal\left( \mbq(t,D)(\mc{E}_{7}[7])/\mbq(t,D) \right) \rightarrow \{ \pm 1 \}
+\]
+denote the restrictions under \eqref{genericGaloisimageiscontainedinborelmod7} of the cubes of the characters defined in \eqref{generaldefinitionofpsisubp}.  We then have
+\begin{equation} \label{quadsubfieldsoflevel7lemmaeqn}
+\begin{split}
+\mbq(t,D)(\mc{E}_{7}[7])^{\ker \psi_{7,1}^3} &= \mbq(t,D)\left( \sqrt{\frac{14D(t^2 + 13t + 49)(t^2 + 245t + 2401)}{(t^4 - 490t^3 - 21609t^2 - 235298t - 823543)}} \right), \\
+\mbq(t,D)(\mc{E}_{7}[7])^{\ker \psi_{7,2}^3} &= \mbq(t,D)\left( \sqrt{- \frac{2D(t^2 + 13t + 49)(t^2 + 245t + 2401)}{(t^4 - 490t^3 - 21609t^2 - 235298t - 823543)}} \right).
+\end{split}
+\end{equation}
+\end{lemma}
+\begin{proof}
+A computation reveals that the $7$th division polynomial of $\mc{E}_7$ has the cubic factor
+\begin{equation} \label{cubicfactorofpsisub7}
+\begin{split}
+x^3 &- \frac{126D(t^2 + 13t + 49)(t^2 + 245t + 2401)}{(t^4 - 490t^3 - 21609t^2 - 235298t - 823543)}x^2 \\ &+ \frac{108D^2(t^2 + 13t + 49)(t^2 + 245t + 2401)^2(33t^2 + 637t + 2401)}{(t^4 - 490t^3 - 21609t^2 - 235298t - 823543)^2}x \\
+&- \frac{216D^3(t^2 + 13t + 49)(t^2 + 245t + 2401)^3(881t^4 + 38122t^3 + 525819t^2 + 3058874t + 5764801)}{7(t^4 - 490t^3 - 21609t^2 - 235298t - 823543)^3},
+\end{split}
+\end{equation}
+which is irreducible over $\mbq(t,D)$ and whose discriminant is in $\left( \mbq(t,D)^\times \right)^2$.  Writing this polynomial in the form $f(x) = (x - \ga_1)(x - \ga_2)(x - \ga_3)$, we have that $\mbq(t,D)\left( \ga_1 \right)$ is cyclic cubic over $\mbq(t,D)$ and that the point 
+\begin{equation} \label{defofPforlevel7}
+P := \left( \ga_1, \sqrt{ \ga_1^3 + D^2 a_{4;7}(t) \ga_1 + D^3 a_{6;7}(t) } \right) 
+\end{equation}
+generates a cyclic submodule $\langle P \rangle \subseteq \mc{E}_7[7]$ on which $G_{\mbq(t,D)}$ acts through the eigenfunction $\psi_{7,1}$ via 
+\begin{equation} \label{Pfixedbykernelofpsisub7supone}
+\gs : P \mapsto \left[ \psi_{7,1}(\gs) \right] P.
+\end{equation}
+We have
+\begin{equation} \label{whatmbqtdPlookslike}
+\begin{split}
+\mbq(t,D)\left( P \right) &= \mbq(t,D)\left( \ga_1, \sqrt{ \ga_1^3 + D^2 a_{4;7}(t) \ga_1 + D^3 a_{6;7}(t) } \right) \\
+&\supseteq \mbq(t,D)\left( \ga_1, \sqrt{ \prod_{j = 1}^3 (\ga_j^3 + D^2 a_{4;7}(t) \ga_j + D^3 a_{6;7}(t)) } \right);
+\end{split}
+\end{equation}
+a computation using the third equation in \eqref{symmetricpolynomialequalities} shows that 
+\[
+\begin{split}
+\mbq(t,D)\left(  \sqrt{ \prod_{j=1}^3 (\ga_j^3 +& D^2 a_{4;7}(t) \ga_j + D^3 a_{6;7}(t) ) } \right) =\\
+&\mbq(t,D)\left( \sqrt{\frac{14D(t^2 + 13t + 49)(t^2 + 245t + 2401)}{(t^4 - 490t^3 - 21609t^2 - 235298t - 823543)}} \right),
+\end{split}
+\]
+establishing the first equality in \eqref{quadsubfieldsoflevel7lemmaeqn} (and also showing that we have equality in \eqref{whatmbqtdPlookslike}).  The second equality follows from the fact that the product $\psi_{7,1}^3(g) \psi_{7,2}^3(g)$ agrees with $\displaystyle \left( \frac{-7}{\det g} \right)$, whose fixed field is $\mbq(t,D)\left( \sqrt{-7} \right)$.
+\end{proof}
+
+Our next lemma explicitly characterizes the subfields cut out by the cubic characters $\psi_{7,1}^2, \psi_{7,2}^2$ and $\psi_{7,1}^2\psi_{7,2}^4$, where $\psi_{7,i}$ is defined as in \eqref{generaldefinitionofpsisubp}.
+
+We define the polynomials
+\begin{equation} \label{defoffsubTRandRprime}
+\begin{split}
+f_{\cyc,7}^+(X) &:= X^3 + X^2 - 2X - 1, \\
+f_T(X) &:= X^3 - T_1(t) X^2 + T_2(t) X - T_3(t), \\
+f_R(X) &:= X^3 - R_1(t) X^2 + R_2(t) X - R_3(t), \\
+f_{R'}(X) &:= X^3 - R_1(t) X^2 + R_2(t) X - R_3'(t),
+\end{split}
+\end{equation}
+where
+\begin{equation} \label{defoffsubXcoefficients}
+\begin{split}
+T_1(t) &:= -21 ( t^2 + 13t + 49 ), \\
+T_2(t) &:= 3 (t^2 + 13t + 49) (33 t^2 + 637t + 2401), \\
+T_3(t) &:= -\frac{1}{7} (t^2 + 13t + 49) ( 881 t^4 + 38122 t^3 + 525819 t^2 + 3058874 t + 5764801 ), \\
+R_1(t) &:= 21 (t^2 + 13t + 49), \\
+R_2(t) &:= -21(t^2 + 13t + 49) (9t^2 - 91 t - 343), \\
+R_3(t) &:= -7 (t^2 + 13t + 49) ( 223t^4 + 3542t^3 + 3381t^2 - 62426 t - 117649 ), \\
+R_3'(t) &:= - (t^2 + 13t + 49) (3289 t^4 + 24794 t^3 + 23667 t^2 - 436982 t - 823543 ).
+\end{split}
+\end{equation}
+\begin{lemma}
+Let $\mc{E}_7$ be be the elliptic curve over $\mbq(t,D)$ defined by \eqref{level7genericellipticcurve} and let  
+\[
+\psi_{7,1}^2, \psi_{7,2}^2 : \gal\left( \mbq(t,D)(\mc{E}_{7}[7])/\mbq(t,D) \right) \longrightarrow \left( (\mbz/7\mbz)^\times \right)^2 \simeq \mu_3
+\]
+denote the restrictions under \eqref{genericGaloisimageiscontainedinborelmod7} of the squares of the characters $\psi_{7,i}$ defined in \eqref{generaldefinitionofpsisubp}.  Let us denote by $\mbq(t,D)_{f_{\cyc,7}^+}$, $\mbq(t,D)_{f_T}$, $\mbq(t,D)_{f_R}$ and $\mbq(t,D)_{f_{R'}}$ the splitting fields over $\mbq(t,D)$ of the polynomials $f_{\cyc,7}^+(X)$, $f_T(X)$, $f_R(X)$ and $f_{R'}(X)$, respectively, where these polynomials are defined by \eqref{defoffsubTRandRprime} and \eqref{defoffsubXcoefficients}.
+We then have
+\begin{equation} \label{cubicsubfieldsoflevel7lemmaeqn}
+\begin{split}
+&\mbq(t,D)\left( \mc{E}_{7}[7] \right)^{\ker \psi_{7,1}^2} = \mbq(t,D)_{f_T}, \quad
+\mbq(t,D)\left( \mc{E}_{7}[7] \right)^{\ker \psi_{7,1}^2 \psi_{7,2}^2} = \mbq(t,D)_{f_{\cyc,7}^+}, \\
+&\mbq(t,D)\left( \mc{E}_{7}[7] \right)^{\ker \psi_{7,2}^2} = \mbq(t,D)_{f_R}, \quad \mbq(t,D)(\mc{E}_{7}[7])^{\psi_{7,1}^2\psi_{7,2}^4} = \mbq(t,D)_{f_{R'}}.
+\end{split}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Since $\rho_{\mc{E}_7,7}\left(G_{\mbq(t,D)}\right) = B(7)$, it is straightforward to see that $\mbq(t,D)\left( \mc{E}_7[7] \right)$ has exactly $4$ cyclic cubic subfields.  Furthermore, we have
+\[
+\mbq(t,D)\left(\mc{E}_7[7] \right)^{\ker \psi_{7,1}^2 \psi_{7,2}^2} = \mbq(t,D)\left( \mu_7 \right)^+ \subseteq \mbq(t,D)\left( \mu_7 \right),
+\]
+the first equality above following from the fact that $\psi_{7,1}(g)\psi_{7,2}(g) = \det g$, which implies that the fixed field of $\ker \psi_{7,1}^2 \psi_{7,2}^2$ is the maximal real subfield $\mbq(t,D)\left( \mu_7 \right)^+$, i.e. the unique subfield of $\mbq(t,D)\left( \mu_7 \right)$ that is cyclic cubic over $\mbq(t,D)$.  We have $\mbq(t,D)\left( \mu_7 \right)^+ = \mbq(t,D)\left( \zeta_7 + \zeta_7^{-1} \right)$, so $\mbq(t,D)\left( \mu_7 \right)^+$ is the splitting field of
+\[
+f_{\cyc,7}^+(X) = X^3 + X^2 - 2X - 1,
+\]
+the minimal polynomial over $\mbq(t,D)$ of the generator $\zeta_7 + \zeta_7^{-1}$.  This establishes the second equality in \eqref{cubicsubfieldsoflevel7lemmaeqn}.
+
+For the equality in \eqref{cubicsubfieldsoflevel7lemmaeqn} involving the fixed field of $\ker \psi_{7,1}^2$, we reason as follows.  By \eqref{Pfixedbykernelofpsisub7supone} and \eqref{defofPforlevel7}, we see that $\mbq(t,D)\left( \mc{E}_7[7] \right)^{\ker \psi_{7,1}} = \mbq(t,D)(P)$, where $\langle P \rangle \subseteq \mc{E}_7[7]$ is a cyclic $G_{\mbq(t,D)}$-stable subgroup, and since this extension is cyclic of degree $6$ over $\mbq(t,D)$, it follows that
+\begin{equation} \label{generatedbyxcoordinateofP}
+\mbq(t,D)\left( \mc{E}_7[7] \right)^{\ker \psi_{7,1}^2} = \mbq(t,D)\left( \ga_1 \right).
+\end{equation}
+where $\ga_1$ is the $x$-coordinate of $P$.
+Finally, the substitution $x = -\frac{6D(t^2 + 245t + 2401)}{(t^4 - 490t^3 - 21609t^2 - 235298t - 823543)}X$ transforms the cyclic cubic polynomial \eqref{cubicfactorofpsisub7} into $\left( -\frac{6D(t^2 + 245t + 2401)}{(t^4 - 490t^3 - 21609t^2 - 235298t - 823543)} \right)^3f_T(X)$, and the first equality in \eqref{cubicsubfieldsoflevel7lemmaeqn} follows.
+
+The discriminants $\gD_T$ and $\gD_{\cyc,7}^+$ associated to the polynomials $f_T(X)$ and $f_{\cyc,7}^+(X)$ satisfy
+\[
+\sqrt{\gD_T} = \frac{2^63^3t^4(t^2 + 13t + 49)}{7}, \quad\quad \sqrt{\gD_{\cyc,7}^+} = 7.
+\]
+Applying Lemma \ref{gettingattheothercubicfieldslemma}, we find that $\mbq(t,D)_{f_R}$ and $\mbq(t,D)_{f_{R'}}$ are the remaining two cyclic cubic subfields of $\mbq(t,D)\left( \mc{E}_7[7] \right)$.  To see which subfield is which, we first note that, just as in \eqref{generatedbyxcoordinateofP}, we have
+\[
+\mbq(t,D)\left( \mc{E}_7[7] \right)^{\ker \psi_{7,2}^2} = \mbq(t,D)\left( x(P') \right),
+\]
+where $P' \in (\mc{E}_7)_{\langle P \rangle}'$ is any generator of a cyclic $G_{\mbq(t,D)}$-stable subgroup $\langle P' \rangle \subseteq (\mc{E}_7)_{\langle P \rangle}'[7]$.  A direct computation reveals that the isogenous curve $\left(\mc{E}_7\right)_{\langle P \rangle}'$ has Weierstrass equation
+\[
+\begin{split}
+\left(\mc{E}_7\right)_{\langle P \rangle}' : \; y^2 = x^3 - &\frac{2^23^37^4D^2(t^2 + 5t + 1)(t^2 + 13t + 49)(t^2 + 245t + 2401)^2}{(t^4 - 490t^3 - 21609t^2 - 235298t - 823543)^3}x \\
+- &\frac{2^43^37^6D^3(t^2 + 13t + 49)(t^2 + 245t + 2401)^3(t^4 + 14t^3 + 63t^2 + 70t - 7)}{(t^4 - 490t^3 - 21609t^2 - 235298t - 823543)^3},
+\end{split}
+\]
+and that its $7$th division polynomial has the cubic factor
+\[
+\begin{split}
+x^3 + &\frac{2\cdot 3^27^2D(t^2 + 13t + 49)(t^2 + 245t + 2401)}{(t^4 - 490t^3 - 21609t^2 - 235298t - 823543)}x^2 \\
++ &\frac{2^23^37^4D^2(t^2 + 13t + 33)(t^2 + 13t + 49)(t^2 + 245t + 2401)^2}{(t^4 - 490t^3 - 21609t^2 - 235298t - 823543)^2}x \\
++ &\frac{2^33^37^6D^3(t^2 + 13t + 49)(t^2 + 245t + 2401)^3(t^4 + 26t^3 + 219t^2 + 778t + 881)}{(t^4 - 490t^3 - 21609t^2 - 235298t - 823543)^3}.
+\end{split}
+\]
+Finally, applying Lemma \ref{settingcubicfieldsequaltoeachotherlemma} (and some extensive, tedious calculations), we see that the splitting field of this polynomial agrees with the splitting field of $f_R(X)$, and this finishes the proof.
+\end{proof}

@@ -1,0 +1,72 @@
+\section{Bounding the $\GL_2$-level of missing trace groups of genus zero} \label{proofofboundingthelevelsthmsection}
+
+In this section we prove Theorem \ref{boundingthelevelsthm}.  To begin with, the main results in \cite{cumminspauli} immediately imply that
+\begin{equation} \label{cumminspaulilevels}
+\left\{ \level_{\SL_2}(\tilde{G}) : G \in \mf{G}(0) \right\} = \left\{ \begin{matrix} 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 \\ 18, 20, 21, 24, 25, 26, 27, 28, 30, 32, 36, 48 \end{matrix} \right\}.
+\end{equation}
+By Proposition \ref{levelincreaseboundprop} we then have
+\begin{equation} \label{boundforSL2levels}
+G \in \mf{G}(0) \; \Longrightarrow \; \level_{\SL_2}(G) \in \left\{ \begin{matrix} 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 20, 21, 22, 24, \\ 25, 26, 27, 28, 30, 32, 36, 40, 42, 48, 50, 52, 54, 56, 60, 64, 72, 96 \end{matrix} \right\},
+\end{equation}
+we will now establish the following proposition, which bounds $m_G$ for $G \in \mf{G}_{MT}^{\max}(0)$ in terms of $m_S := \level_{\SL_2}(G)$.  For an open subgroup $G \subseteq \GL_2(\hat{\mbz})$, we set 
+\begin{equation} \label{defofksubG}
+d_G := \gcd \left( m_S^ \infty, \left| \frac{G(m_S) \cap \SL_2(\mbz/m_S\mbz)}{[G(m_S),G(m_S)]} \right| \right),
+\end{equation}
+i.e. $d_G$ is the largest factor of $\left| \frac{G(m_S) \cap \SL_2(\mbz/m_S\mbz)}{[G(m_S),G(m_S)]} \right|$ supported on primes dividing $m_S$.
+\begin{proposition} \label{twotothekproposition}
+Let $G \in \mf{G}_{MT}^{\max}$ be a maximal missing trace group of $\GL_2$-level $m_G$ and $\SL_2$-level $m_S$ satisfying $\det G = \hat{\mbz}^\times$.  Then $m_G$ divides $d_G m_S$, where $d_G$ is defined by \eqref{defofksubG}.  .
+\end{proposition}
+\begin{proof}
+Without loss of generality, we may assume that $m_G > m_S$; we let $p$ be any prime for which $v_p(m_G) > v_p\left( m_S \right)$ and set $m_G' := m_G/p^{v_p(m_G) - v_p(m_S)}$.  Note that, for any prime $\ell$, we have
+\begin{equation} \label{vpofmsubGequalsvpofmsubS}
+v_{\ell}(m_G') = 
+\begin{cases}
+v_{\ell}(m_G) & \text{ if } \ell \neq p \\
+v_{\ell}(m_S) & \text{ if } \ell = p. 
+\end{cases} 
+\end{equation}
+In particular, since $m_S$ divides $m_G'$, we then have
+\begin{equation} \label{kernelofSL2iscontainedinG}
+\ker \left( \SL_2(\mbz/m_G\mbz) \rightarrow \SL_2(\mbz/m_G'\mbz) \right) \subseteq G(m_G).
+\end{equation}
+Furthermore, since $G$ is maximal among missing trace groups, it follows that
+\begin{equation} \label{tracemodmsubGprimeissurjective}
+\tr\left( G(m_G') \right) = \mbz/m_G'\mbz.
+\end{equation}
+We first claim that 
+\begin{equation} \label{pdividesmsubGprime}
+p \mid m_G'.
+\end{equation}
+To see this, suppose for the sake of contradiction that $p \nmid m_G'$, and define $\ga := v_p(m_G) - v_p(m_S)$.  Then, since $m_S$ divides $m_G'$, under the Chinese Remainder Isomorphism $\mbz/m_G\mbz \simeq \mbz/m_G'\mbz \times \mbz/p^{\ga}\mbz$, condition \eqref{kernelofSL2iscontainedinG} reads 
+\begin{equation} \label{SL2crossoneiscontained}
+\{ 1 \} \times \SL_2(\mbz/p^{\ga}\mbz) \subseteq G(m_G).
+\end{equation}
+By surjectivity of $\det : G(p^{\ga}) \twoheadrightarrow (\mbz/p^{\ga}\mbz)^\times$ and Goursat's lemma, we then have
+\begin{equation} \label{GofmsubGasfiberedproduct}
+G(m_G) \simeq G(m_G') \times_{\psi} \GL_2(\mbz/p^{\ga}\mbz),
+\end{equation}
+where $\psi_{m_G'} : G(m_G') \longrightarrow \Gamma$ and $\psi_p : \GL_2(\mbz/p^{\ga}\mbz) \longrightarrow \Gamma$ denote the surjective group homomorphisms onto the common quotient group $\Gamma$ implicit in the fibered product.
+It follows from \eqref{SL2crossoneiscontained} that $\SL_2(\mbz/p^{\ga}\mbz) \subseteq \ker \psi_p$, and thus, for every $\gamma \in \Gamma$, there exists $d \in (\mbz/p^{\ga}\mbz)^\times$ for which
+\[
+\{ g \in \GL_2(\mbz/p\mbz) : \det g = d \} \subseteq \psi_p^{-1}(\gamma).
+\]
+Since $\tr\left( \{ g \in \GL_2(\mbz/p\mbz) : \det g = d \}  \right) = \mbz/p^{\ga}\mbz$, it is then easy to deduce from \eqref{GofmsubGasfiberedproduct} and \eqref{tracemodmsubGprimeissurjective} that $\tr\left( G(m_G) \right) = \mbz/m_G\mbz$, a contradiction.  Therefore we have established \eqref{pdividesmsubGprime}, and, by \eqref{vpofmsubGequalsvpofmsubS}, $p \mid m_S$.  Since the prime $p$ was arbitrary, it follows that
+\begin{equation} \label{msubGdividesmsubStotheinfty}
+m_G \mid m_S^\infty.
+\end{equation}
+
+We now apply Lemma \ref{verticalSL2liftlemma}, which asserts that there is a surjective group homomorphism $\gd : G(m_S) \longrightarrow (\mbz/m_G\mbz)^\times$ satisfying $\pi \circ \gd = \det : G(m_S) \longrightarrow (\mbz/m_S\mbz)^\times$, and for which
+\[
+G(m_G) = \left\{ g \in \pi_{\GL_2}^{-1}\left( G(m_S) \right) : \gd\left( \pi(g) \right) = \det g \right\}.
+\]
+By \eqref{msubGdividesmsubStotheinfty} and Lemma \ref{verticalSL2liftlemma}, we have that
+\[
+m_G/m_S = \left| \ker \left( (\mbz/m_G\mbz)^\times \rightarrow (\mbz/m_S\mbz)^\times \right) \right| = \left| \gd\left( G(m_S) \cap \SL_2(\mbz/m_S\mbz) \right) \right|,
+\]
+which in turn divides
+\[
+\left| \frac{G(m_S) \cap \SL_2(\mbz/m_S\mbz)}{[G(m_S),G(m_S)]} \right|.
+\]
+By \eqref{msubGdividesmsubStotheinfty}, $m_G/m_S$ also divides $m_S^\infty$, and Proposition \ref{twotothekproposition} follows.
+\end{proof}
+Theorem \ref{boundingthelevelsthm} follows from \eqref{boundforSL2levels} and Proposition \ref{twotothekproposition}, together with a computer computation.  The latter was carried out using the computational package MAGMA \cite{MAGMA}.
